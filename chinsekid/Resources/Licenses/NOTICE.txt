@@ -1,0 +1,15 @@
+Stroke-order graphics
+
+The bundled StrokeOrders.sqlite file contains stroke graphics and median paths
+derived from the Make Me a Hanzi project's graphics.txt data:
+https://github.com/skishore/makemeahanzi
+
+The source graphics are derived from Arphic PL KaitiM GB and Arphic PL UKai
+fonts and are distributed under the Arphic Public License. The data has been
+converted to a compressed SQLite format by scripts/build-stroke-order-db.py.
+The original license text is included as ARPHICPL.TXT. The upstream COPYING
+notice is included as MakeMeAHanzi-COPYING.txt.
+
+Pronunciation data in the same database comes from Make Me a Hanzi's
+dictionary.txt, which is derived from Unihan and CJKlib. Its LGPL license text
+is included as LGPL.txt; refer to MakeMeAHanzi-COPYING.txt for source details.
