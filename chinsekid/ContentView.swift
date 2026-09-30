@@ -22,6 +22,7 @@ struct ContentView: View {
     @State private var selectedTab = 0
     @State private var studySession: StudySession?
     @State private var showingListeningGame = false
+    @State private var showingArithmeticGame = false
     @State private var showingImport = false
     @State private var showingManualEntry = false
     @State private var showingProfiles = false
@@ -38,6 +39,7 @@ struct ContentView: View {
                             beginStudy(startingWith: glyph, visibleOrder: visibleOrder)
                         },
                         startListeningGame: { showingListeningGame = true },
+                        startArithmeticGame: { showingArithmeticGame = true },
                         importWords: { showingImport = true },
                         manualEntry: { showingManualEntry = true },
                         chooseProfile: { showingProfiles = true }
@@ -64,6 +66,9 @@ struct ContentView: View {
                     showingImport = true
                 }
             }
+        }
+        .fullScreenCover(isPresented: $showingArithmeticGame) {
+            ArithmeticGameScreen()
         }
         .sheet(isPresented: $showingImport) {
             OCRImportScreen(app: app)
@@ -100,6 +105,7 @@ private struct HomeScreen: View {
     let startStudy: () -> Void
     let openCharacter: (String, [String]) -> Void
     let startListeningGame: () -> Void
+    let startArithmeticGame: () -> Void
     let importWords: () -> Void
     let manualEntry: () -> Void
     let chooseProfile: () -> Void
@@ -138,6 +144,7 @@ private struct HomeScreen: View {
                 }
 
                 ListeningGameBanner(action: startListeningGame)
+                ArithmeticGameBanner(action: startArithmeticGame)
 
                 VStack(alignment: .leading, spacing: 13) {
                     HStack {
@@ -222,6 +229,39 @@ private struct HomeScreen: View {
 
     private func tileColor(_ index: Int) -> Color {
         [AppPalette.mint, AppPalette.yellow, AppPalette.lilac, AppPalette.blue][index % 4]
+    }
+}
+
+private struct ArithmeticGameBanner: View {
+    let action: () -> Void
+
+    var body: some View {
+        Button(action: action) {
+            HStack(spacing: 14) {
+                ZStack {
+                    RoundedRectangle(cornerRadius: 17).fill(.white.opacity(0.7))
+                        .frame(width: 56, height: 56)
+                    Image(systemName: "number.circle.fill")
+                        .font(.system(size: 32, weight: .bold))
+                        .foregroundStyle(AppPalette.ink)
+                }
+                VStack(alignment: .leading, spacing: 4) {
+                    Text("30秒口算挑战")
+                        .font(.system(size: 18, weight: .heavy, design: .rounded))
+                    Text("加减混合，看看你能答对几题！")
+                        .font(.system(size: 14, weight: .medium, design: .rounded))
+                        .opacity(0.76)
+                }
+                Spacer()
+                Image(systemName: "play.circle.fill")
+                    .font(.system(size: 29))
+            }
+            .foregroundStyle(AppPalette.ink)
+            .padding(15)
+            .background(AppPalette.mint, in: RoundedRectangle(cornerRadius: 24))
+            .shadow(color: AppPalette.mint.opacity(0.30), radius: 12, x: 0, y: 7)
+        }
+        .buttonStyle(.plain)
     }
 }
 
