@@ -1,0 +1,631 @@
+{
+  "name": "整体认读",
+  "symbol": [
+    "zhi",
+    "chi",
+    "shi",
+    "ri",
+    "zi",
+    "ci",
+    "si",
+    "yi",
+    "wu",
+    "yu",
+    "ye",
+    "yue",
+    "yuan",
+    "yin",
+    "yun",
+    "ying"
+  ],
+  "phonemes": [
+    {
+      "id": 33,
+      "symbol": "zhi",
+      "label": "翘舌",
+      "image": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme-image/2cea18937f546ebb9bc2d21a77b120a9.png",
+      "eg_image": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme-image/98b3bdadd95e3078832bd41678f301f6.png",
+      "audio": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme/zhi1.m4a",
+      "phoneme": "zhi",
+      "tips": "“zhi”发音和“zh”大体相同，但要读的稍长、响亮些。",
+      "rule": "“z”占中格，“h”占中上格，“i”占中上格，三个字母底部平齐。",
+      "intro": "蜘蛛织网 zhi zhi zhi",
+      "tones": [
+        {
+          "id": 2890,
+          "symbol": "zhī",
+          "phoneme": "zhi1",
+          "audio": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme/zhi1.m4a"
+        },
+        {
+          "id": 2891,
+          "symbol": "zhí",
+          "phoneme": "zhi2",
+          "audio": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme/zhi2.m4a"
+        },
+        {
+          "id": 2892,
+          "symbol": "zhǐ",
+          "phoneme": "zhi3",
+          "audio": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme/zhi3.m4a"
+        },
+        {
+          "id": 2893,
+          "symbol": "zhì",
+          "phoneme": "zhi4",
+          "audio": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme/zhi4.m4a"
+        }
+      ]
+    },
+    {
+      "id": 34,
+      "symbol": "chi",
+      "label": "翘舌",
+      "image": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme-image/91c1d3d7f4a68191940f9c9bfa3cd43c.png",
+      "eg_image": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme-image/43edde8dd09882199c6759a0228851cd.png",
+      "audio": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme/chi1.m4a",
+      "phoneme": "chi",
+      "tips": "“chi”发音和“ch”大体相同，但要读的稍长、响亮些。",
+      "rule": "“c”占中格，“h”占中上格，“i”占中上格，三个字母底部平齐。",
+      "intro": "爱护牙齿 chi chi chi",
+      "tones": [
+        {
+          "id": 1616,
+          "symbol": "chī",
+          "phoneme": "chi1",
+          "audio": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme/chi1.m4a"
+        },
+        {
+          "id": 1617,
+          "symbol": "chí",
+          "phoneme": "chi2",
+          "audio": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme/chi2.m4a"
+        },
+        {
+          "id": 1618,
+          "symbol": "chǐ",
+          "phoneme": "chi3",
+          "audio": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme/chi3.m4a"
+        },
+        {
+          "id": 1619,
+          "symbol": "chì",
+          "phoneme": "chi4",
+          "audio": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme/chi4.m4a"
+        }
+      ]
+    },
+    {
+      "id": 35,
+      "symbol": "shi",
+      "label": "翘舌",
+      "image": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme-image/3c3cfb6e4835427956b7212b8106abf7.png",
+      "eg_image": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme-image/c0b4ef74a0048adfa6eb2c7ec1392f83.png",
+      "audio": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme/shi1.m4a",
+      "phoneme": "shi",
+      "tips": "“shi”发音和“sh”大体相同，但要读的稍长、响亮些。",
+      "rule": "“s”占中格，“h”占中上格，“i”占中上格，三个字母底部平齐。",
+      "intro": "一头雄狮 shi shi shi",
+      "tones": [
+        {
+          "id": 2527,
+          "symbol": "shī",
+          "phoneme": "shi1",
+          "audio": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme/shi1.m4a"
+        },
+        {
+          "id": 2528,
+          "symbol": "shí",
+          "phoneme": "shi2",
+          "audio": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme/shi2.m4a"
+        },
+        {
+          "id": 2529,
+          "symbol": "shǐ",
+          "phoneme": "shi3",
+          "audio": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme/shi3.m4a"
+        },
+        {
+          "id": 2530,
+          "symbol": "shì",
+          "phoneme": "shi4",
+          "audio": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme/shi4.m4a"
+        }
+      ]
+    },
+    {
+      "id": 36,
+      "symbol": "ri",
+      "label": "翘舌",
+      "image": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme-image/8aeb37e82f70d91a9c82989253f9559a.png",
+      "eg_image": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme-image/53b718cb3da7f448f6b4035f19e5a7dc.png",
+      "audio": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme/ri1.m4a",
+      "phoneme": "ri",
+      "tips": "“ri”发音和“r”大体相同，但要读的稍长、响亮些。",
+      "rule": "“r”占中格，“i”占中上格，左低右高。",
+      "intro": "一轮红日 ri ri ri",
+      "tones": [
+        {
+          "id": 1457,
+          "symbol": "rī",
+          "phoneme": "ri1",
+          "audio": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme/ri1.mp3"
+        },
+        {
+          "id": 1456,
+          "symbol": "rí",
+          "phoneme": "ri2",
+          "audio": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme/ri2.mp3"
+        },
+        {
+          "id": 1455,
+          "symbol": "rǐ",
+          "phoneme": "ri3",
+          "audio": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme/ri3.mp3"
+        },
+        {
+          "id": 2454,
+          "symbol": "rì",
+          "phoneme": "ri4",
+          "audio": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme/ri4.m4a"
+        }
+      ]
+    },
+    {
+      "id": 26,
+      "symbol": "zi",
+      "label": "平舌",
+      "image": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme-image/0ef2ae5f6d7e12653be1046fb1e80e8e.png",
+      "eg_image": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme-image/2782079d433022843b3b217a3c321a0f.png",
+      "audio": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme/z.mp3",
+      "phoneme": "zi",
+      "tips": "“zi”发音和“z”大体相同，但要读的稍长、响亮些。",
+      "rule": "“z”占中格，“i”占中上格，左低右高。",
+      "intro": "认真写字 zi zi zi",
+      "tones": [
+        {
+          "id": 2925,
+          "symbol": "zī",
+          "phoneme": "zi1",
+          "audio": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme/zi1.m4a"
+        },
+        {
+          "id": 1459,
+          "symbol": "zí",
+          "phoneme": "zi2",
+          "audio": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme/zi2.mp3"
+        },
+        {
+          "id": 2926,
+          "symbol": "zǐ",
+          "phoneme": "zi3",
+          "audio": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme/zi3.m4a"
+        },
+        {
+          "id": 2927,
+          "symbol": "zì",
+          "phoneme": "zi4",
+          "audio": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme/zi4.m4a"
+        }
+      ]
+    },
+    {
+      "id": 27,
+      "symbol": "ci",
+      "label": "平舌",
+      "image": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme-image/5b370a7e1b19fecf59ea7108e57d49f8.png",
+      "eg_image": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme-image/62a24528599ad8579fe463668008f78e.png",
+      "audio": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme/c.mp3",
+      "phoneme": "ci",
+      "tips": "“ci”发音和“c”大体相同，但要读的稍长、响亮些",
+      "rule": "“c”占中格，“i”占中上格，左低右高。",
+      "intro": "鱼刺鱼刺 ci ci ci",
+      "tones": [
+        {
+          "id": 1657,
+          "symbol": "cī",
+          "phoneme": "ci1",
+          "audio": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme/ci1.m4a"
+        },
+        {
+          "id": 1658,
+          "symbol": "cí",
+          "phoneme": "ci2",
+          "audio": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme/ci2.m4a"
+        },
+        {
+          "id": 1659,
+          "symbol": "cǐ",
+          "phoneme": "ci3",
+          "audio": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme/ci3.m4a"
+        },
+        {
+          "id": 1660,
+          "symbol": "cì",
+          "phoneme": "ci4",
+          "audio": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme/ci4.m4a"
+        }
+      ]
+    },
+    {
+      "id": 28,
+      "symbol": "si",
+      "label": "平舌",
+      "image": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme-image/74b161773f23dc0d83039a8988ba3b7c.png",
+      "eg_image": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme-image/d3b6169bd941e5b36e94e209d000cbd9.png",
+      "audio": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme/s.mp3",
+      "phoneme": "si",
+      "tips": "“si”发音和“s”大体相同，但要读的稍长、响亮些。",
+      "rule": "“s”占中格，“i”占中上格，左低右高。",
+      "intro": "汽车司机 si si si",
+      "tones": [
+        {
+          "id": 2563,
+          "symbol": "sī",
+          "phoneme": "si1",
+          "audio": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme/si1.m4a"
+        },
+        {
+          "id": 1458,
+          "symbol": "sí",
+          "phoneme": "si2",
+          "audio": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme/si2.mp3"
+        },
+        {
+          "id": 2564,
+          "symbol": "sǐ",
+          "phoneme": "si3",
+          "audio": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme/si3.m4a"
+        },
+        {
+          "id": 2565,
+          "symbol": "sì",
+          "phoneme": "si4",
+          "audio": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme/si4.m4a"
+        }
+      ]
+    },
+    {
+      "id": 61,
+      "symbol": "yi",
+      "label": "平舌",
+      "image": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme-image/yi.png",
+      "eg_image": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme-image/yi-pingyi.png",
+      "audio": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme/yi1.m4a",
+      "phoneme": "yi",
+      "tips": "“yi”的发音与“i”大体相同，气流从鼻腔出来，但要读得稍长、响亮些。",
+      "rule": "先把“y”写在中下格，再写i，“i”占中上格。书写时注意两个字母要紧凑匀称。",
+      "intro": "一件衣服，yi yi yi。",
+      "tones": [
+        {
+          "id": 2795,
+          "symbol": "yī",
+          "phoneme": "yi1",
+          "audio": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme/yi1.m4a"
+        },
+        {
+          "id": 2796,
+          "symbol": "yí",
+          "phoneme": "yi2",
+          "audio": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme/yi2.m4a"
+        },
+        {
+          "id": 2797,
+          "symbol": "yǐ",
+          "phoneme": "yi3",
+          "audio": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme/yi3.m4a"
+        },
+        {
+          "id": 2798,
+          "symbol": "yì",
+          "phoneme": "yi4",
+          "audio": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme/yi4.m4a"
+        }
+      ]
+    },
+    {
+      "id": 62,
+      "symbol": "wu",
+      "label": "",
+      "image": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme-image/wu.png",
+      "eg_image": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme-image/wu-pingyi.png",
+      "audio": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme/wu1.m4a",
+      "phoneme": "wu",
+      "tips": "“wu”的发音与“u”大体相同。",
+      "rule": "先把“w”写在中格，再写u，“w”占中上格，“u”占中格。书写时注意两个字母要紧凑匀称。",
+      "intro": "小房屋，wu wu wu。",
+      "tones": [
+        {
+          "id": 2705,
+          "symbol": "wū",
+          "phoneme": "wu1",
+          "audio": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme/wu1.m4a"
+        },
+        {
+          "id": 2706,
+          "symbol": "wú",
+          "phoneme": "wu2",
+          "audio": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme/wu2.m4a"
+        },
+        {
+          "id": 2707,
+          "symbol": "wǔ",
+          "phoneme": "wu3",
+          "audio": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme/wu3.m4a"
+        },
+        {
+          "id": 2708,
+          "symbol": "wù",
+          "phoneme": "wu4",
+          "audio": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme/wu4.m4a"
+        }
+      ]
+    },
+    {
+      "id": 63,
+      "symbol": "yu",
+      "label": "",
+      "image": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme-image/yu.png",
+      "eg_image": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme-image/yu-pingyi.png",
+      "audio": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme/yu1.m4a",
+      "phoneme": "yu",
+      "tips": "“yu”的发音与“ü”大体相同。",
+      "rule": "先把“y”写在中下格，再写u，“y”占中上格，“u”占中格。书写时注意两个字母要紧凑匀称。",
+      "intro": "yu yu yu，小鱼儿，水中游。",
+      "tones": [
+        {
+          "id": 2818,
+          "symbol": "yū",
+          "phoneme": "yu1",
+          "audio": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme/yu1.m4a"
+        },
+        {
+          "id": 2819,
+          "symbol": "yú",
+          "phoneme": "yu2",
+          "audio": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme/yu2.m4a"
+        },
+        {
+          "id": 2820,
+          "symbol": "yǔ",
+          "phoneme": "yu3",
+          "audio": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme/yu3.m4a"
+        },
+        {
+          "id": 2821,
+          "symbol": "yù",
+          "phoneme": "yu4",
+          "audio": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme/yu4.m4a"
+        }
+      ]
+    },
+    {
+      "id": 46,
+      "symbol": "ye",
+      "label": "",
+      "image": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme-image/0472575ebc4467bfba34375277297f62.png",
+      "eg_image": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme-image/b543fc8e2325a2966170e8e908d4b8e4.png",
+      "audio": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme/ie1.mp3",
+      "phoneme": "ye",
+      "tips": "“ye”发音与“ie”大体相同，口形半开，中间气不断，但要读的稍长、响亮些。",
+      "rule": "先把“y”写在中下格，再把“e”写在中格。书写时注意两个字母要紧凑匀称。",
+      "intro": "一棵椰树 ye ye ye",
+      "tones": [
+        {
+          "id": 2790,
+          "symbol": "yē",
+          "phoneme": "ye1",
+          "audio": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme/ye1.m4a"
+        },
+        {
+          "id": 2791,
+          "symbol": "yé",
+          "phoneme": "ye2",
+          "audio": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme/ye2.m4a"
+        },
+        {
+          "id": 2792,
+          "symbol": "yě",
+          "phoneme": "ye3",
+          "audio": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme/ye3.m4a"
+        },
+        {
+          "id": 2793,
+          "symbol": "yè",
+          "phoneme": "ye4",
+          "audio": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme/ye4.m4a"
+        }
+      ]
+    },
+    {
+      "id": 47,
+      "symbol": "yue",
+      "label": "",
+      "image": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme-image/bde483fd48501132238f5a93f94dc4d0.png",
+      "eg_image": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme-image/94c2626976f3c04af85a9a8aa029bac9.png",
+      "audio": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme/ve1.mp3",
+      "phoneme": "yue",
+      "tips": "“yue”发音与“üe”大体相同，口形由合到半开，中间气不断，但要读的稍长、响亮些。",
+      "rule": "先把“y”写在中下格，再把“ü”去掉两点写在中格，最后把“e”写在中格。书写时注意三个字母要紧凑匀称。",
+      "intro": "一轮圆月 yue yue yue",
+      "tones": [
+        {
+          "id": 2827,
+          "symbol": "yuē",
+          "phoneme": "yue1",
+          "audio": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme/yue1.m4a"
+        },
+        {
+          "id": 1461,
+          "symbol": "yué",
+          "phoneme": "yue2",
+          "audio": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme/yue2.mp3"
+        },
+        {
+          "id": 1460,
+          "symbol": "yuě",
+          "phoneme": "yue3",
+          "audio": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme/yue3.mp3"
+        },
+        {
+          "id": 2828,
+          "symbol": "yuè",
+          "phoneme": "yue4",
+          "audio": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme/yue4.m4a"
+        }
+      ]
+    },
+    {
+      "id": 53,
+      "symbol": "yuan",
+      "label": "",
+      "image": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme-image/41df1d2e0daad31d828269aeeb13470e.png",
+      "eg_image": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme-image/b8dc7c80bd67c1ba8bc37fc6848ccc03.png",
+      "audio": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme/yuan1.m4a",
+      "phoneme": "yuan",
+      "tips": "先发“yu”的音，再发“ɑn”的音，由“yu”滑向“ɑn”，中间不停顿。",
+      "rule": "先把“y”写在中下格，再把“u、ɑ、n”写在中格。书写时注意四个字母要紧凑匀称。",
+      "intro": "篮球圆圆 yuɑn yuɑn yuɑn",
+      "tones": [
+        {
+          "id": 2823,
+          "symbol": "yuān",
+          "phoneme": "yuan1",
+          "audio": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme/yuan1.m4a"
+        },
+        {
+          "id": 2824,
+          "symbol": "yuán",
+          "phoneme": "yuan2",
+          "audio": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme/yuan2.m4a"
+        },
+        {
+          "id": 2825,
+          "symbol": "yuǎn",
+          "phoneme": "yuan3",
+          "audio": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme/yuan3.m4a"
+        },
+        {
+          "id": 2826,
+          "symbol": "yuàn",
+          "phoneme": "yuan4",
+          "audio": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme/yuan4.m4a"
+        }
+      ]
+    },
+    {
+      "id": 54,
+      "symbol": "yin",
+      "label": "",
+      "image": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme-image/d01db03e684b3ec29a7af4bf334b1322.png",
+      "eg_image": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme-image/9dadf5d398400bb6667fbe3c6bb69cbc.png",
+      "audio": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme/in1.mp3",
+      "phoneme": "yin",
+      "tips": "发音与“in”大体相同，气流从鼻腔出来，但要读的稍长、响亮些。",
+      "rule": "先把“y”写在中下格，再把“i”写在中上格，最后把“n”写在中格。书写时注意三个字母要紧凑匀称。",
+      "intro": "一串脚印 yin yin yin",
+      "tones": [
+        {
+          "id": 2800,
+          "symbol": "yīn",
+          "phoneme": "yin1",
+          "audio": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme/yin1.m4a"
+        },
+        {
+          "id": 2801,
+          "symbol": "yín",
+          "phoneme": "yin2",
+          "audio": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme/yin2.m4a"
+        },
+        {
+          "id": 2802,
+          "symbol": "yǐn",
+          "phoneme": "yin3",
+          "audio": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme/yin3.m4a"
+        },
+        {
+          "id": 2803,
+          "symbol": "yìn",
+          "phoneme": "yin4",
+          "audio": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme/yin4.m4a"
+        }
+      ]
+    },
+    {
+      "id": 55,
+      "symbol": "yun",
+      "label": "",
+      "image": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme-image/fb189be805a95b60a0110d8eb70bebc3.png",
+      "eg_image": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme-image/946f539eba84a5215b77c43748463b19.png",
+      "audio": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme/yun1.m4a",
+      "phoneme": "yun",
+      "tips": "发音与“ün”大体相同，气流从鼻腔出来，但要读得稍长、响亮些。",
+      "rule": "先把“y”写在中下格，再把“u、n”写在中格。书写时注意两个字母要紧凑匀称。",
+      "intro": "一个熨斗 yun yun yun",
+      "tones": [
+        {
+          "id": 2829,
+          "symbol": "yūn",
+          "phoneme": "yun1",
+          "audio": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme/yun1.m4a"
+        },
+        {
+          "id": 2830,
+          "symbol": "yún",
+          "phoneme": "yun2",
+          "audio": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme/yun2.m4a"
+        },
+        {
+          "id": 2831,
+          "symbol": "yǔn",
+          "phoneme": "yun3",
+          "audio": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme/yun3.m4a"
+        },
+        {
+          "id": 2832,
+          "symbol": "yùn",
+          "phoneme": "yun4",
+          "audio": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme/yun4.m4a"
+        }
+      ]
+    },
+    {
+      "id": 60,
+      "symbol": "ying",
+      "label": "",
+      "image": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme-image/e08140301124ea7e6e33a2a91c0a9a59.png",
+      "eg_image": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme-image/2e2daa833ecc2ed258b18411a1c37a4f.png",
+      "audio": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme/ing1.mp3",
+      "phoneme": "ying",
+      "tips": "“ying”的发音与“ing”大体相同，气流从鼻腔出来，但要读得稍长、响亮些。",
+      "rule": "先把“y”写在中下格，再写ing，“i”占中上格，“n”占中格，“g”占中下格。书写时注意四个字母要紧凑匀称。",
+      "intro": "三个樱桃 ying ying ying",
+      "tones": [
+        {
+          "id": 2804,
+          "symbol": "yīng",
+          "phoneme": "ying1",
+          "audio": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme/ying1.m4a"
+        },
+        {
+          "id": 2805,
+          "symbol": "yíng",
+          "phoneme": "ying2",
+          "audio": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme/ying2.m4a"
+        },
+        {
+          "id": 2806,
+          "symbol": "yǐng",
+          "phoneme": "ying3",
+          "audio": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme/ying3.m4a"
+        },
+        {
+          "id": 2807,
+          "symbol": "yìng",
+          "phoneme": "ying4",
+          "audio": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme/ying4.m4a"
+        }
+      ]
+    }
+  ]
+}

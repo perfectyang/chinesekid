@@ -1,0 +1,163 @@
+{
+  "name": "后鼻韵母",
+  "symbol": [
+    "ɑng",
+    "eng",
+    "ing",
+    "ong"
+  ],
+  "phonemes": [
+    {
+      "id": 56,
+      "symbol": "ɑng",
+      "label": "",
+      "image": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme-image/c980b89b64a44073e5ff372c2a3c866d.png",
+      "eg_image": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme-image/c8e0cf5b95cc1003817ef35cae6bc6c8.png",
+      "audio": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme/ang1.m4a",
+      "phoneme": "ɑng",
+      "tips": "后鼻韵母，先张大嘴巴，使嘴巴呈“ɑ”的形状，舌后部隆起后缩，抵住软腭，气流从鼻腔出来。",
+      "rule": "“ɑ、n”占中格，“g”占中下格。书写时注意三个字母要紧凑匀称。",
+      "intro": "一只山羊 ɑng ɑng ɑng",
+      "tones": [
+        {
+          "id": 1490,
+          "symbol": "āng",
+          "phoneme": "ang1",
+          "audio": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme/ang1.m4a"
+        },
+        {
+          "id": 1491,
+          "symbol": "áng",
+          "phoneme": "ang2",
+          "audio": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme/ang2.m4a"
+        },
+        {
+          "id": 1465,
+          "symbol": "ǎng",
+          "phoneme": "ang3",
+          "audio": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme/ang3.mp3"
+        },
+        {
+          "id": 1492,
+          "symbol": "àng",
+          "phoneme": "ang4",
+          "audio": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme/ang4.m4a"
+        }
+      ]
+    },
+    {
+      "id": 57,
+      "symbol": "eng",
+      "label": "",
+      "image": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme-image/f47bd4f87c27db92f6cb925275fb96f2.png",
+      "eg_image": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme-image/246da6bb2ccd5505639ff9ae489c8e8d.png",
+      "audio": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme/eng1.m4a",
+      "phoneme": "eng",
+      "tips": "后鼻韵母，先发“e”的口形，舌根后缩，抵住软腭，气流从鼻腔出来。",
+      "rule": "“e、n”占中格，“g”占中下格。书写时注意三个字母要紧凑匀称。",
+      "intro": "一盏台灯 eng eng eng",
+      "tones": [
+        {
+          "id": 2993,
+          "symbol": "ēng",
+          "phoneme": "eng1",
+          "audio": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme/eng1.m4a"
+        },
+        {
+          "id": 2994,
+          "symbol": "éng",
+          "phoneme": "eng2",
+          "audio": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme/eng2.m4a"
+        },
+        {
+          "id": 2995,
+          "symbol": "ěng",
+          "phoneme": "eng3",
+          "audio": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme/eng3.m4a"
+        },
+        {
+          "id": 2996,
+          "symbol": "èng",
+          "phoneme": "eng4",
+          "audio": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme/eng4.m4a"
+        }
+      ]
+    },
+    {
+      "id": 58,
+      "symbol": "ing",
+      "label": "",
+      "image": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme-image/07b2384bfd44b7321122614e2a0c2d79.png",
+      "eg_image": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme-image/00f75b31adc371bb57c26738f9c2ae23.png",
+      "audio": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme/ing1.mp3",
+      "phoneme": "ing",
+      "tips": "后鼻韵母，先发“i”音，舌根后缩，抵住软腭，气流从鼻腔出来。",
+      "rule": "“i”占中上格，“n”占中格，“g”占中下格。书写时注意三个字母要紧凑匀称。",
+      "intro": "一只老鹰 ing ing ing",
+      "tones": [
+        {
+          "id": 2997,
+          "symbol": "īng",
+          "phoneme": "ing1",
+          "audio": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme/ing1.mp3"
+        },
+        {
+          "id": 2998,
+          "symbol": "íng",
+          "phoneme": "ing2",
+          "audio": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme/ing2.mp3"
+        },
+        {
+          "id": 2999,
+          "symbol": "ǐng",
+          "phoneme": "ing3",
+          "audio": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme/ing3.mp3"
+        },
+        {
+          "id": 3000,
+          "symbol": "ìng",
+          "phoneme": "ing4",
+          "audio": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme/ing4.mp3"
+        }
+      ]
+    },
+    {
+      "id": 59,
+      "symbol": "ong",
+      "label": "",
+      "image": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme-image/a371afabf73860b24948676fed946412.png",
+      "eg_image": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme-image/f3bfa725866ddd791cb4b8553a765a8f.png",
+      "audio": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme/ong1.m4a",
+      "phoneme": "ong",
+      "tips": "后鼻韵母，先发“o”音，舌根后缩，抵住软腭，气流从鼻腔出来。",
+      "rule": "“o、n”占中格，“g”占中下格。书写时注意三个字母要紧凑匀称。",
+      "intro": "墙上挂钟 ong ong ong",
+      "tones": [
+        {
+          "id": 3001,
+          "symbol": "ōng",
+          "phoneme": "ong1",
+          "audio": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme/ong1.m4a"
+        },
+        {
+          "id": 3002,
+          "symbol": "óng",
+          "phoneme": "ong2",
+          "audio": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme/ong2.m4a"
+        },
+        {
+          "id": 3003,
+          "symbol": "ǒng",
+          "phoneme": "ong3",
+          "audio": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme/ong3.m4a"
+        },
+        {
+          "id": 3004,
+          "symbol": "òng",
+          "phoneme": "ong4",
+          "audio": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme/ong4.m4a"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,904 @@
+{
+  "name": "声母",
+  "symbol": [
+    "b",
+    "p",
+    "m",
+    "f",
+    "d",
+    "t",
+    "n",
+    "l",
+    "g",
+    "k",
+    "h",
+    "j",
+    "q",
+    "x",
+    "zh",
+    "ch",
+    "sh",
+    "r",
+    "z",
+    "c",
+    "s",
+    "y",
+    "w"
+  ],
+  "phonemes": [
+    {
+      "id": 9,
+      "symbol": "b",
+      "label": "",
+      "image": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme-image/627942a944a6cba495a6289da96de98a.png",
+      "eg_image": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme-image/63ba00a6af110297e5c83e85578b43cd.png",
+      "audio": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme/b.mp3",
+      "phoneme": "b",
+      "tips": "双唇紧闭，挡住气流，双唇突然打开，气流爆发。",
+      "rule": "“b”两笔写成，占中上格。书写时注意第一笔竖不能碰到第一条线，右下半圆写饱满。",
+      "intro": "收听广播 b b b",
+      "tones": [
+        {
+          "id": 1497,
+          "symbol": "bā",
+          "phoneme": "ba1",
+          "audio": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme/ba1.m4a"
+        },
+        {
+          "id": 1498,
+          "symbol": "bá",
+          "phoneme": "ba2",
+          "audio": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme/ba2.m4a"
+        },
+        {
+          "id": 1499,
+          "symbol": "bǎ",
+          "phoneme": "ba3",
+          "audio": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme/ba3.m4a"
+        },
+        {
+          "id": 1500,
+          "symbol": "bà",
+          "phoneme": "ba4",
+          "audio": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme/ba4.m4a"
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "symbol": "p",
+      "label": "",
+      "image": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme-image/a16b9912cceefc9f5a07c0538481479f.png",
+      "eg_image": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme-image/304d46db83b2ed38143d3a81aecda72a.png",
+      "audio": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme/p.mp3",
+      "phoneme": "p",
+      "tips": "双唇紧闭，挡住气流，双唇突然打开，气流较强。",
+      "rule": "“p”两笔写成，占中下格。书写时注意第一笔竖不能碰到第四条线，右上半圆写饱满。",
+      "intro": "一个球拍 p p p",
+      "tones": [
+        {
+          "id": 2378,
+          "symbol": "pū",
+          "phoneme": "pu1",
+          "audio": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme/pu1.m4a"
+        },
+        {
+          "id": 2379,
+          "symbol": "pú",
+          "phoneme": "pu2",
+          "audio": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme/pu2.m4a"
+        },
+        {
+          "id": 2380,
+          "symbol": "pǔ",
+          "phoneme": "pu3",
+          "audio": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme/pu3.m4a"
+        },
+        {
+          "id": 2381,
+          "symbol": "pù",
+          "phoneme": "pu4",
+          "audio": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme/pu4.m4a"
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "symbol": "m",
+      "label": "",
+      "image": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme-image/2ec3ba1dc91bc3ff19e07dcac44f2f84.png",
+      "eg_image": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme-image/16c649574c3585f25a725557bfefd36b.png",
+      "audio": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme/m.mp3",
+      "phoneme": "m",
+      "tips": "双唇紧闭，挡住气流，发音时，气流从鼻腔透出，声带振动。",
+      "rule": "“m”三笔写成，占中格，左右门洞要一样大。",
+      "intro": "两个门洞 m m m",
+      "tones": [
+        {
+          "id": 2167,
+          "symbol": "mā",
+          "phoneme": "ma1",
+          "audio": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme/ma1.m4a"
+        },
+        {
+          "id": 2168,
+          "symbol": "má",
+          "phoneme": "ma2",
+          "audio": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme/ma2.m4a"
+        },
+        {
+          "id": 2169,
+          "symbol": "mǎ",
+          "phoneme": "ma3",
+          "audio": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme/ma3.m4a"
+        },
+        {
+          "id": 2170,
+          "symbol": "mà",
+          "phoneme": "ma4",
+          "audio": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme/ma4.m4a"
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "symbol": "f",
+      "label": "",
+      "image": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme-image/e6aeb1cbc1d8f3a6dde69cbdeebfaeda.png",
+      "eg_image": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme-image/8c90edb458d1253996ea5b64c828ca2d.png",
+      "audio": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme/f.mp3",
+      "phoneme": "f",
+      "tips": "上齿接触下唇，形成一道狭缝，让气流从狭缝中摩擦而出。",
+      "rule": "“f”两笔写成，占中上格。“f”的横比较短，写在比第二条线略低一点的位置上。",
+      "intro": "一根拐棍 f f f",
+      "tones": [
+        {
+          "id": 1798,
+          "symbol": "fū",
+          "phoneme": "fu1",
+          "audio": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme/fu1.m4a"
+        },
+        {
+          "id": 1799,
+          "symbol": "fú",
+          "phoneme": "fu2",
+          "audio": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme/fu2.m4a"
+        },
+        {
+          "id": 1800,
+          "symbol": "fǔ",
+          "phoneme": "fu3",
+          "audio": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme/fu3.m4a"
+        },
+        {
+          "id": 1801,
+          "symbol": "fù",
+          "phoneme": "fu4",
+          "audio": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme/fu4.m4a"
+        }
+      ]
+    },
+    {
+      "id": 13,
+      "symbol": "d",
+      "label": "",
+      "image": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme-image/9a92516dff112f644128d1098f2ab96d.png",
+      "eg_image": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme-image/3945a8ae21067d307f638a129064574a.png",
+      "audio": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme/d.mp3",
+      "phoneme": "d",
+      "tips": "舌尖抵住上牙龈，突然弹开，吐出微弱气流。",
+      "rule": "“d”两笔写成，占中上格。书写时注意第一笔左下半圆写饱满，竖不能碰到第一条线。",
+      "intro": "马蹄声响 d d d",
+      "tones": [
+        {
+          "id": 1684,
+          "symbol": "dā",
+          "phoneme": "da1",
+          "audio": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme/da1.m4a"
+        },
+        {
+          "id": 1685,
+          "symbol": "dá",
+          "phoneme": "da2",
+          "audio": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme/da2.m4a"
+        },
+        {
+          "id": 1686,
+          "symbol": "dǎ",
+          "phoneme": "da3",
+          "audio": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme/da3.m4a"
+        },
+        {
+          "id": 1687,
+          "symbol": "dà",
+          "phoneme": "da4",
+          "audio": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme/da4.m4a"
+        }
+      ]
+    },
+    {
+      "id": 14,
+      "symbol": "t",
+      "label": "",
+      "image": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme-image/d34a8d0d4d85fa366a70db94ea7e1c24.png",
+      "eg_image": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme-image/017542843f14956a4eac29ca654f7ae4.png",
+      "audio": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme/t.mp3",
+      "phoneme": "t",
+      "tips": "舌尖抵住上牙龈，突然弹开，送出气流较强。",
+      "rule": "“t”两笔写成，占中上格。书写时注意横比较短，写在比第二条线略低的位置",
+      "intro": "一个伞柄 t t t",
+      "tones": [
+        {
+          "id": 2649,
+          "symbol": "tū",
+          "phoneme": "tu1",
+          "audio": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme/tu1.m4a"
+        },
+        {
+          "id": 2650,
+          "symbol": "tú",
+          "phoneme": "tu2",
+          "audio": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme/tu2.m4a"
+        },
+        {
+          "id": 2651,
+          "symbol": "tǔ",
+          "phoneme": "tu3",
+          "audio": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme/tu3.m4a"
+        },
+        {
+          "id": 2652,
+          "symbol": "tù",
+          "phoneme": "tu4",
+          "audio": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme/tu4.m4a"
+        }
+      ]
+    },
+    {
+      "id": 15,
+      "symbol": "n",
+      "label": "",
+      "image": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme-image/9df0d0ae6c819f8b36981071db4fa5f3.png",
+      "eg_image": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme-image/f40c4c9d5f8d4e60edfc98597cd3b072.png",
+      "audio": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme/n.mp3",
+      "phoneme": "n",
+      "tips": "舌尖抵住上牙龈，让气流从鼻孔流出。",
+      "rule": "“n”两笔写成，占中格。书写时注意占满格。",
+      "intro": "一个门洞 n n n",
+      "tones": [
+        {
+          "id": 1464,
+          "symbol": "nā",
+          "phoneme": "na1",
+          "audio": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme/na1.mp3"
+        },
+        {
+          "id": 2239,
+          "symbol": "ná",
+          "phoneme": "na2",
+          "audio": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme/na2.m4a"
+        },
+        {
+          "id": 2240,
+          "symbol": "nǎ",
+          "phoneme": "na3",
+          "audio": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme/na3.m4a"
+        },
+        {
+          "id": 2241,
+          "symbol": "nà",
+          "phoneme": "na4",
+          "audio": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme/na4.m4a"
+        }
+      ]
+    },
+    {
+      "id": 16,
+      "symbol": "l",
+      "label": "",
+      "image": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme-image/207ad6c8204862551a297df45d8ab328.png",
+      "eg_image": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme-image/6957e338b44f81fada75eacc1c5cd424.png",
+      "audio": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme/l.mp3",
+      "phoneme": "l",
+      "tips": "舌尖抵住上牙龈，不顶满，让气流从舌头两边出来，声带振动。",
+      "rule": "“l”一笔写成，占中上格。书写时注意竖的起笔在比第一条线略低一点的位置上。",
+      "intro": "一根小棍 l l l",
+      "tones": [
+        {
+          "id": 2098,
+          "symbol": "lī",
+          "phoneme": "li1",
+          "audio": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme/li1.m4a"
+        },
+        {
+          "id": 2099,
+          "symbol": "lí",
+          "phoneme": "li2",
+          "audio": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme/li2.m4a"
+        },
+        {
+          "id": 2100,
+          "symbol": "lǐ",
+          "phoneme": "li3",
+          "audio": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme/li3.m4a"
+        },
+        {
+          "id": 2101,
+          "symbol": "lì",
+          "phoneme": "li4",
+          "audio": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme/li4.m4a"
+        }
+      ]
+    },
+    {
+      "id": 17,
+      "symbol": "g",
+      "label": "",
+      "image": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme-image/72144f0a5ab0041e3d82228f46543121.png",
+      "eg_image": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme-image/b1a081693dda92a46225436f94e9adb9.png",
+      "audio": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme/g.mp3",
+      "phoneme": "g",
+      "tips": "舌根音，舌根抬起抵住软腭，挡住气流，突然打开，吐出微弱气流。",
+      "rule": "“g”的两笔写成，占中下格。书写时注意第二笔竖左弯的竖要直。",
+      "intro": "一只白鸽 g g g",
+      "tones": [
+        {
+          "id": 1803,
+          "symbol": "gā",
+          "phoneme": "ga1",
+          "audio": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme/ga1.m4a"
+        },
+        {
+          "id": 1804,
+          "symbol": "gá",
+          "phoneme": "ga2",
+          "audio": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme/ga2.m4a"
+        },
+        {
+          "id": 1805,
+          "symbol": "gǎ",
+          "phoneme": "ga3",
+          "audio": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme/ga3.m4a"
+        },
+        {
+          "id": 1806,
+          "symbol": "gà",
+          "phoneme": "ga4",
+          "audio": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme/ga4.m4a"
+        }
+      ]
+    },
+    {
+      "id": 18,
+      "symbol": "k",
+      "label": "",
+      "image": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme-image/9e9b1706bd478f916c60bf5eeb5c1be4.png",
+      "eg_image": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme-image/2ea402ab56fbcff8c1314a24a1280684.png",
+      "audio": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme/k.mp3",
+      "phoneme": "k",
+      "tips": "舌根音，舌根抬起抵住软腭，挡住气流，突然打开，吐出气流比“g”强。",
+      "rule": "“k”两笔写成，占中上格。书写时注意竖右侧的左斜、右斜是一笔完成的。",
+      "intro": "四条蝌蚪 k k k",
+      "tones": [
+        {
+          "id": 2020,
+          "symbol": "kē",
+          "phoneme": "ke1",
+          "audio": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme/ke1.m4a"
+        },
+        {
+          "id": 2021,
+          "symbol": "ké",
+          "phoneme": "ke2",
+          "audio": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme/ke2.m4a"
+        },
+        {
+          "id": 2022,
+          "symbol": "kě",
+          "phoneme": "ke3",
+          "audio": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme/ke3.m4a"
+        },
+        {
+          "id": 2023,
+          "symbol": "kè",
+          "phoneme": "ke4",
+          "audio": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme/ke4.m4a"
+        }
+      ]
+    },
+    {
+      "id": 19,
+      "symbol": "h",
+      "label": "",
+      "image": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme-image/a08b4d91d5590f65ce7b91523dd884b4.png",
+      "eg_image": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme-image/4b121b6dc3e23550088ccb9b3caf9c20.png",
+      "audio": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme/h.mp3",
+      "phoneme": "h",
+      "tips": "舌头靠近软腭，形成一条狭缝，让气流从狭缝中摩擦而出。",
+      "rule": "“h”两笔写成，占中上格。书写时注意第一笔竖占到上格但不顶第一条线。",
+      "intro": "一把椅子 h h h",
+      "tones": [
+        {
+          "id": 1871,
+          "symbol": "hā",
+          "phoneme": "ha1",
+          "audio": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme/ha1.m4a"
+        },
+        {
+          "id": 1872,
+          "symbol": "há",
+          "phoneme": "ha2",
+          "audio": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme/ha2.m4a"
+        },
+        {
+          "id": 1873,
+          "symbol": "hǎ",
+          "phoneme": "ha3",
+          "audio": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme/ha3.m4a"
+        },
+        {
+          "id": 1463,
+          "symbol": "hà",
+          "phoneme": "ha4",
+          "audio": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme/ha4.mp3"
+        }
+      ]
+    },
+    {
+      "id": 20,
+      "symbol": "j",
+      "label": "",
+      "image": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme-image/dd11fb4b998badefec02ee33c31d9352.png",
+      "eg_image": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme-image/cf75ad40759c158d7a85a71961324ff2.png",
+      "audio": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme/j.mp3",
+      "phoneme": "j",
+      "tips": "舌面高抬，抵住硬腭前部，然后稍稍放松，气流从窄缝中摩擦成声。",
+      "rule": "“j”两笔写成，它是唯一一个占满上中下三格的字母。先写竖左弯，再写点。书写时注意竖左弯的竖要直，弯从下格开始。",
+      "intro": "一架飞机 j j j",
+      "tones": [
+        {
+          "id": 1948,
+          "symbol": "jī",
+          "phoneme": "ji1",
+          "audio": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme/ji1.m4a"
+        },
+        {
+          "id": 1949,
+          "symbol": "jí",
+          "phoneme": "ji2",
+          "audio": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme/ji2.m4a"
+        },
+        {
+          "id": 1950,
+          "symbol": "jǐ",
+          "phoneme": "ji3",
+          "audio": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme/ji3.m4a"
+        },
+        {
+          "id": 1951,
+          "symbol": "jì",
+          "phoneme": "ji4",
+          "audio": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme/ji4.m4a"
+        }
+      ]
+    },
+    {
+      "id": 21,
+      "symbol": "q",
+      "label": "",
+      "image": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme-image/169928640391021cf508d9d08ec8f75e.png",
+      "eg_image": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme-image/97c69f1527ef35847b97dd842a8e1182.png",
+      "audio": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme/q.mp3",
+      "phoneme": "q",
+      "tips": "“q”与“j”发音大体相同，只是送出气流较强。",
+      "rule": "“q”两笔写成，占中下格。书写时注意竖要从中格写到下格。",
+      "intro": "两只气球 q q q",
+      "tones": [
+        {
+          "id": 2383,
+          "symbol": "qī",
+          "phoneme": "qi1",
+          "audio": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme/qi1.m4a"
+        },
+        {
+          "id": 2384,
+          "symbol": "qí",
+          "phoneme": "qi2",
+          "audio": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme/qi2.m4a"
+        },
+        {
+          "id": 2385,
+          "symbol": "qǐ",
+          "phoneme": "qi3",
+          "audio": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme/qi3.m4a"
+        },
+        {
+          "id": 2386,
+          "symbol": "qì",
+          "phoneme": "qi4",
+          "audio": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme/qi4.m4a"
+        }
+      ]
+    },
+    {
+      "id": 22,
+      "symbol": "x",
+      "label": "",
+      "image": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme-image/5c74873bd1e5839527197ce5f08b21e2.png",
+      "eg_image": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme-image/27dc0d0c363d0491d3c6d8a71f92bc9c.png",
+      "audio": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme/x.mp3",
+      "phoneme": "x",
+      "tips": "“x”与“j”“q”发音部位相同，直接摩擦成音。",
+      "rule": "“x”两笔写成，占中格。书写时先写右斜，从左上往右下写；再写左斜，从右上向左下写。注意左右斜度一样。",
+      "intro": "一个西瓜 x x x",
+      "tones": [
+        {
+          "id": 2710,
+          "symbol": "xī",
+          "phoneme": "xi1",
+          "audio": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme/xi1.m4a"
+        },
+        {
+          "id": 2711,
+          "symbol": "xí",
+          "phoneme": "xi2",
+          "audio": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme/xi2.m4a"
+        },
+        {
+          "id": 2712,
+          "symbol": "xǐ",
+          "phoneme": "xi3",
+          "audio": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme/xi3.m4a"
+        },
+        {
+          "id": 2713,
+          "symbol": "xì",
+          "phoneme": "xi4",
+          "audio": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme/xi4.m4a"
+        }
+      ]
+    },
+    {
+      "id": 29,
+      "symbol": "zh",
+      "label": "翘舌",
+      "image": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme-image/3b2b5bc369c9b8f48d9dc84597d8941e.png",
+      "eg_image": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme-image/0cb2a942f1bbf33376481ca7d42bfc5a.png",
+      "audio": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme/zhi1.m4a",
+      "phoneme": "zh",
+      "tips": "舌尖翘起，抵住硬腭前部，稍稍放松让气流从窄缝中挤出来。",
+      "rule": "“zh”三笔写成，“z”占中格，“h”占中上格。书写时注意两个字母要紧凑。",
+      "intro": "手织毛衣zh zh zh",
+      "tones": [
+        {
+          "id": 2858,
+          "symbol": "zhā",
+          "phoneme": "zha1",
+          "audio": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme/zha1.m4a"
+        },
+        {
+          "id": 2859,
+          "symbol": "zhá",
+          "phoneme": "zha2",
+          "audio": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme/zha2.m4a"
+        },
+        {
+          "id": 2860,
+          "symbol": "zhǎ",
+          "phoneme": "zha3",
+          "audio": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme/zha3.m4a"
+        },
+        {
+          "id": 2861,
+          "symbol": "zhà",
+          "phoneme": "zha4",
+          "audio": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme/zha4.m4a"
+        }
+      ]
+    },
+    {
+      "id": 30,
+      "symbol": "ch",
+      "label": "翘舌",
+      "image": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme-image/a65ead6426e98fa1142d9a303b57cc3a.png",
+      "eg_image": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme-image/05440395020124b65509145dca6c9618.png",
+      "audio": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme/chi1.m4a",
+      "phoneme": "ch",
+      "tips": "发音动作与“zh”相同，只是送出的气流较强。",
+      "rule": "“ch”三笔写成，“c”占中格，“h”占中上格。书写时注意两个字母要紧凑。",
+      "intro": "宝宝吃饭 ch ch ch",
+      "tones": [
+        {
+          "id": 1583,
+          "symbol": "chā",
+          "phoneme": "cha1",
+          "audio": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme/cha1.m4a"
+        },
+        {
+          "id": 1584,
+          "symbol": "chá",
+          "phoneme": "cha2",
+          "audio": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme/cha2.m4a"
+        },
+        {
+          "id": 1585,
+          "symbol": "chǎ",
+          "phoneme": "cha3",
+          "audio": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme/cha3.m4a"
+        },
+        {
+          "id": 1586,
+          "symbol": "chà",
+          "phoneme": "cha4",
+          "audio": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme/cha4.m4a"
+        }
+      ]
+    },
+    {
+      "id": 31,
+      "symbol": "sh",
+      "label": "翘舌",
+      "image": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme-image/9f37c6e7be8ee00af06b70ee67f708d8.png",
+      "eg_image": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme-image/df774490fb83daa6148ce01de8a76343.png",
+      "audio": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme/shi1.m4a",
+      "phoneme": "sh",
+      "tips": "翘起舌尖，靠近硬腭前部留一条窄缝，气流从中挤出。",
+      "rule": "“sh”三笔写成，“s”占中格，“h”占中上格。书写时注意两个字母要紧凑。",
+      "intro": "十个手指 sh sh sh",
+      "tones": [
+        {
+          "id": 2493,
+          "symbol": "shā",
+          "phoneme": "sha1",
+          "audio": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme/sha1.m4a"
+        },
+        {
+          "id": 2494,
+          "symbol": "shá",
+          "phoneme": "sha2",
+          "audio": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme/sha2.m4a"
+        },
+        {
+          "id": 2495,
+          "symbol": "shǎ",
+          "phoneme": "sha3",
+          "audio": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme/sha3.m4a"
+        },
+        {
+          "id": 2496,
+          "symbol": "shà",
+          "phoneme": "sha4",
+          "audio": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme/sha4.m4a"
+        }
+      ]
+    },
+    {
+      "id": 32,
+      "symbol": "r",
+      "label": "翘舌",
+      "image": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme-image/bdb92b2d7918b9cd7397457aab334d2d.png",
+      "eg_image": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme-image/432a2e54a56513fe3145348271ab6e3d.png",
+      "audio": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme/r.mp3",
+      "phoneme": "r",
+      "tips": "“r”与“sh”发音动作相同，只是发音时声带颤动。",
+      "rule": "“r”两笔写成，占中格。书写时注意在竖的靠上端向右写一弯笔。",
+      "intro": "树苗向日 r r r",
+      "tones": [
+        {
+          "id": 1457,
+          "symbol": "rī",
+          "phoneme": "ri1",
+          "audio": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme/ri1.mp3"
+        },
+        {
+          "id": 1456,
+          "symbol": "rí",
+          "phoneme": "ri2",
+          "audio": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme/ri2.mp3"
+        },
+        {
+          "id": 1455,
+          "symbol": "rǐ",
+          "phoneme": "ri3",
+          "audio": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme/ri3.mp3"
+        },
+        {
+          "id": 2454,
+          "symbol": "rì",
+          "phoneme": "ri4",
+          "audio": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme/ri4.m4a"
+        }
+      ]
+    },
+    {
+      "id": 23,
+      "symbol": "z",
+      "label": "平舌",
+      "image": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme-image/44ee23281576f5736fa39bf6adc07fd1.png",
+      "eg_image": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme-image/acf97492367b13f09587cb8f65fa5810.png",
+      "audio": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme/z.mp3",
+      "phoneme": "z",
+      "tips": "舌尖向前平伸，抵住上齿背，憋住气，舌尖稍稍离开，形成狭缝，让气流挤出来，声带不颤动。",
+      "rule": "“z”一笔写成，占中格。书写时注意两横长度一样。",
+      "intro": "我爱写字 z z z ",
+      "tones": [
+        {
+          "id": 2948,
+          "symbol": "zuō",
+          "phoneme": "zuo1",
+          "audio": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme/zuo1.m4a"
+        },
+        {
+          "id": 2949,
+          "symbol": "zuó",
+          "phoneme": "zuo2",
+          "audio": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme/zuo2.m4a"
+        },
+        {
+          "id": 2950,
+          "symbol": "zuǒ",
+          "phoneme": "zuo3",
+          "audio": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme/zuo3.m4a"
+        },
+        {
+          "id": 2951,
+          "symbol": "zuò",
+          "phoneme": "zuo4",
+          "audio": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme/zuo4.m4a"
+        }
+      ]
+    },
+    {
+      "id": 24,
+      "symbol": "c",
+      "label": "平舌",
+      "image": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme-image/624082fd7ad009314cdcc45b3fca3029.png",
+      "eg_image": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme-image/ffb1a3c3a7142797aa683bcd8fb82cbc.png",
+      "audio": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme/c.mp3",
+      "phoneme": "c",
+      "tips": "“c”与“z”发音大体相同，只是吐出气流较强。",
+      "rule": "“c”一笔写成，占中格。书写时注意上下顶格。",
+      "intro": "一只刺猬 c c c",
+      "tones": [
+        {
+          "id": 1679,
+          "symbol": "cuō",
+          "phoneme": "cuo1",
+          "audio": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme/cuo1.m4a"
+        },
+        {
+          "id": 1680,
+          "symbol": "cuó",
+          "phoneme": "cuo2",
+          "audio": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme/cuo2.m4a"
+        },
+        {
+          "id": 1681,
+          "symbol": "cuǒ",
+          "phoneme": "cuo3",
+          "audio": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme/cuo3.m4a"
+        },
+        {
+          "id": 1682,
+          "symbol": "cuò",
+          "phoneme": "cuo4",
+          "audio": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme/cuo4.m4a"
+        }
+      ]
+    },
+    {
+      "id": 25,
+      "symbol": "s",
+      "label": "平舌",
+      "image": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme-image/1414986c5c2cef17f2f30e079c39b967.png",
+      "eg_image": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme-image/67317021ee7816ebf3a387520c140465.png",
+      "audio": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme/s.mp3",
+      "phoneme": "s",
+      "tips": "舌尖向前平伸，靠近上齿背，形成狭缝，让气流挤出来，声带不颤动。",
+      "rule": "“s”一笔写成，占中格。书写时注意从右上起笔，先向左写半圆，再向右写半圆。",
+      "intro": "春蚕吐丝 s s s",
+      "tones": [
+        {
+          "id": 2563,
+          "symbol": "sī",
+          "phoneme": "si1",
+          "audio": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme/si1.m4a"
+        },
+        {
+          "id": 1458,
+          "symbol": "sí",
+          "phoneme": "si2",
+          "audio": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme/si2.mp3"
+        },
+        {
+          "id": 2564,
+          "symbol": "sǐ",
+          "phoneme": "si3",
+          "audio": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme/si3.m4a"
+        },
+        {
+          "id": 2565,
+          "symbol": "sì",
+          "phoneme": "si4",
+          "audio": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme/si4.m4a"
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "symbol": "y",
+      "label": "",
+      "image": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme-image/18a5b8637f7f6953cffd341e86b54525.png",
+      "eg_image": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme-image/7958639847ec73829eedd84051892310.png",
+      "audio": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme/y.mp3",
+      "phoneme": "y",
+      "tips": "声母“y”读音同韵母“i”，音要读的轻短。",
+      "rule": "“y”占中下格，先写右斜，再写左斜，左斜要长些，伸到下格一半处，两笔写成。",
+      "intro": "一根树杈 y y y",
+      "tones": [
+        {
+          "id": 2770,
+          "symbol": "yā",
+          "phoneme": "ya1",
+          "audio": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme/ya1.m4a"
+        },
+        {
+          "id": 2771,
+          "symbol": "yá",
+          "phoneme": "ya2",
+          "audio": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme/ya2.m4a"
+        },
+        {
+          "id": 2772,
+          "symbol": "yǎ",
+          "phoneme": "ya3",
+          "audio": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme/ya3.m4a"
+        },
+        {
+          "id": 2773,
+          "symbol": "yà",
+          "phoneme": "ya4",
+          "audio": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme/ya4.m4a"
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "symbol": "w",
+      "label": "",
+      "image": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme-image/6ca3654013c69ec0b953c098d7d71b95.png",
+      "eg_image": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme-image/35df654ef97ac7bc1aaeb79c52ac5b49.png",
+      "audio": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme/w.mp3",
+      "phoneme": "w",
+      "tips": "声母“w”读音同韵母“u”，音要读的轻短。",
+      "rule": "“w”占两格，由两个“v”组成，“v”不要写太宽，两笔写成。",
+      "intro": "小屋相连 w w w",
+      "tones": [
+        {
+          "id": 2671,
+          "symbol": "wā",
+          "phoneme": "wa1",
+          "audio": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme/wa1.m4a"
+        },
+        {
+          "id": 2672,
+          "symbol": "wá",
+          "phoneme": "wa2",
+          "audio": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme/wa2.m4a"
+        },
+        {
+          "id": 2673,
+          "symbol": "wǎ",
+          "phoneme": "wa3",
+          "audio": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme/wa3.m4a"
+        },
+        {
+          "id": 2674,
+          "symbol": "wà",
+          "phoneme": "wa4",
+          "audio": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme/wa4.m4a"
+        }
+      ]
+    }
+  ]
+}

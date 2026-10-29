@@ -9,13 +9,13 @@ private struct ArithmeticQuestion {
 
     static func make(upperBound: Int) -> ArithmeticQuestion {
         if Bool.random() {
-            let left = Int.random(in: 1..<upperBound)
-            let right = Int.random(in: 1...(upperBound - left))
+            let left = Int.random(in: 0...upperBound)
+            let right = Int.random(in: 0...(upperBound - left))
             return make(left: left, operation: "+", right: right, answer: left + right, upperBound: upperBound)
         }
 
-        let left = Int.random(in: 2...upperBound)
-        let right = Int.random(in: 1..<left)
+        let left = Int.random(in: 0...upperBound)
+        let right = Int.random(in: 0...left)
         return make(left: left, operation: "−", right: right, answer: left - right, upperBound: upperBound)
     }
 
@@ -26,7 +26,7 @@ private struct ArithmeticQuestion {
             operation: operation,
             right: right,
             answer: answer,
-            options: (Array(choices) + [answer]).shuffled()
+            options: (Array(choices) + [answer]).sorted()
         )
     }
 }
@@ -43,10 +43,18 @@ private enum ArithmeticPalette {
 }
 
 struct ArithmeticGameScreen: View {
+    let app: AppModel
+
+    private enum InputField: Hashable {
+        case upperBound
+        case duration
+    }
+
     @Environment(\.dismiss) private var dismiss
+    @FocusState private var focusedInput: InputField?
     @State private var upperBoundInput = "5"
     @State private var upperBound = 5
-    @State private var durationInput = "30"
+    @State private var durationInput = "40"
     @State private var gameDuration = 30
     @State private var question: ArithmeticQuestion?
     @State private var selectedAnswer: Int?
@@ -56,13 +64,23 @@ struct ArithmeticGameScreen: View {
     @State private var hasStarted = false
     @State private var isPlaying = false
     @State private var feedback: Bool?
+    @State private var answerAdvanceTask: Task<Void, Never>?
 
     var body: some View {
         ZStack {
             StorybookBackground()
+                .contentShape(Rectangle())
+                .onTapGesture { focusedInput = nil }
             VStack(spacing: 18) {
                 HStack {
-                    Button { dismiss() } label: {
+                    Button {
+                        if hasStarted {
+                            returnToSetup()
+                        } else {
+                            focusedInput = nil
+                            dismiss()
+                        }
+                    } label: {
                         Image(systemName: "xmark")
                             .font(.system(size: 15, weight: .black))
                             .foregroundStyle(ArithmeticPalette.ink)
@@ -70,6 +88,7 @@ struct ArithmeticGameScreen: View {
                             .background(.white, in: Circle())
                     }
                     .buttonStyle(.plain)
+                    .accessibilityLabel(hasStarted ? "返回挑战设置" : "关闭口算挑战")
                     Spacer()
                     Text("闪电口算王")
                         .font(.system(size: 21, weight: .black, design: .rounded))
@@ -93,6 +112,7 @@ struct ArithmeticGameScreen: View {
             .frame(maxWidth: 680)
             .frame(maxWidth: .infinity, maxHeight: .infinity)
         }
+        .keyboardDismissToolbar { focusedInput = nil }
         .task(id: isPlaying) {
             guard isPlaying else { return }
             while !Task.isCancelled && remainingSeconds > 0 {
@@ -107,6 +127,7 @@ struct ArithmeticGameScreen: View {
                 isPlaying = false
             }
         }
+        .onDisappear { answerAdvanceTask?.cancel() }
     }
 
     private var setupContent: some View {
@@ -133,11 +154,16 @@ struct ArithmeticGameScreen: View {
                         .font(.system(size: 20, weight: .bold, design: .rounded))
                         .foregroundStyle(ArithmeticPalette.ink)
                     TextField("5", text: $upperBoundInput)
+                        .textFieldStyle(.plain)
                         .font(.system(size: 26, weight: .black, design: .rounded))
+                        .foregroundStyle(ArithmeticPalette.ink)
+                        .tint(ArithmeticPalette.ink)
                         .multilineTextAlignment(.center)
                         .keyboardType(.numberPad)
+                        .focused($focusedInput, equals: .upperBound)
                         .frame(width: 100, height: 58)
                         .background(.white, in: RoundedRectangle(cornerRadius: 16))
+                        .overlay(RoundedRectangle(cornerRadius: 16).strokeBorder(ArithmeticPalette.ink.opacity(0.18), lineWidth: 1))
                         .onChange(of: upperBoundInput) { _, value in
                             upperBoundInput = String(value.filter(\.isNumber).prefix(3))
                         }
@@ -152,19 +178,24 @@ struct ArithmeticGameScreen: View {
                         .padding(.vertical, 10)
                         .background(ArithmeticPalette.mint.opacity(0.65), in: Capsule())
                 }
-                Text("请输入 2–999；题目中的数字和答案都不含 0。")
+                Text("请输入 2–999；题目会包含加 0、减 0，答案可以是 0。")
                     .font(.system(size: 13, weight: .semibold, design: .rounded))
                     .foregroundStyle(ArithmeticPalette.muted)
                 HStack(spacing: 12) {
                     Text("挑战时间")
                         .font(.system(size: 18, weight: .bold, design: .rounded))
                         .foregroundStyle(ArithmeticPalette.ink)
-                    TextField("30", text: $durationInput)
+                    TextField("40", text: $durationInput)
+                        .textFieldStyle(.plain)
                         .font(.system(size: 24, weight: .black, design: .rounded))
+                        .foregroundStyle(ArithmeticPalette.ink)
+                        .tint(ArithmeticPalette.ink)
                         .multilineTextAlignment(.center)
                         .keyboardType(.numberPad)
+                        .focused($focusedInput, equals: .duration)
                         .frame(width: 100, height: 54)
                         .background(.white, in: RoundedRectangle(cornerRadius: 16))
+                        .overlay(RoundedRectangle(cornerRadius: 16).strokeBorder(ArithmeticPalette.ink.opacity(0.18), lineWidth: 1))
                         .onChange(of: durationInput) { _, value in
                             durationInput = String(value.filter(\.isNumber).prefix(4))
                         }
@@ -172,7 +203,7 @@ struct ArithmeticGameScreen: View {
                         .font(.system(size: 18, weight: .bold, design: .rounded))
                         .foregroundStyle(ArithmeticPalette.ink)
                     Spacer()
-                    Text("默认 30 秒")
+                    Text("默认 40 秒")
                         .font(.system(size: 14, weight: .semibold, design: .rounded))
                         .foregroundStyle(ArithmeticPalette.muted)
                 }
@@ -183,7 +214,7 @@ struct ArithmeticGameScreen: View {
             Button(action: startGame) {
                 HStack(spacing: 10) {
                     Image(systemName: "play.fill")
-                    Text("开始 \(durationInput.isEmpty ? "30" : durationInput) 秒挑战")
+                    Text("开始 \(durationInput.isEmpty ? "40" : durationInput) 秒挑战")
                 }
                 .font(.system(size: 21, weight: .black, design: .rounded))
                 .foregroundStyle(ArithmeticPalette.ink)
@@ -222,7 +253,7 @@ struct ArithmeticGameScreen: View {
                     .frame(maxWidth: .infinity, minHeight: 140)
                 answerChoices
                 if let feedback {
-                    Text(feedback ? "答对啦！继续加油 ⭐️" : "再接再厉，下一题！")
+                    Text(feedback ? "答对啦！继续加油 ⭐️" : "再接再厉，正确答案是 \(question?.answer ?? 0)")
                         .font(.system(size: 18, weight: .heavy, design: .rounded))
                         .foregroundStyle(feedback ? ArithmeticPalette.ink : ArithmeticPalette.red)
                         .frame(height: 26)
@@ -284,7 +315,7 @@ struct ArithmeticGameScreen: View {
                     .background(ArithmeticPalette.yellow, in: Capsule())
             }
             .buttonStyle(.plain)
-            Button("回到首页") { dismiss() }
+            Button("返回挑战设置") { returnToSetup() }
                 .font(.system(size: 16, weight: .bold, design: .rounded))
                 .foregroundStyle(ArithmeticPalette.muted)
         }
@@ -294,6 +325,7 @@ struct ArithmeticGameScreen: View {
 
     private func optionColor(_ option: Int) -> Color {
         guard let selectedAnswer, let feedback else { return .white }
+        if !feedback, option == question?.answer { return ArithmeticPalette.mint }
         guard selectedAnswer == option else { return .white.opacity(0.72) }
         return feedback ? ArithmeticPalette.mint : ArithmeticPalette.red.opacity(0.78)
     }
@@ -306,10 +338,13 @@ struct ArithmeticGameScreen: View {
     }
 
     private func startGame() {
+        answerAdvanceTask?.cancel()
+        answerAdvanceTask = nil
+        focusedInput = nil
         let parsedLimit = Int(upperBoundInput) ?? 5
         upperBound = min(max(parsedLimit, 2), 999)
         upperBoundInput = String(upperBound)
-        let parsedDuration = Int(durationInput) ?? 30
+        let parsedDuration = Int(durationInput) ?? 40
         gameDuration = min(max(parsedDuration, 1), 9_999)
         durationInput = String(gameDuration)
         remainingSeconds = gameDuration
@@ -322,6 +357,17 @@ struct ArithmeticGameScreen: View {
         isPlaying = true
     }
 
+    private func returnToSetup() {
+        answerAdvanceTask?.cancel()
+        answerAdvanceTask = nil
+        focusedInput = nil
+        isPlaying = false
+        hasStarted = false
+        question = nil
+        selectedAnswer = nil
+        feedback = nil
+    }
+
     private func choose(_ answer: Int) {
         guard isPlaying, feedback == nil, let currentQuestion = question else { return }
         selectedAnswer = answer
@@ -330,7 +376,8 @@ struct ArithmeticGameScreen: View {
         if isCorrect { correctCount += 1 }
         feedback = isCorrect
 
-        Task { @MainActor in
+        answerAdvanceTask?.cancel()
+        answerAdvanceTask = Task { @MainActor in
             do {
                 try await Task.sleep(nanoseconds: 180_000_000)
             } catch {

@@ -1,0 +1,2936 @@
+{
+  "version": 2,
+  "id": "grade-1-volume-2",
+  "title": "一年级下册",
+  "sourceLabel": "统编小学语文教材写字表同步训练字库 · 结构教学版",
+  "entries": [
+    {
+      "id": "builtin-春",
+      "character": "春",
+      "pinyin": "chūn",
+      "structure": "top-center-bottom",
+      "components": [
+        "三",
+        "人",
+        "日"
+      ],
+      "words": [
+        "春天",
+        "春节",
+        "早春"
+      ],
+      "verified": true
+    },
+    {
+      "id": "builtin-风",
+      "character": "风",
+      "pinyin": "fēng",
+      "structure": "semi-enclosure",
+      "components": [
+        "几",
+        "乂"
+      ],
+      "words": [
+        "微风",
+        "顺风",
+        "风光"
+      ],
+      "verified": true
+    },
+    {
+      "id": "builtin-冬",
+      "character": "冬",
+      "pinyin": "dōng",
+      "structure": "top-bottom",
+      "components": [
+        "夂",
+        "⺀"
+      ],
+      "words": [
+        "冬天",
+        "冬季",
+        "冬瓜"
+      ],
+      "verified": true
+    },
+    {
+      "id": "builtin-雪",
+      "character": "雪",
+      "pinyin": "xuě",
+      "structure": "top-bottom",
+      "components": [
+        "雨",
+        "彐"
+      ],
+      "words": [
+        "雪人",
+        "雪花",
+        "雪白"
+      ],
+      "verified": true
+    },
+    {
+      "id": "builtin-花",
+      "character": "花",
+      "pinyin": "huā",
+      "structure": "top-bottom",
+      "components": [
+        "艹",
+        "化"
+      ],
+      "words": [
+        "花朵",
+        "红花",
+        "开花"
+      ],
+      "verified": true
+    },
+    {
+      "id": "builtin-青",
+      "character": "青",
+      "pinyin": "qīng",
+      "structure": "top-bottom",
+      "components": [
+        "龶",
+        "月"
+      ],
+      "words": [
+        "青年",
+        "青春",
+        "青春期"
+      ],
+      "verified": true
+    },
+    {
+      "id": "builtin-清",
+      "character": "清",
+      "pinyin": "qīng",
+      "structure": "left-right",
+      "components": [
+        "氵",
+        "青"
+      ],
+      "words": [
+        "清水",
+        "清早",
+        "清白"
+      ],
+      "verified": true
+    },
+    {
+      "id": "builtin-晴",
+      "character": "晴",
+      "pinyin": "qíng",
+      "structure": "left-right",
+      "components": [
+        "日",
+        "青"
+      ],
+      "words": [
+        "晴天",
+        "晴空",
+        "放晴"
+      ],
+      "verified": true
+    },
+    {
+      "id": "builtin-情",
+      "character": "情",
+      "pinyin": "qíng",
+      "structure": "left-right",
+      "components": [
+        "忄",
+        "青"
+      ],
+      "words": [
+        "心情",
+        "事情",
+        "友情"
+      ],
+      "verified": true
+    },
+    {
+      "id": "builtin-请",
+      "character": "请",
+      "pinyin": "qǐng",
+      "structure": "left-right",
+      "components": [
+        "讠",
+        "青"
+      ],
+      "words": [
+        "请坐",
+        "请问",
+        "请安"
+      ],
+      "verified": true
+    },
+    {
+      "id": "builtin-生",
+      "character": "生",
+      "pinyin": "shēng",
+      "structure": "left-right",
+      "components": [
+        "龶",
+        "丿"
+      ],
+      "words": [
+        "人生",
+        "先生",
+        "女生"
+      ],
+      "verified": true
+    },
+    {
+      "id": "builtin-姓",
+      "character": "姓",
+      "pinyin": "xìng",
+      "structure": "left-right",
+      "components": [
+        "女",
+        "生"
+      ],
+      "words": [
+        "百姓",
+        "姓名",
+        "老百姓"
+      ],
+      "verified": true
+    },
+    {
+      "id": "builtin-什",
+      "character": "什",
+      "pinyin": "shén",
+      "structure": "left-right",
+      "components": [
+        "亻",
+        "十"
+      ],
+      "words": [
+        "什么",
+        "为什么",
+        "干什么"
+      ],
+      "verified": true
+    },
+    {
+      "id": "builtin-么",
+      "character": "么",
+      "pinyin": "me",
+      "structure": "top-bottom",
+      "components": [
+        "丿",
+        "厶"
+      ],
+      "words": [
+        "什么",
+        "怎么",
+        "这么"
+      ],
+      "verified": true
+    },
+    {
+      "id": "builtin-双",
+      "character": "双",
+      "pinyin": "shuāng",
+      "structure": "left-right",
+      "components": [
+        "又",
+        "又"
+      ],
+      "words": [
+        "双手",
+        "双方",
+        "一双"
+      ],
+      "verified": true
+    },
+    {
+      "id": "builtin-国",
+      "character": "国",
+      "pinyin": "guó",
+      "structure": "full-enclosure",
+      "components": [
+        "囗",
+        "玉"
+      ],
+      "words": [
+        "国家",
+        "中国",
+        "国王"
+      ],
+      "verified": true
+    },
+    {
+      "id": "builtin-王",
+      "character": "王",
+      "pinyin": "wáng",
+      "structure": "top-bottom",
+      "components": [
+        "一",
+        "土"
+      ],
+      "words": [
+        "女王",
+        "王子",
+        "王道"
+      ],
+      "verified": true
+    },
+    {
+      "id": "builtin-字",
+      "character": "字",
+      "pinyin": "zì",
+      "structure": "top-bottom",
+      "components": [
+        "宀",
+        "子"
+      ],
+      "words": [
+        "写字",
+        "生字",
+        "汉字"
+      ],
+      "verified": true
+    },
+    {
+      "id": "builtin-左",
+      "character": "左",
+      "pinyin": "zuǒ",
+      "structure": "semi-enclosure",
+      "components": [
+        "𠂇",
+        "工"
+      ],
+      "words": [
+        "左右",
+        "左手",
+        "左边"
+      ],
+      "verified": true
+    },
+    {
+      "id": "builtin-右",
+      "character": "右",
+      "pinyin": "yòu",
+      "structure": "semi-enclosure",
+      "components": [
+        "𠂇",
+        "口"
+      ],
+      "words": [
+        "右边",
+        "左右",
+        "右侧"
+      ],
+      "verified": true
+    },
+    {
+      "id": "builtin-红",
+      "character": "红",
+      "pinyin": "hóng",
+      "structure": "left-right",
+      "components": [
+        "纟",
+        "工"
+      ],
+      "words": [
+        "红色",
+        "红花",
+        "火红"
+      ],
+      "verified": true
+    },
+    {
+      "id": "builtin-时",
+      "character": "时",
+      "pinyin": "shí",
+      "structure": "left-right",
+      "components": [
+        "日",
+        "寸"
+      ],
+      "words": [
+        "时间",
+        "小时",
+        "有时"
+      ],
+      "verified": true
+    },
+    {
+      "id": "builtin-动",
+      "character": "动",
+      "pinyin": "dòng",
+      "structure": "left-center-right",
+      "components": [
+        "二",
+        "厶",
+        "力"
+      ],
+      "words": [
+        "主动",
+        "动作",
+        "动力"
+      ],
+      "verified": true
+    },
+    {
+      "id": "builtin-万",
+      "character": "万",
+      "pinyin": "wàn",
+      "structure": "top-center-bottom",
+      "components": [
+        "一",
+        "丿",
+        "㇆"
+      ],
+      "words": [
+        "千万",
+        "万事如意",
+        "亿万"
+      ],
+      "verified": true
+    },
+    {
+      "id": "builtin-吃",
+      "character": "吃",
+      "pinyin": "chī",
+      "structure": "left-right",
+      "components": [
+        "口",
+        "乞"
+      ],
+      "words": [
+        "吃饭",
+        "吃水",
+        "好吃"
+      ],
+      "verified": true
+    },
+    {
+      "id": "builtin-叫",
+      "character": "叫",
+      "pinyin": "jiào",
+      "structure": "left-right",
+      "components": [
+        "口",
+        "丩"
+      ],
+      "words": [
+        "叫声",
+        "叫好",
+        "喊叫"
+      ],
+      "verified": true
+    },
+    {
+      "id": "builtin-主",
+      "character": "主",
+      "pinyin": "zhǔ",
+      "structure": "left-right",
+      "components": [
+        "王",
+        "丶"
+      ],
+      "words": [
+        "主人",
+        "主动",
+        "主持人"
+      ],
+      "verified": true
+    },
+    {
+      "id": "builtin-江",
+      "character": "江",
+      "pinyin": "jiāng",
+      "structure": "left-right",
+      "components": [
+        "氵",
+        "工"
+      ],
+      "words": [
+        "江河",
+        "长江",
+        "江水"
+      ],
+      "verified": true
+    },
+    {
+      "id": "builtin-住",
+      "character": "住",
+      "pinyin": "zhù",
+      "structure": "left-right",
+      "components": [
+        "亻",
+        "主"
+      ],
+      "words": [
+        "居住",
+        "住房",
+        "住宿"
+      ],
+      "verified": true
+    },
+    {
+      "id": "builtin-没",
+      "character": "没",
+      "pinyin": "méi",
+      "structure": "left-right",
+      "components": [
+        "氵",
+        "殳"
+      ],
+      "words": [
+        "没有",
+        "没事",
+        "没什么"
+      ],
+      "verified": true
+    },
+    {
+      "id": "builtin-以",
+      "character": "以",
+      "pinyin": "yǐ",
+      "structure": "semi-enclosure",
+      "components": [
+        "乚",
+        "丶",
+        "人"
+      ],
+      "words": [
+        "以后",
+        "可以",
+        "所以"
+      ],
+      "verified": true
+    },
+    {
+      "id": "builtin-玩",
+      "character": "玩",
+      "pinyin": "wán",
+      "structure": "left-right",
+      "components": [
+        "王",
+        "元"
+      ],
+      "words": [
+        "玩耍",
+        "玩具",
+        "好玩"
+      ],
+      "verified": true
+    },
+    {
+      "id": "builtin-很",
+      "character": "很",
+      "pinyin": "hěn",
+      "structure": "left-right",
+      "components": [
+        "彳",
+        "艮"
+      ],
+      "words": [
+        "得很"
+      ],
+      "verified": true
+    },
+    {
+      "id": "builtin-当",
+      "character": "当",
+      "pinyin": "dāng",
+      "structure": "top-bottom",
+      "components": [
+        "⺌",
+        "彐"
+      ],
+      "words": [
+        "当年",
+        "当时",
+        "当然"
+      ],
+      "verified": true
+    },
+    {
+      "id": "builtin-音",
+      "character": "音",
+      "pinyin": "yīn",
+      "structure": "top-bottom",
+      "components": [
+        "立",
+        "日"
+      ],
+      "words": [
+        "声音",
+        "音乐",
+        "口音"
+      ],
+      "verified": true
+    },
+    {
+      "id": "builtin-讲",
+      "character": "讲",
+      "pinyin": "jiǎng",
+      "structure": "left-right",
+      "components": [
+        "讠",
+        "井"
+      ],
+      "words": [
+        "讲话",
+        "讲课",
+        "演讲"
+      ],
+      "verified": true
+    },
+    {
+      "id": "builtin-行",
+      "character": "行",
+      "pinyin": "xíng",
+      "structure": "left-right",
+      "components": [
+        "彳",
+        "亍"
+      ],
+      "words": [
+        "排行",
+        "旅行",
+        "流行"
+      ],
+      "verified": true
+    },
+    {
+      "id": "builtin-许",
+      "character": "许",
+      "pinyin": "xǔ",
+      "structure": "left-center-right",
+      "components": [
+        "讠",
+        "干",
+        "丿"
+      ],
+      "words": [
+        "也许",
+        "或许",
+        "许多"
+      ],
+      "verified": true
+    },
+    {
+      "id": "builtin-会",
+      "character": "会",
+      "pinyin": "huì",
+      "structure": "top-center-bottom",
+      "components": [
+        "人",
+        "二",
+        "厶"
+      ],
+      "words": [
+        "学会",
+        "机会",
+        "一会"
+      ],
+      "verified": true
+    },
+    {
+      "id": "builtin-走",
+      "character": "走",
+      "pinyin": "zǒu",
+      "structure": "top-bottom",
+      "components": [
+        "土",
+        "龰"
+      ],
+      "words": [
+        "带走",
+        "拿走",
+        "抢走"
+      ],
+      "verified": true
+    },
+    {
+      "id": "builtin-北",
+      "character": "北",
+      "pinyin": "běi",
+      "structure": "left-right",
+      "components": [
+        "匕",
+        "匕"
+      ],
+      "words": [
+        "北京",
+        "北京人",
+        "北京市"
+      ],
+      "verified": true
+    },
+    {
+      "id": "builtin-京",
+      "character": "京",
+      "pinyin": "jīng",
+      "structure": "top-center-bottom",
+      "components": [
+        "亠",
+        "口",
+        "小"
+      ],
+      "words": [
+        "北京",
+        "京剧",
+        "京城"
+      ],
+      "verified": true
+    },
+    {
+      "id": "builtin-广",
+      "character": "广",
+      "pinyin": "guǎng",
+      "structure": "left-right",
+      "components": [
+        "厂",
+        "丶"
+      ],
+      "words": [
+        "广告",
+        "广场",
+        "广州"
+      ],
+      "verified": true
+    },
+    {
+      "id": "builtin-思",
+      "character": "思",
+      "pinyin": "sī",
+      "structure": "top-bottom",
+      "components": [
+        "田",
+        "心"
+      ],
+      "words": [
+        "思想",
+        "思考",
+        "思念"
+      ],
+      "verified": true
+    },
+    {
+      "id": "builtin-床",
+      "character": "床",
+      "pinyin": "chuáng",
+      "structure": "semi-enclosure",
+      "components": [
+        "广",
+        "木"
+      ],
+      "words": [
+        "起床",
+        "病床",
+        "床头"
+      ],
+      "verified": true
+    },
+    {
+      "id": "builtin-前",
+      "character": "前",
+      "pinyin": "qián",
+      "structure": "top-bottom",
+      "components": [
+        "䒑",
+        "刖"
+      ],
+      "words": [
+        "之前",
+        "以前",
+        "前世"
+      ],
+      "verified": true
+    },
+    {
+      "id": "builtin-光",
+      "character": "光",
+      "pinyin": "guāng",
+      "structure": "top-center-bottom",
+      "components": [
+        "⺌",
+        "一",
+        "儿"
+      ],
+      "words": [
+        "光明",
+        "光荣",
+        "时光"
+      ],
+      "verified": true
+    },
+    {
+      "id": "builtin-低",
+      "character": "低",
+      "pinyin": "dī",
+      "structure": "left-right",
+      "components": [
+        "亻",
+        "氐"
+      ],
+      "words": [
+        "低头",
+        "低声"
+      ],
+      "verified": true
+    },
+    {
+      "id": "builtin-故",
+      "character": "故",
+      "pinyin": "gù",
+      "structure": "left-right",
+      "components": [
+        "古",
+        "攵"
+      ],
+      "words": [
+        "故事",
+        "故乡",
+        "故人"
+      ],
+      "verified": true
+    },
+    {
+      "id": "builtin-乡",
+      "character": "乡",
+      "pinyin": "xiāng",
+      "structure": "top-center-bottom",
+      "components": [
+        "㇛",
+        "㇛",
+        "丿"
+      ],
+      "words": [
+        "他乡",
+        "家乡",
+        "故乡"
+      ],
+      "verified": true
+    },
+    {
+      "id": "builtin-过",
+      "character": "过",
+      "pinyin": "guò",
+      "structure": "semi-enclosure",
+      "components": [
+        "辶",
+        "寸"
+      ],
+      "words": [
+        "过去",
+        "过年",
+        "过来"
+      ],
+      "verified": true
+    },
+    {
+      "id": "builtin-各",
+      "character": "各",
+      "pinyin": "gè",
+      "structure": "top-bottom",
+      "components": [
+        "夂",
+        "口"
+      ],
+      "words": [
+        "各位",
+        "各自",
+        "加尔各答"
+      ],
+      "verified": true
+    },
+    {
+      "id": "builtin-种",
+      "character": "种",
+      "pinyin": "zhǒng",
+      "structure": "left-center-right",
+      "components": [
+        "禾",
+        "口",
+        "丨"
+      ],
+      "words": [
+        "各种各样",
+        "品种",
+        "物种"
+      ],
+      "verified": true
+    },
+    {
+      "id": "builtin-样",
+      "character": "样",
+      "pinyin": "yàng",
+      "structure": "left-right",
+      "components": [
+        "木",
+        "羊"
+      ],
+      "words": [
+        "样子",
+        "同样",
+        "榜样"
+      ],
+      "verified": true
+    },
+    {
+      "id": "builtin-伙",
+      "character": "伙",
+      "pinyin": "huǒ",
+      "structure": "left-right",
+      "components": [
+        "亻",
+        "火"
+      ],
+      "words": [
+        "家伙",
+        "伙伴",
+        "伙食"
+      ],
+      "verified": true
+    },
+    {
+      "id": "builtin-伴",
+      "character": "伴",
+      "pinyin": "bàn",
+      "structure": "left-right",
+      "components": [
+        "亻",
+        "半"
+      ],
+      "words": [
+        "伙伴",
+        "同伴",
+        "陪伴"
+      ],
+      "verified": true
+    },
+    {
+      "id": "builtin-这",
+      "character": "这",
+      "pinyin": "zhè",
+      "structure": "semi-enclosure",
+      "components": [
+        "辶",
+        "文"
+      ],
+      "words": [
+        "这里",
+        "这边",
+        "这样"
+      ],
+      "verified": true
+    },
+    {
+      "id": "builtin-色",
+      "character": "色",
+      "pinyin": "sè",
+      "structure": "top-bottom",
+      "components": [
+        "刀",
+        "巴"
+      ],
+      "words": [
+        "红色",
+        "金色",
+        "色彩"
+      ],
+      "verified": true
+    },
+    {
+      "id": "builtin-外",
+      "character": "外",
+      "pinyin": "wài",
+      "structure": "left-right",
+      "components": [
+        "夕",
+        "卜"
+      ],
+      "words": [
+        "外面",
+        "外语",
+        "格外"
+      ],
+      "verified": true
+    },
+    {
+      "id": "builtin-看",
+      "character": "看",
+      "pinyin": "kàn",
+      "structure": "top-bottom",
+      "components": [
+        "手",
+        "目"
+      ],
+      "words": [
+        "看见",
+        "好看",
+        "看着"
+      ],
+      "verified": true
+    },
+    {
+      "id": "builtin-爸",
+      "character": "爸",
+      "pinyin": "bà",
+      "structure": "top-bottom",
+      "components": [
+        "父",
+        "巴"
+      ],
+      "words": [
+        "爸爸",
+        "老爸"
+      ],
+      "verified": true
+    },
+    {
+      "id": "builtin-晚",
+      "character": "晚",
+      "pinyin": "wǎn",
+      "structure": "left-right",
+      "components": [
+        "日",
+        "免"
+      ],
+      "words": [
+        "晚上",
+        "夜晚",
+        "晚会"
+      ],
+      "verified": true
+    },
+    {
+      "id": "builtin-笑",
+      "character": "笑",
+      "pinyin": "xiào",
+      "structure": "top-center-bottom",
+      "components": [
+        "⺮",
+        "丿",
+        "大"
+      ],
+      "words": [
+        "微笑",
+        "偷笑",
+        "傻笑"
+      ],
+      "verified": true
+    },
+    {
+      "id": "builtin-再",
+      "character": "再",
+      "pinyin": "zài",
+      "structure": "top-center-bottom",
+      "components": [
+        "一",
+        "冂",
+        "土"
+      ],
+      "words": [
+        "再度",
+        "再次",
+        "再见"
+      ],
+      "verified": true
+    },
+    {
+      "id": "builtin-太",
+      "character": "太",
+      "pinyin": "tài",
+      "structure": "left-right",
+      "components": [
+        "大",
+        "丶"
+      ],
+      "words": [
+        "太原",
+        "太太",
+        "太平"
+      ],
+      "verified": true
+    },
+    {
+      "id": "builtin-阳",
+      "character": "阳",
+      "pinyin": "yáng",
+      "structure": "left-right",
+      "components": [
+        "阝",
+        "日"
+      ],
+      "words": [
+        "太阳",
+        "阳光",
+        "阳台"
+      ],
+      "verified": true
+    },
+    {
+      "id": "builtin-金",
+      "character": "金",
+      "pinyin": "jīn",
+      "structure": "left-right",
+      "components": [
+        "全",
+        "丷"
+      ],
+      "words": [
+        "现金",
+        "资金",
+        "金字塔"
+      ],
+      "verified": true
+    },
+    {
+      "id": "builtin-秋",
+      "character": "秋",
+      "pinyin": "qiū",
+      "structure": "left-right",
+      "components": [
+        "禾",
+        "火"
+      ],
+      "words": [
+        "秋天",
+        "秋风",
+        "深秋"
+      ],
+      "verified": true
+    },
+    {
+      "id": "builtin-因",
+      "character": "因",
+      "pinyin": "yīn",
+      "structure": "full-enclosure",
+      "components": [
+        "囗",
+        "大"
+      ],
+      "words": [
+        "因为",
+        "因果",
+        "原因"
+      ],
+      "verified": true
+    },
+    {
+      "id": "builtin-为",
+      "character": "为",
+      "pinyin": "wèi",
+      "structure": "left-center-right",
+      "components": [
+        "力",
+        "⺀"
+      ],
+      "words": [
+        "以为",
+        "因为",
+        "成为"
+      ],
+      "verified": true
+    },
+    {
+      "id": "builtin-午",
+      "character": "午",
+      "pinyin": "wǔ",
+      "structure": "left-right",
+      "components": [
+        "干",
+        "丿"
+      ],
+      "words": [
+        "下午",
+        "上午",
+        "中午"
+      ],
+      "verified": true
+    },
+    {
+      "id": "builtin-节",
+      "character": "节",
+      "pinyin": "jié",
+      "structure": "top-bottom",
+      "components": [
+        "艹",
+        "卩"
+      ],
+      "words": [
+        "节日",
+        "春节",
+        "节约"
+      ],
+      "verified": true
+    },
+    {
+      "id": "builtin-叶",
+      "character": "叶",
+      "pinyin": "yè",
+      "structure": "left-right",
+      "components": [
+        "口",
+        "十"
+      ],
+      "words": [
+        "茶叶",
+        "叶子",
+        "金枝玉叶"
+      ],
+      "verified": true
+    },
+    {
+      "id": "builtin-米",
+      "character": "米",
+      "pinyin": "mǐ",
+      "structure": "left-right",
+      "components": [
+        "木",
+        "丷"
+      ],
+      "words": [
+        "虾米",
+        "厘米",
+        "大米"
+      ],
+      "verified": true
+    },
+    {
+      "id": "builtin-真",
+      "character": "真",
+      "pinyin": "zhēn",
+      "structure": "top-bottom",
+      "components": [
+        "十",
+        "具"
+      ],
+      "words": [
+        "真心",
+        "天真",
+        "写真"
+      ],
+      "verified": true
+    },
+    {
+      "id": "builtin-分",
+      "character": "分",
+      "pinyin": "fēn",
+      "structure": "top-bottom",
+      "components": [
+        "八",
+        "刀"
+      ],
+      "words": [
+        "分享",
+        "分钟",
+        "部分"
+      ],
+      "verified": true
+    },
+    {
+      "id": "builtin-豆",
+      "character": "豆",
+      "pinyin": "dòu",
+      "structure": "top-bottom",
+      "components": [
+        "𠮛",
+        "䒑"
+      ],
+      "words": [
+        "土豆",
+        "红豆",
+        "豆浆"
+      ],
+      "verified": true
+    },
+    {
+      "id": "builtin-他",
+      "character": "他",
+      "pinyin": "tā",
+      "structure": "left-right",
+      "components": [
+        "亻",
+        "也"
+      ],
+      "words": [
+        "他们",
+        "他的",
+        "其他"
+      ],
+      "verified": true
+    },
+    {
+      "id": "builtin-河",
+      "character": "河",
+      "pinyin": "hé",
+      "structure": "left-right",
+      "components": [
+        "氵",
+        "可"
+      ],
+      "words": [
+        "河水",
+        "小河",
+        "山河"
+      ],
+      "verified": true
+    },
+    {
+      "id": "builtin-说",
+      "character": "说",
+      "pinyin": "shuō",
+      "structure": "left-right",
+      "components": [
+        "讠",
+        "兑"
+      ],
+      "words": [
+        "说话",
+        "小说",
+        "听说"
+      ],
+      "verified": true
+    },
+    {
+      "id": "builtin-也",
+      "character": "也",
+      "pinyin": "yě",
+      "structure": "semi-enclosure",
+      "components": [
+        "乚",
+        "㇆",
+        "丨"
+      ],
+      "words": [
+        "也许",
+        "之乎者也",
+        "也就是说"
+      ],
+      "verified": true
+    },
+    {
+      "id": "builtin-地",
+      "character": "地",
+      "pinyin": "dì",
+      "structure": "left-right",
+      "components": [
+        "土",
+        "也"
+      ],
+      "words": [
+        "土地",
+        "大地",
+        "田地"
+      ],
+      "verified": true
+    },
+    {
+      "id": "builtin-听",
+      "character": "听",
+      "pinyin": "tīng",
+      "structure": "left-right",
+      "components": [
+        "口",
+        "斤"
+      ],
+      "words": [
+        "听见",
+        "好听",
+        "听话"
+      ],
+      "verified": true
+    },
+    {
+      "id": "builtin-哥",
+      "character": "哥",
+      "pinyin": "gē",
+      "structure": "left-right",
+      "components": [
+        "可",
+        "可"
+      ],
+      "words": [
+        "哥哥",
+        "大哥"
+      ],
+      "verified": true
+    },
+    {
+      "id": "builtin-着",
+      "character": "着",
+      "pinyin": "zhe",
+      "structure": "top-bottom",
+      "components": [
+        "羊",
+        "目"
+      ],
+      "words": [
+        "执着",
+        "接着",
+        "睡着"
+      ],
+      "verified": true
+    },
+    {
+      "id": "builtin-到",
+      "character": "到",
+      "pinyin": "dào",
+      "structure": "left-right",
+      "components": [
+        "至",
+        "刂"
+      ],
+      "words": [
+        "不到",
+        "来到",
+        "做到"
+      ],
+      "verified": true
+    },
+    {
+      "id": "builtin-兴",
+      "character": "兴",
+      "pinyin": "xīng",
+      "structure": "top-center-bottom",
+      "components": [
+        "⺍",
+        "一",
+        "八"
+      ],
+      "words": [
+        "兴奋",
+        "兴趣",
+        "高兴"
+      ],
+      "verified": true
+    },
+    {
+      "id": "builtin-千",
+      "character": "千",
+      "pinyin": "qiān",
+      "structure": "top-bottom",
+      "components": [
+        "丿",
+        "十"
+      ],
+      "words": [
+        "千万",
+        "千亿",
+        "千千万万"
+      ],
+      "verified": true
+    },
+    {
+      "id": "builtin-成",
+      "character": "成",
+      "pinyin": "chéng",
+      "structure": "left-right",
+      "components": [
+        "万",
+        "戈"
+      ],
+      "words": [
+        "完成",
+        "成功",
+        "成就"
+      ],
+      "verified": true
+    },
+    {
+      "id": "builtin-居",
+      "character": "居",
+      "pinyin": "jū",
+      "structure": "semi-enclosure",
+      "components": [
+        "尸",
+        "古"
+      ],
+      "words": [
+        "居住",
+        "居民"
+      ],
+      "verified": true
+    },
+    {
+      "id": "builtin-招",
+      "character": "招",
+      "pinyin": "zhāo",
+      "structure": "left-right",
+      "components": [
+        "扌",
+        "召"
+      ],
+      "words": [
+        "招手",
+        "招呼"
+      ],
+      "verified": true
+    },
+    {
+      "id": "builtin-呼",
+      "character": "呼",
+      "pinyin": "hū",
+      "structure": "left-right",
+      "components": [
+        "口",
+        "乎"
+      ],
+      "words": [
+        "呼叫",
+        "欢呼",
+        "招呼"
+      ],
+      "verified": true
+    },
+    {
+      "id": "builtin-快",
+      "character": "快",
+      "pinyin": "kuài",
+      "structure": "left-right",
+      "components": [
+        "忄",
+        "夬"
+      ],
+      "words": [
+        "快乐",
+        "飞快",
+        "赶快"
+      ],
+      "verified": true
+    },
+    {
+      "id": "builtin-乐",
+      "character": "乐",
+      "pinyin": "lè",
+      "structure": "top-center-bottom",
+      "components": [
+        "丿",
+        "㇗",
+        "小"
+      ],
+      "words": [
+        "快乐",
+        "乐园",
+        "音乐"
+      ],
+      "verified": true
+    },
+    {
+      "id": "builtin-间",
+      "character": "间",
+      "pinyin": "jiān",
+      "structure": "semi-enclosure",
+      "components": [
+        "门",
+        "日"
+      ],
+      "words": [
+        "时间",
+        "中间",
+        "房间"
+      ],
+      "verified": true
+    },
+    {
+      "id": "builtin-迷",
+      "character": "迷",
+      "pinyin": "mí",
+      "structure": "semi-enclosure",
+      "components": [
+        "辶",
+        "米"
+      ],
+      "words": [
+        "迷路",
+        "迷人",
+        "着迷"
+      ],
+      "verified": true
+    },
+    {
+      "id": "builtin-造",
+      "character": "造",
+      "pinyin": "zào",
+      "structure": "semi-enclosure",
+      "components": [
+        "告",
+        "辶"
+      ],
+      "words": [
+        "制造",
+        "造句"
+      ],
+      "verified": true
+    },
+    {
+      "id": "builtin-运",
+      "character": "运",
+      "pinyin": "yùn",
+      "structure": "semi-enclosure",
+      "components": [
+        "辶",
+        "云"
+      ],
+      "words": [
+        "运动",
+        "运气",
+        "搬运"
+      ],
+      "verified": true
+    },
+    {
+      "id": "builtin-池",
+      "character": "池",
+      "pinyin": "chí",
+      "structure": "left-right",
+      "components": [
+        "氵",
+        "也"
+      ],
+      "words": [
+        "水池",
+        "池塘",
+        "电池"
+      ],
+      "verified": true
+    },
+    {
+      "id": "builtin-欢",
+      "character": "欢",
+      "pinyin": "huān",
+      "structure": "left-right",
+      "components": [
+        "又",
+        "欠"
+      ],
+      "words": [
+        "欢乐",
+        "喜欢",
+        "欢笑"
+      ],
+      "verified": true
+    },
+    {
+      "id": "builtin-网",
+      "character": "网",
+      "pinyin": "wǎng",
+      "structure": "semi-enclosure",
+      "components": [
+        "冂",
+        "爻"
+      ],
+      "words": [
+        "上网",
+        "互联网",
+        "新浪网"
+      ],
+      "verified": true
+    },
+    {
+      "id": "builtin-打",
+      "character": "打",
+      "pinyin": "dǎ",
+      "structure": "left-right",
+      "components": [
+        "扌",
+        "丁"
+      ],
+      "words": [
+        "打开",
+        "打球",
+        "打水"
+      ],
+      "verified": true
+    },
+    {
+      "id": "builtin-拍",
+      "character": "拍",
+      "pinyin": "pāi",
+      "structure": "left-right",
+      "components": [
+        "扌",
+        "白"
+      ],
+      "words": [
+        "拍手",
+        "拍打",
+        "节拍"
+      ],
+      "verified": true
+    },
+    {
+      "id": "builtin-跑",
+      "character": "跑",
+      "pinyin": "pǎo",
+      "structure": "left-right",
+      "components": [
+        "⻊",
+        "包"
+      ],
+      "words": [
+        "跑步",
+        "奔跑",
+        "跑道"
+      ],
+      "verified": true
+    },
+    {
+      "id": "builtin-足",
+      "character": "足",
+      "pinyin": "zú",
+      "structure": "top-bottom",
+      "components": [
+        "口",
+        "龰"
+      ],
+      "words": [
+        "不足",
+        "十足",
+        "满足"
+      ],
+      "verified": true
+    },
+    {
+      "id": "builtin-声",
+      "character": "声",
+      "pinyin": "shēng",
+      "structure": "top-center-bottom",
+      "components": [
+        "士",
+        "丨",
+        "丨"
+      ],
+      "words": [
+        "大声",
+        "心声",
+        "歌声"
+      ],
+      "verified": true
+    },
+    {
+      "id": "builtin-身",
+      "character": "身",
+      "pinyin": "shēn",
+      "structure": "left-right",
+      "components": [
+        "𨈑",
+        "丿"
+      ],
+      "words": [
+        "单身",
+        "身份",
+        "身价"
+      ],
+      "verified": true
+    },
+    {
+      "id": "builtin-体",
+      "character": "体",
+      "pinyin": "tǐ",
+      "structure": "left-right",
+      "components": [
+        "亻",
+        "本"
+      ],
+      "words": [
+        "身体",
+        "体操",
+        "体力"
+      ],
+      "verified": true
+    },
+    {
+      "id": "builtin-古",
+      "character": "古",
+      "pinyin": "gǔ",
+      "structure": "top-bottom",
+      "components": [
+        "十",
+        "口"
+      ],
+      "words": [
+        "古代",
+        "复古",
+        "上古"
+      ],
+      "verified": true
+    },
+    {
+      "id": "builtin-凉",
+      "character": "凉",
+      "pinyin": "liáng",
+      "structure": "left-right",
+      "components": [
+        "冫",
+        "京"
+      ],
+      "words": [
+        "凉快",
+        "凉爽",
+        "冰凉"
+      ],
+      "verified": true
+    },
+    {
+      "id": "builtin-细",
+      "character": "细",
+      "pinyin": "xì",
+      "structure": "left-right",
+      "components": [
+        "纟",
+        "田"
+      ],
+      "words": [
+        "细心",
+        "细雨",
+        "仔细"
+      ],
+      "verified": true
+    },
+    {
+      "id": "builtin-李",
+      "character": "李",
+      "pinyin": "lǐ",
+      "structure": "top-bottom",
+      "components": [
+        "木",
+        "子"
+      ],
+      "words": [
+        "桃李",
+        "李子",
+        "行李"
+      ],
+      "verified": true
+    },
+    {
+      "id": "builtin-语",
+      "character": "语",
+      "pinyin": "yǔ",
+      "structure": "left-right",
+      "components": [
+        "讠",
+        "吾"
+      ],
+      "words": [
+        "语文",
+        "语言",
+        "词语"
+      ],
+      "verified": true
+    },
+    {
+      "id": "builtin-香",
+      "character": "香",
+      "pinyin": "xiāng",
+      "structure": "top-bottom",
+      "components": [
+        "禾",
+        "日"
+      ],
+      "words": [
+        "香港",
+        "香蕉",
+        "丁香"
+      ],
+      "verified": true
+    },
+    {
+      "id": "builtin-之",
+      "character": "之",
+      "pinyin": "zhī",
+      "structure": "top-bottom",
+      "components": [
+        "丶",
+        "㇝"
+      ],
+      "words": [
+        "之前",
+        "之后",
+        "一臂之力"
+      ],
+      "verified": true
+    },
+    {
+      "id": "builtin-相",
+      "character": "相",
+      "pinyin": "xiāng",
+      "structure": "left-right",
+      "components": [
+        "木",
+        "目"
+      ],
+      "words": [
+        "相信",
+        "互相",
+        "相片"
+      ],
+      "verified": true
+    },
+    {
+      "id": "builtin-近",
+      "character": "近",
+      "pinyin": "jìn",
+      "structure": "semi-enclosure",
+      "components": [
+        "辶",
+        "斤"
+      ],
+      "words": [
+        "附近",
+        "近处",
+        "亲近"
+      ],
+      "verified": true
+    },
+    {
+      "id": "builtin-习",
+      "character": "习",
+      "pinyin": "xí",
+      "structure": "semi-enclosure",
+      "components": [
+        "㇆",
+        "亠"
+      ],
+      "words": [
+        "学习",
+        "习惯",
+        "实习"
+      ],
+      "verified": true
+    },
+    {
+      "id": "builtin-远",
+      "character": "远",
+      "pinyin": "yuǎn",
+      "structure": "semi-enclosure",
+      "components": [
+        "辶",
+        "元"
+      ],
+      "words": [
+        "远方",
+        "远近",
+        "长远"
+      ],
+      "verified": true
+    },
+    {
+      "id": "builtin-玉",
+      "character": "玉",
+      "pinyin": "yù",
+      "structure": "left-right",
+      "components": [
+        "王",
+        "丶"
+      ],
+      "words": [
+        "林黛玉",
+        "玉米",
+        "金枝玉叶"
+      ],
+      "verified": true
+    },
+    {
+      "id": "builtin-义",
+      "character": "义",
+      "pinyin": "yì",
+      "structure": "left-center-right",
+      "components": [
+        "丿",
+        "丿",
+        "丶"
+      ],
+      "words": [
+        "侠义",
+        "名义",
+        "含义"
+      ],
+      "verified": true
+    },
+    {
+      "id": "builtin-首",
+      "character": "首",
+      "pinyin": "shǒu",
+      "structure": "top-bottom",
+      "components": [
+        "䒑",
+        "自"
+      ],
+      "words": [
+        "首页",
+        "回首",
+        "首先"
+      ],
+      "verified": true
+    },
+    {
+      "id": "builtin-采",
+      "character": "采",
+      "pinyin": "cǎi",
+      "structure": "top-bottom",
+      "components": [
+        "爫",
+        "木"
+      ],
+      "words": [
+        "采花",
+        "采摘",
+        "神采"
+      ],
+      "verified": true
+    },
+    {
+      "id": "builtin-无",
+      "character": "无",
+      "pinyin": "wú",
+      "structure": "top-bottom",
+      "components": [
+        "一",
+        "尢"
+      ],
+      "words": [
+        "无奈",
+        "无所谓",
+        "无敌"
+      ],
+      "verified": true
+    },
+    {
+      "id": "builtin-树",
+      "character": "树",
+      "pinyin": "shù",
+      "structure": "left-center-right",
+      "components": [
+        "木",
+        "又",
+        "寸"
+      ],
+      "words": [
+        "大树",
+        "松树",
+        "果树"
+      ],
+      "verified": true
+    },
+    {
+      "id": "builtin-尖",
+      "character": "尖",
+      "pinyin": "jiān",
+      "structure": "top-bottom",
+      "components": [
+        "小",
+        "大"
+      ],
+      "words": [
+        "笔尖",
+        "尖角",
+        "指尖"
+      ],
+      "verified": true
+    },
+    {
+      "id": "builtin-角",
+      "character": "角",
+      "pinyin": "jiǎo",
+      "structure": "top-bottom",
+      "components": [
+        "⺈",
+        "用"
+      ],
+      "words": [
+        "主角",
+        "角度",
+        "角色"
+      ],
+      "verified": true
+    },
+    {
+      "id": "builtin-要",
+      "character": "要",
+      "pinyin": "yào",
+      "structure": "top-bottom",
+      "components": [
+        "覀",
+        "女"
+      ],
+      "words": [
+        "主要",
+        "只要",
+        "必要"
+      ],
+      "verified": true
+    },
+    {
+      "id": "builtin-连",
+      "character": "连",
+      "pinyin": "lián",
+      "structure": "semi-enclosure",
+      "components": [
+        "辶",
+        "车"
+      ],
+      "words": [
+        "连长",
+        "连线",
+        "一连"
+      ],
+      "verified": true
+    },
+    {
+      "id": "builtin-百",
+      "character": "百",
+      "pinyin": "bǎi",
+      "structure": "top-bottom",
+      "components": [
+        "一",
+        "白"
+      ],
+      "words": [
+        "一呼百应",
+        "百姓",
+        "百度"
+      ],
+      "verified": true
+    },
+    {
+      "id": "builtin-还",
+      "character": "还",
+      "pinyin": "hái",
+      "structure": "semi-enclosure",
+      "components": [
+        "辶",
+        "不"
+      ],
+      "words": [
+        "还有",
+        "还是",
+        "归还"
+      ],
+      "verified": true
+    },
+    {
+      "id": "builtin-舌",
+      "character": "舌",
+      "pinyin": "shé",
+      "structure": "top-bottom",
+      "components": [
+        "千",
+        "口"
+      ],
+      "words": [
+        "舌战",
+        "舌头",
+        "七嘴八舌"
+      ],
+      "verified": true
+    },
+    {
+      "id": "builtin-点",
+      "character": "点",
+      "pinyin": "diǎn",
+      "structure": "top-center-bottom",
+      "components": [
+        "⺊",
+        "口",
+        "灬"
+      ],
+      "words": [
+        "一点",
+        "快点",
+        "有点"
+      ],
+      "verified": true
+    },
+    {
+      "id": "builtin-机",
+      "character": "机",
+      "pinyin": "jī",
+      "structure": "left-right",
+      "components": [
+        "木",
+        "几"
+      ],
+      "words": [
+        "司机",
+        "手机",
+        "机场"
+      ],
+      "verified": true
+    },
+    {
+      "id": "builtin-台",
+      "character": "台",
+      "pinyin": "tái",
+      "structure": "top-bottom",
+      "components": [
+        "厶",
+        "口"
+      ],
+      "words": [
+        "讲台",
+        "台灯",
+        "阳台"
+      ],
+      "verified": true
+    },
+    {
+      "id": "builtin-放",
+      "character": "放",
+      "pinyin": "fàng",
+      "structure": "left-right",
+      "components": [
+        "方",
+        "⺙"
+      ],
+      "words": [
+        "放假",
+        "放弃",
+        "奔放"
+      ],
+      "verified": true
+    },
+    {
+      "id": "builtin-朵",
+      "character": "朵",
+      "pinyin": "duǒ",
+      "structure": "top-bottom",
+      "components": [
+        "几",
+        "木"
+      ],
+      "words": [
+        "耳朵",
+        "花朵",
+        "大快朵颐"
+      ],
+      "verified": true
+    },
+    {
+      "id": "builtin-美",
+      "character": "美",
+      "pinyin": "měi",
+      "structure": "top-bottom",
+      "components": [
+        "羊",
+        "大"
+      ],
+      "words": [
+        "完美",
+        "美人",
+        "美国"
+      ],
+      "verified": true
+    },
+    {
+      "id": "builtin-块",
+      "character": "块",
+      "pinyin": "kuài",
+      "structure": "left-right",
+      "components": [
+        "土",
+        "夬"
+      ],
+      "words": [
+        "一块",
+        "石块",
+        "土块"
+      ],
+      "verified": true
+    },
+    {
+      "id": "builtin-常",
+      "character": "常",
+      "pinyin": "cháng",
+      "structure": "top-bottom",
+      "components": [
+        "龸",
+        "吊"
+      ],
+      "words": [
+        "正常",
+        "经常",
+        "非常"
+      ],
+      "verified": true
+    },
+    {
+      "id": "builtin-往",
+      "character": "往",
+      "pinyin": "wǎng",
+      "structure": "left-center-right",
+      "components": [
+        "彳",
+        "王",
+        "丶"
+      ],
+      "words": [
+        "往事",
+        "往往",
+        "一如既往"
+      ],
+      "verified": true
+    },
+    {
+      "id": "builtin-进",
+      "character": "进",
+      "pinyin": "jìn",
+      "structure": "semi-enclosure",
+      "components": [
+        "辶",
+        "井"
+      ],
+      "words": [
+        "前进",
+        "进出",
+        "进步"
+      ],
+      "verified": true
+    },
+    {
+      "id": "builtin-空",
+      "character": "空",
+      "pinyin": "kōng",
+      "structure": "top-bottom",
+      "components": [
+        "穴",
+        "工"
+      ],
+      "words": [
+        "天空",
+        "星空",
+        "时空"
+      ],
+      "verified": true
+    },
+    {
+      "id": "builtin-直",
+      "character": "直",
+      "pinyin": "zhí",
+      "structure": "top-center-bottom",
+      "components": [
+        "十",
+        "目",
+        "一"
+      ],
+      "words": [
+        "一直",
+        "直接",
+        "直播"
+      ],
+      "verified": true
+    },
+    {
+      "id": "builtin-呀",
+      "character": "呀",
+      "pinyin": "ya",
+      "structure": "left-right",
+      "components": [
+        "口",
+        "牙"
+      ],
+      "words": [
+        "呀诺达",
+        "哎呀",
+        "啊呀"
+      ],
+      "verified": true
+    },
+    {
+      "id": "builtin-边",
+      "character": "边",
+      "pinyin": "biān",
+      "structure": "semi-enclosure",
+      "components": [
+        "辶",
+        "力"
+      ],
+      "words": [
+        "边上",
+        "旁边",
+        "一边"
+      ],
+      "verified": true
+    },
+    {
+      "id": "builtin-呢",
+      "character": "呢",
+      "pinyin": "ne",
+      "structure": "left-center-right",
+      "components": [
+        "口",
+        "尸",
+        "匕"
+      ],
+      "words": [
+        "呢呢",
+        "呢喃",
+        "呢子"
+      ],
+      "verified": true
+    },
+    {
+      "id": "builtin-吗",
+      "character": "吗",
+      "pinyin": "ma",
+      "structure": "left-right",
+      "components": [
+        "口",
+        "马"
+      ],
+      "words": [
+        "吗哪",
+        "吗啡",
+        "干吗"
+      ],
+      "verified": true
+    },
+    {
+      "id": "builtin-吧",
+      "character": "吧",
+      "pinyin": "ba",
+      "structure": "left-right",
+      "components": [
+        "口",
+        "巴"
+      ],
+      "words": [
+        "网吧",
+        "吧台",
+        "好吧"
+      ],
+      "verified": true
+    },
+    {
+      "id": "builtin-加",
+      "character": "加",
+      "pinyin": "jiā",
+      "structure": "left-right",
+      "components": [
+        "力",
+        "口"
+      ],
+      "words": [
+        "加法",
+        "参加",
+        "加油"
+      ],
+      "verified": true
+    },
+    {
+      "id": "builtin-病",
+      "character": "病",
+      "pinyin": "bìng",
+      "structure": "semi-enclosure",
+      "components": [
+        "疒",
+        "丙"
+      ],
+      "words": [
+        "生病",
+        "看病",
+        "病人"
+      ],
+      "verified": true
+    },
+    {
+      "id": "builtin-医",
+      "character": "医",
+      "pinyin": "yī",
+      "structure": "semi-enclosure",
+      "components": [
+        "匚",
+        "矢"
+      ],
+      "words": [
+        "医生",
+        "医院",
+        "中医"
+      ],
+      "verified": true
+    },
+    {
+      "id": "builtin-别",
+      "character": "别",
+      "pinyin": "bié",
+      "structure": "left-right",
+      "components": [
+        "另",
+        "刂"
+      ],
+      "words": [
+        "告别",
+        "分别",
+        "离别"
+      ],
+      "verified": true
+    },
+    {
+      "id": "builtin-干",
+      "character": "干",
+      "pinyin": "gān",
+      "structure": "top-bottom",
+      "components": [
+        "一",
+        "十"
+      ],
+      "words": [
+        "干净",
+        "干嘛",
+        "干活"
+      ],
+      "verified": true
+    },
+    {
+      "id": "builtin-奇",
+      "character": "奇",
+      "pinyin": "qí",
+      "structure": "top-bottom",
+      "components": [
+        "大",
+        "可"
+      ],
+      "words": [
+        "奇怪",
+        "奇妙",
+        "好奇"
+      ],
+      "verified": true
+    },
+    {
+      "id": "builtin-七",
+      "character": "七",
+      "pinyin": "qī",
+      "structure": "left-center-right",
+      "components": [
+        "乚",
+        "一"
+      ],
+      "words": [
+        "七十",
+        "七彩",
+        "七月"
+      ],
+      "verified": true
+    },
+    {
+      "id": "builtin-星",
+      "character": "星",
+      "pinyin": "xīng",
+      "structure": "top-bottom",
+      "components": [
+        "日",
+        "生"
+      ],
+      "words": [
+        "星星",
+        "星空",
+        "明星"
+      ],
+      "verified": true
+    },
+    {
+      "id": "builtin-文",
+      "character": "文",
+      "pinyin": "wén",
+      "structure": "top-bottom",
+      "components": [
+        "亠",
+        "乂"
+      ],
+      "words": [
+        "中文",
+        "博文",
+        "原文"
+      ],
+      "verified": true
+    },
+    {
+      "id": "builtin-次",
+      "character": "次",
+      "pinyin": "cì",
+      "structure": "left-right",
+      "components": [
+        "冫",
+        "欠"
+      ],
+      "words": [
+        "一次",
+        "下次",
+        "其次"
+      ],
+      "verified": true
+    },
+    {
+      "id": "builtin-找",
+      "character": "找",
+      "pinyin": "zhǎo",
+      "structure": "left-right",
+      "components": [
+        "扌",
+        "戈"
+      ],
+      "words": [
+        "找到",
+        "寻找",
+        "找来"
+      ],
+      "verified": true
+    },
+    {
+      "id": "builtin-平",
+      "character": "平",
+      "pinyin": "píng",
+      "structure": "left-right",
+      "components": [
+        "干",
+        "丷"
+      ],
+      "words": [
+        "公平",
+        "和平",
+        "平凡"
+      ],
+      "verified": true
+    },
+    {
+      "id": "builtin-办",
+      "character": "办",
+      "pinyin": "bàn",
+      "structure": "left-center-right",
+      "components": [
+        "力",
+        "八"
+      ],
+      "words": [
+        "办公室",
+        "办法",
+        "主办"
+      ],
+      "verified": true
+    },
+    {
+      "id": "builtin-让",
+      "character": "让",
+      "pinyin": "ràng",
+      "structure": "left-right",
+      "components": [
+        "讠",
+        "上"
+      ],
+      "words": [
+        "让开",
+        "让路",
+        "礼让"
+      ],
+      "verified": true
+    },
+    {
+      "id": "builtin-包",
+      "character": "包",
+      "pinyin": "bāo",
+      "structure": "left-right",
+      "components": [
+        "勹",
+        "巳"
+      ],
+      "words": [
+        "包括",
+        "红包",
+        "包包"
+      ],
+      "verified": true
+    },
+    {
+      "id": "builtin-吓",
+      "character": "吓",
+      "pinyin": "xià",
+      "structure": "left-center-right",
+      "components": [
+        "口",
+        "一",
+        "卜"
+      ],
+      "words": [
+        "吓唬",
+        "吓坏",
+        "惊吓"
+      ],
+      "verified": true
+    },
+    {
+      "id": "builtin-怕",
+      "character": "怕",
+      "pinyin": "pà",
+      "structure": "left-right",
+      "components": [
+        "忄",
+        "白"
+      ],
+      "words": [
+        "可怕",
+        "不怕",
+        "怕生"
+      ],
+      "verified": true
+    },
+    {
+      "id": "builtin-跟",
+      "character": "跟",
+      "pinyin": "gēn",
+      "structure": "left-right",
+      "components": [
+        "⻊",
+        "艮"
+      ],
+      "words": [
+        "高跟鞋",
+        "栽跟头",
+        "紧跟"
+      ],
+      "verified": true
+    },
+    {
+      "id": "builtin-家",
+      "character": "家",
+      "pinyin": "jiā",
+      "structure": "top-bottom",
+      "components": [
+        "宀",
+        "豕"
+      ],
+      "words": [
+        "回家",
+        "大家",
+        "玩家"
+      ],
+      "verified": true
+    },
+    {
+      "id": "builtin-都",
+      "character": "都",
+      "pinyin": "dōu",
+      "structure": "left-center-right",
+      "components": [
+        "耂",
+        "日",
+        "阝"
+      ],
+      "words": [
+        "成都",
+        "都市",
+        "京都"
+      ],
+      "verified": true
+    },
+    {
+      "id": "builtin-钟",
+      "character": "钟",
+      "pinyin": "zhōng",
+      "structure": "left-right",
+      "components": [
+        "钅",
+        "中"
+      ],
+      "words": [
+        "闹钟",
+        "钟表",
+        "分钟"
+      ],
+      "verified": true
+    },
+    {
+      "id": "builtin-元",
+      "character": "元",
+      "pinyin": "yuán",
+      "structure": "top-bottom",
+      "components": [
+        "二",
+        "儿"
+      ],
+      "words": [
+        "元宵",
+        "元旦",
+        "一元"
+      ],
+      "verified": true
+    },
+    {
+      "id": "builtin-洗",
+      "character": "洗",
+      "pinyin": "xǐ",
+      "structure": "left-right",
+      "components": [
+        "氵",
+        "先"
+      ],
+      "words": [
+        "洗手",
+        "洗脸",
+        "清洗"
+      ],
+      "verified": true
+    },
+    {
+      "id": "builtin-共",
+      "character": "共",
+      "pinyin": "gòng",
+      "structure": "top-center-bottom",
+      "components": [
+        "艹",
+        "一",
+        "八"
+      ],
+      "words": [
+        "共同",
+        "一共",
+        "中共"
+      ],
+      "verified": true
+    },
+    {
+      "id": "builtin-经",
+      "character": "经",
+      "pinyin": "jīng",
+      "structure": "left-right",
+      "components": [
+        "纟",
+        "圣"
+      ],
+      "words": [
+        "已经",
+        "经过",
+        "经常"
+      ],
+      "verified": true
+    },
+    {
+      "id": "builtin-坐",
+      "character": "坐",
+      "pinyin": "zuò",
+      "structure": "left-center-right",
+      "components": [
+        "土",
+        "人",
+        "人"
+      ],
+      "words": [
+        "乘坐",
+        "坐下",
+        "坐立不安"
+      ],
+      "verified": true
+    },
+    {
+      "id": "builtin-捉",
+      "character": "捉",
+      "pinyin": "zhuō",
+      "structure": "left-right",
+      "components": [
+        "扌",
+        "足"
+      ],
+      "words": [
+        "捉虫",
+        "捉住",
+        "捕捉"
+      ],
+      "verified": true
+    },
+    {
+      "id": "builtin-条",
+      "character": "条",
+      "pinyin": "tiáo",
+      "structure": "top-center-bottom",
+      "components": [
+        "夂",
+        "十",
+        "小"
+      ],
+      "words": [
+        "条件",
+        "信条",
+        "半条命"
+      ],
+      "verified": true
+    },
+    {
+      "id": "builtin-爬",
+      "character": "爬",
+      "pinyin": "pá",
+      "structure": "semi-enclosure",
+      "components": [
+        "爪",
+        "巴"
+      ],
+      "words": [
+        "爬山",
+        "爬行"
+      ],
+      "verified": true
+    },
+    {
+      "id": "builtin-姐",
+      "character": "姐",
+      "pinyin": "jiě",
+      "structure": "left-right",
+      "components": [
+        "女",
+        "且"
+      ],
+      "words": [
+        "姐姐",
+        "大姐",
+        "姐妹"
+      ],
+      "verified": true
+    },
+    {
+      "id": "builtin-您",
+      "character": "您",
+      "pinyin": "nín",
+      "structure": "top-bottom",
+      "components": [
+        "你",
+        "心"
+      ],
+      "words": [
+        "您好"
+      ],
+      "verified": true
+    },
+    {
+      "id": "builtin-草",
+      "character": "草",
+      "pinyin": "cǎo",
+      "structure": "top-bottom",
+      "components": [
+        "艹",
+        "早"
+      ],
+      "words": [
+        "小草",
+        "草地",
+        "青草"
+      ],
+      "verified": true
+    },
+    {
+      "id": "builtin-房",
+      "character": "房",
+      "pinyin": "fáng",
+      "structure": "semi-enclosure",
+      "components": [
+        "户",
+        "方"
+      ],
+      "words": [
+        "房子",
+        "房间",
+        "乳房"
+      ],
+      "verified": true
+    }
+  ]
+}

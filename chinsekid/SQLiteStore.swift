@@ -10,6 +10,17 @@ struct ChildProfile: Identifiable, Equatable {
     var avatarFilename: String? = nil
 }
 
+struct SnakeRewardStatus: Equatable {
+    var completedQuestions: Int = 0
+    var ticketCount: Int = 0
+    var hasPlayed = false
+
+    var hasTicket: Bool { ticketCount > 0 }
+
+    static let alphabetRoundQuestionGoal = 26
+    static let locked = SnakeRewardStatus()
+}
+
 enum LearningStatus: String {
     case new
     case practicing
@@ -455,6 +466,183 @@ final class SQLiteStore {
         return (Int(sqlite3_column_int(statement, 0)), Int(sqlite3_column_int(statement, 1)))
     }
 
+    func studiedPinyinItems(for userID: String) throws -> Set<String> {
+        let statement = try prepare("SELECT item_id FROM pinyin_progress WHERE user_id = ?;")
+        defer { sqlite3_finalize(statement) }
+        bind(userID, to: statement, at: 1)
+        var result: Set<String> = []
+        while sqlite3_step(statement) == SQLITE_ROW {
+            result.insert(text(statement, column: 0))
+        }
+        return result
+    }
+
+    func recordPinyinStudy(userID: String, itemID: String) throws {
+        let statement = try prepare("""
+            INSERT INTO pinyin_progress(user_id, item_id, studied_at) VALUES(?, ?, ?)
+            ON CONFLICT(user_id, item_id) DO UPDATE SET studied_at = excluded.studied_at;
+            """)
+        defer { sqlite3_finalize(statement) }
+        bind(userID, to: statement, at: 1)
+        bind(itemID, to: statement, at: 2)
+        sqlite3_bind_double(statement, 3, Date().timeIntervalSince1970)
+        try stepDone(statement)
+    }
+
+    func studiedAlphabetLetters(for userID: String) throws -> Set<String> {
+        let statement = try prepare("SELECT letter FROM alphabet_progress WHERE user_id = ?;")
+        defer { sqlite3_finalize(statement) }
+        bind(userID, to: statement, at: 1)
+        var result: Set<String> = []
+        while sqlite3_step(statement) == SQLITE_ROW {
+            result.insert(text(statement, column: 0))
+        }
+        return result
+    }
+
+    func recordAlphabetStudy(userID: String, letter: String) throws {
+        let statement = try prepare("""
+            INSERT INTO alphabet_progress(user_id, letter, studied_at) VALUES(?, ?, ?)
+            ON CONFLICT(user_id, letter) DO UPDATE SET studied_at = excluded.studied_at;
+            """)
+        defer { sqlite3_finalize(statement) }
+        bind(userID, to: statement, at: 1)
+        bind(letter.uppercased(), to: statement, at: 2)
+        sqlite3_bind_double(statement, 3, Date().timeIntervalSince1970)
+        try stepDone(statement)
+    }
+
+    func snakeRewardStatus(for userID: String) throws -> SnakeRewardStatus {
+        let statement = try prepare("SELECT completed_questions, ticket_count, has_played FROM snake_daily_rewards WHERE user_id = ?;")
+        defer { sqlite3_finalize(statement) }
+        bind(userID, to: statement, at: 1)
+        guard sqlite3_step(statement) == SQLITE_ROW else {
+            return .locked
+        }
+        return SnakeRewardStatus(
+            completedQuestions: Int(sqlite3_column_int(statement, 0)),
+            ticketCount: Int(sqlite3_column_int(statement, 1)),
+            hasPlayed: sqlite3_column_int(statement, 2) != 0
+        )
+    }
+
+    @discardableResult
+    func resetAlphabetSnakePracticeProgress(userID: String) throws -> SnakeRewardStatus {
+        let statement = try prepare("""
+            INSERT INTO snake_daily_rewards(user_id, day_key, completed_questions, has_ticket, has_played)
+            VALUES(?, ?, 0, 0, 0)
+            ON CONFLICT(user_id) DO UPDATE SET
+                day_key = excluded.day_key,
+                completed_questions = 0,
+                has_ticket = CASE WHEN snake_daily_rewards.ticket_count > 0 THEN 1 ELSE 0 END,
+                has_played = snake_daily_rewards.has_played;
+            """)
+        defer { sqlite3_finalize(statement) }
+        bind(userID, to: statement, at: 1)
+        bind(currentDayKey(), to: statement, at: 2)
+        try stepDone(statement)
+        return try snakeRewardStatus(for: userID)
+    }
+
+    @discardableResult
+    func recordAlphabetSnakePracticeAnswer(userID: String, isCorrect: Bool) throws -> SnakeRewardStatus {
+        try execute("BEGIN IMMEDIATE TRANSACTION;")
+        do {
+            let current = try snakeRewardStatus(for: userID)
+            guard current.completedQuestions < SnakeRewardStatus.alphabetRoundQuestionGoal else {
+                try execute("COMMIT;")
+                return current
+            }
+
+            let completed = isCorrect
+                ? min(current.completedQuestions + 1, SnakeRewardStatus.alphabetRoundQuestionGoal)
+                : 0
+            let earnedTicket = isCorrect && completed == SnakeRewardStatus.alphabetRoundQuestionGoal
+            let ticketCount = current.ticketCount + (earnedTicket ? 1 : 0)
+            let statement = try prepare("""
+                INSERT INTO snake_daily_rewards(user_id, day_key, completed_questions, has_ticket, has_played, ticket_count)
+                VALUES(?, ?, ?, ?, ?, ?)
+                ON CONFLICT(user_id) DO UPDATE SET
+                    day_key = excluded.day_key,
+                    completed_questions = excluded.completed_questions,
+                    has_ticket = excluded.has_ticket,
+                    has_played = excluded.has_played,
+                    ticket_count = excluded.ticket_count;
+                """)
+            defer { sqlite3_finalize(statement) }
+            bind(userID, to: statement, at: 1)
+            bind(currentDayKey(), to: statement, at: 2)
+            sqlite3_bind_int(statement, 3, Int32(completed))
+            sqlite3_bind_int(statement, 4, ticketCount > 0 ? 1 : 0)
+            sqlite3_bind_int(statement, 5, current.hasPlayed ? 1 : 0)
+            sqlite3_bind_int(statement, 6, Int32(ticketCount))
+            try stepDone(statement)
+            try execute("COMMIT;")
+            return SnakeRewardStatus(completedQuestions: completed, ticketCount: ticketCount, hasPlayed: current.hasPlayed)
+        } catch {
+            try? execute("ROLLBACK;")
+            throw error
+        }
+    }
+
+    func consumeSnakeTicket(userID: String, count: Int = 1) throws -> Bool {
+        guard count > 0 else { return false }
+        let statement = try prepare("""
+            UPDATE snake_daily_rewards
+            SET completed_questions = 0, ticket_count = ticket_count - ?,
+                has_ticket = CASE WHEN ticket_count - ? > 0 THEN 1 ELSE 0 END,
+                has_played = 1
+            WHERE user_id = ? AND ticket_count >= ?;
+            """)
+        defer { sqlite3_finalize(statement) }
+        sqlite3_bind_int(statement, 1, Int32(count))
+        sqlite3_bind_int(statement, 2, Int32(count))
+        bind(userID, to: statement, at: 3)
+        sqlite3_bind_int(statement, 4, Int32(count))
+        try stepDone(statement)
+        return sqlite3_changes(database) == 1
+    }
+
+    func awardFishPracticeTicket(userID: String, roundID: String) throws -> Bool {
+        try execute("BEGIN IMMEDIATE TRANSACTION;")
+        do {
+            let isNewAward: Bool
+            do {
+                let award = try prepare("INSERT OR IGNORE INTO fish_ticket_awards(round_id, user_id) VALUES(?, ?);")
+                defer { sqlite3_finalize(award) }
+                bind(roundID, to: award, at: 1)
+                bind(userID, to: award, at: 2)
+                try stepDone(award)
+                isNewAward = sqlite3_changes(database) == 1
+            }
+            guard isNewAward else {
+                try execute("COMMIT;")
+                return false
+            }
+            do {
+                let update = try prepare("""
+                    INSERT INTO snake_daily_rewards(user_id, day_key, completed_questions, has_ticket, has_played, ticket_count)
+                    VALUES(?, ?, 0, 1, 0, 1)
+                    ON CONFLICT(user_id) DO UPDATE SET ticket_count = ticket_count + 1, has_ticket = 1;
+                    """)
+                defer { sqlite3_finalize(update) }
+                bind(userID, to: update, at: 1)
+                bind(currentDayKey(), to: update, at: 2)
+                try stepDone(update)
+            }
+            try execute("COMMIT;")
+            return true
+        } catch {
+            try? execute("ROLLBACK;")
+            throw error
+        }
+    }
+
+    private func currentDayKey() -> String {
+        let components = Calendar.current.dateComponents([.year, .month, .day], from: Date())
+        return String(format: "%04d-%02d-%02d", components.year ?? 0, components.month ?? 0, components.day ?? 0)
+    }
+
     private func migrate() throws {
         try execute("""
             CREATE TABLE IF NOT EXISTS schema_migrations (
@@ -599,6 +787,119 @@ final class SQLiteStore {
             do {
                 try backfillPolyphonicReadings()
                 try execute("INSERT INTO schema_migrations(version, applied_at) VALUES(8, strftime('%s','now'));")
+                try execute("COMMIT;")
+            } catch {
+                try? execute("ROLLBACK;")
+                throw error
+            }
+        }
+        if current < 9 {
+            try execute("BEGIN IMMEDIATE TRANSACTION;")
+            do {
+                try execute("""
+                    CREATE TABLE pinyin_progress (
+                        user_id TEXT NOT NULL REFERENCES users(id) ON DELETE CASCADE,
+                        item_id TEXT NOT NULL,
+                        studied_at REAL NOT NULL,
+                        PRIMARY KEY(user_id, item_id)
+                    );
+                    CREATE INDEX idx_pinyin_progress_user ON pinyin_progress(user_id, studied_at DESC);
+                    INSERT INTO schema_migrations(version, applied_at) VALUES(9, strftime('%s','now'));
+                    """)
+                try execute("COMMIT;")
+            } catch {
+                try? execute("ROLLBACK;")
+                throw error
+            }
+        }
+        if current < 10 {
+            try execute("BEGIN IMMEDIATE TRANSACTION;")
+            do {
+                try execute("""
+                    CREATE TABLE alphabet_progress (
+                        user_id TEXT NOT NULL REFERENCES users(id) ON DELETE CASCADE,
+                        letter TEXT NOT NULL CHECK(length(letter) = 1),
+                        studied_at REAL NOT NULL,
+                        PRIMARY KEY(user_id, letter)
+                    );
+                    CREATE INDEX idx_alphabet_progress_user ON alphabet_progress(user_id, studied_at DESC);
+                    INSERT INTO schema_migrations(version, applied_at) VALUES(10, strftime('%s','now'));
+                    """)
+                try execute("COMMIT;")
+            } catch {
+                try? execute("ROLLBACK;")
+                throw error
+            }
+        }
+        if current < 11 {
+            try execute("BEGIN IMMEDIATE TRANSACTION;")
+            do {
+                try execute("""
+                    CREATE TABLE snake_daily_rewards (
+                        user_id TEXT PRIMARY KEY NOT NULL REFERENCES users(id) ON DELETE CASCADE,
+                        day_key TEXT NOT NULL,
+                        completed_questions INTEGER NOT NULL DEFAULT 0 CHECK(completed_questions BETWEEN 0 AND 5),
+                        has_ticket INTEGER NOT NULL DEFAULT 0 CHECK(has_ticket IN (0, 1)),
+                        has_played INTEGER NOT NULL DEFAULT 0 CHECK(has_played IN (0, 1))
+                    );
+                    INSERT INTO schema_migrations(version, applied_at) VALUES(11, strftime('%s','now'));
+                    """)
+                try execute("COMMIT;")
+            } catch {
+                try? execute("ROLLBACK;")
+                throw error
+            }
+        }
+        if current < 12 {
+            try execute("BEGIN IMMEDIATE TRANSACTION;")
+            do {
+                try execute("""
+                    CREATE TABLE snake_daily_rewards_v12 (
+                        user_id TEXT PRIMARY KEY NOT NULL REFERENCES users(id) ON DELETE CASCADE,
+                        day_key TEXT NOT NULL,
+                        completed_questions INTEGER NOT NULL DEFAULT 0 CHECK(completed_questions BETWEEN 0 AND 26),
+                        has_ticket INTEGER NOT NULL DEFAULT 0 CHECK(has_ticket IN (0, 1)),
+                        has_played INTEGER NOT NULL DEFAULT 0 CHECK(has_played IN (0, 1))
+                    );
+                    INSERT INTO snake_daily_rewards_v12(user_id, day_key, completed_questions, has_ticket, has_played)
+                    SELECT user_id, day_key, 0, has_ticket, has_played FROM snake_daily_rewards;
+                    DROP TABLE snake_daily_rewards;
+                    ALTER TABLE snake_daily_rewards_v12 RENAME TO snake_daily_rewards;
+                    INSERT INTO schema_migrations(version, applied_at) VALUES(12, strftime('%s','now'));
+                    """)
+                try execute("COMMIT;")
+                current = 12
+            } catch {
+                try? execute("ROLLBACK;")
+                throw error
+            }
+        }
+        if current < 13 {
+            try execute("BEGIN IMMEDIATE TRANSACTION;")
+            do {
+                try execute("""
+                    ALTER TABLE snake_daily_rewards
+                        ADD COLUMN ticket_count INTEGER NOT NULL DEFAULT 0 CHECK(ticket_count >= 0);
+                    UPDATE snake_daily_rewards SET ticket_count = has_ticket;
+                    INSERT INTO schema_migrations(version, applied_at) VALUES(13, strftime('%s','now'));
+                    """)
+                try execute("COMMIT;")
+                current = 13
+            } catch {
+                try? execute("ROLLBACK;")
+                throw error
+            }
+        }
+        if current < 14 {
+            try execute("BEGIN IMMEDIATE TRANSACTION;")
+            do {
+                try execute("""
+                    CREATE TABLE fish_ticket_awards (
+                        round_id TEXT PRIMARY KEY NOT NULL,
+                        user_id TEXT NOT NULL REFERENCES users(id) ON DELETE CASCADE
+                    );
+                    INSERT INTO schema_migrations(version, applied_at) VALUES(14, strftime('%s','now'));
+                    """)
                 try execute("COMMIT;")
             } catch {
                 try? execute("ROLLBACK;")

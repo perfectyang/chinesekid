@@ -37,7 +37,8 @@ struct ListeningGameFlowScreen: View {
     var body: some View {
         Group {
             if let activeSet {
-                ListeningGameScreen(app: app, initialCharacters: activeSet.characters, setName: activeSet.name, onCollect: onCollect)
+                ListeningGameScreen(app: app, initialCharacters: activeSet.characters, setName: activeSet.name,
+                                    onCollect: onCollect, onReturnToSetPicker: { self.activeSet = nil })
                     .id(activeSet.id)
             } else {
                 PracticeSetPickerScreen(app: app, onCollect: onCollect) { name, characters in
@@ -195,6 +196,7 @@ private struct PracticeSetPickerScreen: View {
             PracticeSetEditorScreen(app: app, set: request.set)
                 .presentationDetents([.large])
                 .presentationDragIndicator(.visible)
+                .interactiveDismissDisabled()
         }
         .alert(item: $setPendingDeletion) { set in
             Alert(
@@ -270,8 +272,13 @@ private struct PracticeSetEditorScreen: View {
                     Image(systemName: "pencil.and.list.clipboard")
                         .foregroundStyle(GamePalette.orange)
                     TextField("给这组字起个名字", text: $name)
+                        .textFieldStyle(.plain)
                         .font(.system(size: 17, weight: .bold, design: .rounded))
+                        .foregroundStyle(GamePalette.ink)
+                        .tint(GamePalette.ink)
                         .focused($nameFocused)
+                        .submitLabel(.done)
+                        .onSubmit { nameFocused = false }
                         .onChange(of: name) { _, value in
                             if value.count > 24 { name = String(value.prefix(24)) }
                         }
@@ -294,6 +301,7 @@ private struct PracticeSetEditorScreen: View {
                         ForEach(Array(app.characters.enumerated()), id: \.element.glyph) { index, item in
                             let selected = selectedGlyphs.contains(item.glyph)
                             Button {
+                                nameFocused = false
                                 if selected { selectedGlyphs.remove(item.glyph) }
                                 else { selectedGlyphs.insert(item.glyph) }
                             } label: {
@@ -318,15 +326,24 @@ private struct PracticeSetEditorScreen: View {
                 }
             }
             .padding(18)
-            .background { StorybookBackground() }
+            .scrollDismissesKeyboard(.interactively)
+            .background {
+                StorybookBackground()
+                    .contentShape(Rectangle())
+                    .onTapGesture { nameFocused = false }
+            }
             .navigationTitle(set == nil ? "新建题组" : "编辑题组")
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItem(placement: .cancellationAction) {
-                    Button("取消") { dismiss() }
+                    Button("取消") {
+                        nameFocused = false
+                        dismiss()
+                    }
                 }
                 ToolbarItem(placement: .confirmationAction) {
                     Button("完成") {
+                        nameFocused = false
                         if app.savePracticeSet(id: set?.id, name: trimmedName, glyphs: Array(selectedGlyphs)) != nil {
                             dismiss()
                         }
@@ -336,6 +353,7 @@ private struct PracticeSetEditorScreen: View {
                 }
             }
         }
+        .keyboardDismissToolbar { nameFocused = false }
         .onAppear { if set == nil { nameFocused = true } }
     }
 }
@@ -345,8 +363,8 @@ struct ListeningGameScreen: View {
     let initialCharacters: [LearningCharacter]
     let setName: String
     let onCollect: () -> Void
+    let onReturnToSetPicker: () -> Void
 
-    @Environment(\.dismiss) private var dismiss
     @State private var speech = SpeechPlayer()
     @State private var wordPool: [LearningCharacter] = []
     @State private var targetQueue: [LearningCharacter] = []
@@ -399,7 +417,7 @@ struct ListeningGameScreen: View {
     private var questionScreen: some View {
         VStack(spacing: 20) {
             HStack {
-                Button { speech.stop(); dismiss() } label: {
+                Button(action: returnToSetPicker) {
                     Image(systemName: "xmark")
                         .font(.system(size: 15, weight: .black))
                         .foregroundStyle(GamePalette.ink)
@@ -485,8 +503,9 @@ struct ListeningGameScreen: View {
         let isSelected = selectedGlyph == item.glyph
         let isCorrectTarget = target?.glyph == item.glyph
         let background: Color = {
-            guard isAnswered && isSelected else { return GamePalette.answerTiles[index % GamePalette.answerTiles.count] }
-            return isCorrectTarget ? GamePalette.correctTile : GamePalette.wrong
+            guard isAnswered else { return GamePalette.answerTiles[index % GamePalette.answerTiles.count] }
+            if isCorrectTarget { return GamePalette.correctTile }
+            return isSelected ? GamePalette.wrong : GamePalette.answerTiles[index % GamePalette.answerTiles.count]
         }()
 
         return Button {
@@ -506,7 +525,7 @@ struct ListeningGameScreen: View {
                         .stroke(GamePalette.tileOutline, lineWidth: 2)
                 }
                 .shadow(color: GamePalette.ink.opacity(0.10), radius: 5, x: 0, y: 3)
-                if isAnswered && isSelected {
+                if isAnswered && (isSelected || isCorrectTarget) {
                     Image(systemName: isCorrectTarget ? "checkmark.circle.fill" : "xmark.circle.fill")
                         .font(.system(size: 22, weight: .bold))
                         .foregroundStyle(isCorrectTarget ? GamePalette.correctInk : .white)
@@ -537,7 +556,7 @@ struct ListeningGameScreen: View {
                     .background(GamePalette.yellow, in: Capsule())
             }
             .buttonStyle(.plain)
-            Button("先回首页") { dismiss() }
+            Button("返回题组") { returnToSetPicker() }
                 .font(.system(size: 15, weight: .bold, design: .rounded))
                 .foregroundStyle(GamePalette.muted)
         }
@@ -567,7 +586,7 @@ struct ListeningGameScreen: View {
             .foregroundStyle(GamePalette.ink)
             .frame(width: 230, height: 56)
             .background(GamePalette.yellow, in: Capsule())
-            Button("回到首页") { dismiss() }
+            Button("选择其他题组") { returnToSetPicker() }
                 .font(.system(size: 15, weight: .bold, design: .rounded))
                 .foregroundStyle(GamePalette.muted)
         }
@@ -613,6 +632,13 @@ struct ListeningGameScreen: View {
             }
         }
         .padding(28)
+    }
+
+    private func returnToSetPicker() {
+        answerAdvanceTask?.cancel()
+        answerAdvanceTask = nil
+        speech.stop()
+        onReturnToSetPicker()
     }
 
     private func startQuestion() {

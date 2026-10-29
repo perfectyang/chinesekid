@@ -1,7 +1,15 @@
+import CoreFoundation
 import PhotosUI
 import SwiftUI
 import UIKit
 import Vision
+
+private enum ImportPickerSheet: String, Identifiable {
+    case photoLibrary
+    case camera
+
+    var id: String { rawValue }
+}
 
 private enum ImportPalette {
     static let ink = KidsTheme.ink
@@ -15,8 +23,7 @@ private enum ImportPalette {
 struct OCRImportScreen: View {
     let app: AppModel
     @Environment(\.dismiss) private var dismiss
-    @State private var photoItem: PhotosPickerItem?
-    @State private var showingCamera = false
+    @State private var activePickerSheet: ImportPickerSheet?
     @State private var capturedImage: UIImage?
     @State private var foundCharacters: [String] = []
     @State private var selectedCharacters = Set<String>()
@@ -69,13 +76,22 @@ struct OCRImportScreen: View {
                         .fontWeight(.bold)
                 }
             }
-            .onChange(of: photoItem) { _, item in
-                guard let item else { return }
-                Task { await recognize(item: item) }
-            }
-            .sheet(isPresented: $showingCamera, onDismiss: processCapturedImage) {
-                CameraPicker(image: $capturedImage)
-                    .ignoresSafeArea()
+            .sheet(item: $activePickerSheet, onDismiss: processCapturedImage) { pickerSheet in
+                Group {
+                    switch pickerSheet {
+                    case .photoLibrary:
+                        PhotoLibraryPicker { data in
+                            activePickerSheet = nil
+                            guard let data else { return }
+                            Task { await recognize(data: data) }
+                        }
+                        .ignoresSafeArea()
+                    case .camera:
+                        CameraPicker(image: $capturedImage)
+                            .ignoresSafeArea()
+                    }
+                }
+                .interactiveDismissDisabled()
             }
             .alert("没有找到汉字", isPresented: Binding(
                 get: { notice != nil && foundCharacters.isEmpty && !isRecognizing },
@@ -102,7 +118,9 @@ struct OCRImportScreen: View {
 
     private var sourceActions: some View {
         HStack(spacing: 12) {
-            PhotosPicker(selection: $photoItem, matching: .images, photoLibrary: .shared()) {
+            Button {
+                activePickerSheet = .photoLibrary
+            } label: {
                 sourceCard(title: "从相册选", subtitle: "挑一张照片", icon: "photo.on.rectangle.angled", color: ImportPalette.mint)
             }
             .buttonStyle(.plain)
@@ -111,7 +129,7 @@ struct OCRImportScreen: View {
                     notice = "当前设备没有可用的相机，可以从相册选一张照片。"
                     return
                 }
-                showingCamera = true
+                activePickerSheet = .camera
             } label: {
                 sourceCard(title: "现在拍照", subtitle: "对准汉字拍", icon: "camera.fill", color: ImportPalette.yellow)
             }
@@ -144,8 +162,11 @@ struct OCRImportScreen: View {
                 }
                 Spacer()
                 Button(selectedCharacters.count == foundCharacters.count ? "全不选" : "全选") {
-                    if selectedCharacters.count == foundCharacters.count { selectedCharacters.removeAll() }
-                    else { selectedCharacters = Set(foundCharacters) }
+                    if selectedCharacters.count == foundCharacters.count {
+                        selectedCharacters.removeAll()
+                    } else {
+                        selectedCharacters = Set(foundCharacters)
+                    }
                 }
                 .font(.system(size: 14, weight: .bold, design: .rounded))
             }
@@ -224,23 +245,21 @@ struct OCRImportScreen: View {
     }
 
     @MainActor
-    private func recognize(item: PhotosPickerItem) async {
+    private func recognize(data: Data) async {
         isRecognizing = true
         notice = nil
         importedResult = nil
-        defer { isRecognizing = false; photoItem = nil }
+        foundCharacters = []
+        selectedCharacters.removeAll()
+        defer { isRecognizing = false }
         do {
-            guard let data = try await item.loadTransferable(type: Data.self) else {
-                notice = "这张照片读不出来，再选一张试试吧。"
-                return
-            }
             let found = try await ocr.recognize(data: data)
             guard !found.isEmpty else {
                 notice = "没有找到汉字。试试拍得更清楚、离近一点～"
                 return
             }
             foundCharacters = found
-            selectedCharacters = Set(found)
+            selectedCharacters.removeAll()
         } catch {
             notice = "照片识别遇到一点小问题，再试一次吧。"
         }
@@ -250,36 +269,23 @@ struct OCRImportScreen: View {
     private func processCapturedImage() {
         guard let capturedImage else { return }
         self.capturedImage = nil
-        guard let data = capturedImage.jpegData(compressionQuality: 0.88) else {
+        guard let data = capturedImage.jpegData(compressionQuality: 0.96) else {
             notice = "照片处理失败，可以重拍一次。"
             return
         }
         Task { await recognize(data: data) }
     }
 
-    @MainActor
-    private func recognize(data: Data) async {
-        isRecognizing = true
-        notice = nil
-        importedResult = nil
-        defer { isRecognizing = false }
-        do {
-            let found = try await ocr.recognize(data: data)
-            if found.isEmpty { notice = "没有找到汉字。试试拍得更清楚、离近一点～" }
-            else {
-                foundCharacters = found
-                selectedCharacters = Set(found)
-            }
-        } catch {
-            notice = "照片识别遇到一点小问题，再试一次吧。"
-        }
-    }
 }
 
 private actor OCRService {
     func recognize(data: Data) throws -> [String] {
         let request = VNRecognizeTextRequest()
         request.recognitionLevel = .accurate
+        // Detect text down to 0.1% of the image height; the smaller threshold
+        // helps with fine print while the selection screen lets users discard
+        // any extra background characters that it finds.
+        request.minimumTextHeight = 0.001
         request.recognitionLanguages = ["zh-Hans"]
         request.usesLanguageCorrection = true
         try VNImageRequestHandler(data: data, options: [:]).perform([request])
@@ -287,7 +293,10 @@ private actor OCRService {
         var seen = Set<String>()
         var characters: [String] = []
         for line in lines {
-            for character in line {
+            let simplifiedLine = NSMutableString(string: line)
+            let didConvert = CFStringTransform(simplifiedLine, nil, "Traditional-Simplified" as CFString, false)
+            let normalizedLine = didConvert ? simplifiedLine as String : line
+            for character in normalizedLine {
                 guard Self.isHan(character), seen.insert(String(character)).inserted else { continue }
                 characters.append(String(character))
             }

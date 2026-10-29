@@ -1,0 +1,202 @@
+{
+  "name": "前鼻韵母",
+  "symbol": [
+    "ɑn",
+    "en",
+    "in",
+    "un",
+    "ün"
+  ],
+  "phonemes": [
+    {
+      "id": 48,
+      "symbol": "ɑn",
+      "label": "",
+      "image": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme-image/4f9ecc939a5b6ff4bda00484444146ee.png",
+      "eg_image": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme-image/4daa8681125466b1a661d0e1004ba32e.png",
+      "audio": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme/an1.m4a",
+      "phoneme": "ɑn",
+      "tips": "前鼻韵母，先发“ɑ”音。然后用舌尖顶住上牙床，使气流从鼻腔出来，发“安”音。",
+      "rule": "“ɑ、n”占中格。书写时注意两个字母要紧凑匀称。",
+      "intro": "早安早安 ɑn ɑn ɑn",
+      "tones": [
+        {
+          "id": 1486,
+          "symbol": "ān",
+          "phoneme": "an1",
+          "audio": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme/an1.m4a"
+        },
+        {
+          "id": 1487,
+          "symbol": "án",
+          "phoneme": "an2",
+          "audio": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme/an2.m4a"
+        },
+        {
+          "id": 1488,
+          "symbol": "ǎn",
+          "phoneme": "an3",
+          "audio": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme/an3.m4a"
+        },
+        {
+          "id": 1489,
+          "symbol": "àn",
+          "phoneme": "an4",
+          "audio": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme/an4.m4a"
+        }
+      ]
+    },
+    {
+      "id": 49,
+      "symbol": "en",
+      "label": "",
+      "image": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme-image/616c490fc4f4804cda889e1b1ae601f4.png",
+      "eg_image": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme-image/da5a01abcab8606b5211fd624d9a1cc5.png",
+      "audio": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme/en1.m4a",
+      "phoneme": "en",
+      "tips": "前鼻韵母，先发“e”音，接着舌尖顶住上牙床，发出的音就是“嗯”。",
+      "rule": "“e、n”占中格。书写时注意两个字母要紧凑匀称。",
+      "intro": "摁个按钮 en en en",
+      "tones": [
+        {
+          "id": 1760,
+          "symbol": "ēn",
+          "phoneme": "en1",
+          "audio": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme/en1.m4a"
+        },
+        {
+          "id": 1468,
+          "symbol": "én",
+          "phoneme": "en2",
+          "audio": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme/en2.mp3"
+        },
+        {
+          "id": 1467,
+          "symbol": "ěn",
+          "phoneme": "en3",
+          "audio": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme/en3.mp3"
+        },
+        {
+          "id": 1761,
+          "symbol": "èn",
+          "phoneme": "en4",
+          "audio": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme/en4.m4a"
+        }
+      ]
+    },
+    {
+      "id": 50,
+      "symbol": "in",
+      "label": "",
+      "image": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme-image/48b491559906aa3e46b45d129c2132f8.png",
+      "eg_image": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme-image/fba8fb81652e107607a2422ff1864fc1.png",
+      "audio": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme/in1.mp3",
+      "phoneme": "in",
+      "tips": "前鼻韵母，先发“i”音，接着舌尖顶住上牙床，用鼻腔出气，嘴自然闭上。",
+      "rule": "“i”占中上格，“n”占中格。书写时注意两个字母要紧凑匀称。",
+      "intro": "一片绿荫 in in in",
+      "tones": [
+        {
+          "id": 2981,
+          "symbol": "īn",
+          "phoneme": "in1",
+          "audio": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme/in1.mp3"
+        },
+        {
+          "id": 2982,
+          "symbol": "ín",
+          "phoneme": "in2",
+          "audio": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme/in2.mp3"
+        },
+        {
+          "id": 2983,
+          "symbol": "ǐn",
+          "phoneme": "in3",
+          "audio": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme/in3.mp3"
+        },
+        {
+          "id": 2984,
+          "symbol": "ìn",
+          "phoneme": "in4",
+          "audio": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme/in4.mp3"
+        }
+      ]
+    },
+    {
+      "id": 51,
+      "symbol": "un",
+      "label": "",
+      "image": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme-image/c72518de127f20e407e32d2d65719dac.png",
+      "eg_image": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme-image/939b15fb5b394d06dcb8c50787841255.png",
+      "audio": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme/un1.mp3",
+      "phoneme": "un",
+      "tips": "前鼻韵母，先发u音，接着舌尖顶住上牙床，让气流从鼻腔通过。",
+      "rule": "“u、n”都占中格。书写时注意两个字母要紧凑匀称。",
+      "intro": "春天来了 un un un",
+      "tones": [
+        {
+          "id": 2985,
+          "symbol": "ūn",
+          "phoneme": "un1",
+          "audio": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme/un1.mp3"
+        },
+        {
+          "id": 2986,
+          "symbol": "ún",
+          "phoneme": "un2",
+          "audio": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme/un2.mp3"
+        },
+        {
+          "id": 2987,
+          "symbol": "ǔn",
+          "phoneme": "un3",
+          "audio": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme/un3.mp3"
+        },
+        {
+          "id": 2988,
+          "symbol": "ùn",
+          "phoneme": "un4",
+          "audio": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme/un4.mp3"
+        }
+      ]
+    },
+    {
+      "id": 52,
+      "symbol": "ün",
+      "label": "",
+      "image": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme-image/c12c0cb9bcb7cf9b370f2991e9ff05fe.png",
+      "eg_image": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme-image/4ed0a7a8e4454c2ac9d39cfd419a360b.png",
+      "audio": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme/yun1.m4a",
+      "phoneme": "ün",
+      "tips": "前鼻韵母，先发ü音，接着舌尖顶住上牙床，让气流从鼻腔通过。",
+      "rule": "“ü”占中上格，“n”占中格。书写时注意两个字母要紧凑匀称。",
+      "intro": "两朵白云 ün ün ün",
+      "tones": [
+        {
+          "id": 2989,
+          "symbol": "ǖn",
+          "phoneme": "vn1",
+          "audio": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme/yun1.m4a"
+        },
+        {
+          "id": 2990,
+          "symbol": "ǘn",
+          "phoneme": "vn2",
+          "audio": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme/yun2.m4a"
+        },
+        {
+          "id": 2991,
+          "symbol": "ǚn",
+          "phoneme": "vn3",
+          "audio": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme/yun3.m4a"
+        },
+        {
+          "id": 2992,
+          "symbol": "ǜn",
+          "phoneme": "vn4",
+          "audio": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme/yun4.m4a"
+        }
+      ]
+    }
+  ]
+}

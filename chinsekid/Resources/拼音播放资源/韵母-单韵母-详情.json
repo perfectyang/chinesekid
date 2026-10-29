@@ -1,0 +1,241 @@
+{
+  "name": "单韵母",
+  "symbol": [
+    "ɑ",
+    "o",
+    "e",
+    "i",
+    "u",
+    "ü"
+  ],
+  "phonemes": [
+    {
+      "id": 1,
+      "symbol": "ɑ",
+      "label": "",
+      "image": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme-image/251af786ef2f8f32b222785800e9b0b8.png",
+      "eg_image": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme-image/104c1ed0f9d98572210ff4a52c35b7c6.png",
+      "audio": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme/a1.mp3",
+      "phoneme": "a",
+      "tips": "下巴向下伸，嘴张大，然后舌头伸直，位置低平，嘴唇呈自然状态，发“啊”的第一声。",
+      "rule": "“ɑ”占四线格的中格，声调标在上格。先写左半圆，然后写竖弯，最后标声调。",
+      "intro": "张嘴唱歌 ɑ ɑ ɑ",
+      "tones": [
+        {
+          "id": 1477,
+          "symbol": "ā",
+          "phoneme": "a1",
+          "audio": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme/a1.m4a"
+        },
+        {
+          "id": 1478,
+          "symbol": "á",
+          "phoneme": "a2",
+          "audio": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme/a2.m4a"
+        },
+        {
+          "id": 1479,
+          "symbol": "ǎ",
+          "phoneme": "a3",
+          "audio": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme/a3.m4a"
+        },
+        {
+          "id": 1480,
+          "symbol": "à",
+          "phoneme": "a4",
+          "audio": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme/a4.m4a"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "symbol": "o",
+      "label": "",
+      "image": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme-image/34687391fa29644ef717ed78e064941c.png",
+      "eg_image": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme-image/b004a11f3a09712da2614672d5f83a3e.png",
+      "audio": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme/o1.mp3",
+      "phoneme": "o",
+      "tips": "嘴唇圆圆的，舌头略向后缩，舌面后部隆起，口微开，声带振动。",
+      "rule": "“o”占四线格的中格，声调标在上格。先一笔写圆圈，然后标声调。",
+      "intro": "嘴巴圆圆 o o o ",
+      "tones": [
+        {
+          "id": 2310,
+          "symbol": "ō",
+          "phoneme": "o1",
+          "audio": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme/o1.m4a"
+        },
+        {
+          "id": 2311,
+          "symbol": "ó",
+          "phoneme": "o2",
+          "audio": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme/o2.m4a"
+        },
+        {
+          "id": 2312,
+          "symbol": "ǒ",
+          "phoneme": "o3",
+          "audio": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme/o3.mp3"
+        },
+        {
+          "id": 2313,
+          "symbol": "ò",
+          "phoneme": "o4",
+          "audio": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme/o4.m4a"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "symbol": "e",
+      "label": "",
+      "image": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme-image/6c61e5ee0d1a6e5ec9889345aa62b051.png",
+      "eg_image": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme-image/0252af10403af5a16a7b60122a30accc.png",
+      "audio": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme/e1.mp3",
+      "phoneme": "e",
+      "tips": "双唇向两边咧开，舌位靠后，上下牙齿错位，然后发“鹅”的第一声，声带振动。",
+      "rule": "“e”占四线格的中格，声调标在上格。先一笔写横折左半圆，然后标声调。",
+      "intro": "白鹅倒立 e e e",
+      "tones": [
+        {
+          "id": 1755,
+          "symbol": "ē",
+          "phoneme": "e1",
+          "audio": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme/e1.m4a"
+        },
+        {
+          "id": 1756,
+          "symbol": "é",
+          "phoneme": "e2",
+          "audio": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme/e2.m4a"
+        },
+        {
+          "id": 1757,
+          "symbol": "ě",
+          "phoneme": "e3",
+          "audio": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme/e3.m4a"
+        },
+        {
+          "id": 1758,
+          "symbol": "è",
+          "phoneme": "e4",
+          "audio": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme/e4.m4a"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "symbol": "i",
+      "label": "",
+      "image": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme-image/21cde5e2dc40d8bb6bd1296a3a85607e.png",
+      "eg_image": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme-image/8c2e8c3acb5176c6090cea4568773500.png",
+      "audio": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme/i1.mp3",
+      "phoneme": "i",
+      "tips": "开口度小，牙齿对齐，嘴角向两边咧，舌尖靠近下齿背，发音响亮。",
+      "rule": "“i”占中上格，先把“丨”写在中格，再把“·”写在上格，两笔写成。",
+      "intro": "蜡烛点着 i i i",
+      "tones": [
+        {
+          "id": 2953,
+          "symbol": "ī",
+          "phoneme": "i1",
+          "audio": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme/i1.mp3"
+        },
+        {
+          "id": 2954,
+          "symbol": "í",
+          "phoneme": "i2",
+          "audio": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme/i2.mp3"
+        },
+        {
+          "id": 2955,
+          "symbol": "ǐ",
+          "phoneme": "i3",
+          "audio": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme/i3.mp3"
+        },
+        {
+          "id": 2956,
+          "symbol": "ì",
+          "phoneme": "i4",
+          "audio": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme/i4.mp3"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "symbol": "u",
+      "label": "",
+      "image": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme-image/4bdc8d125cabddf2399ec9c2aa53790e.png",
+      "eg_image": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme-image/d12b2d78c35e1efacdd8a5a29ec886ff.png",
+      "audio": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme/u1.mp3",
+      "phoneme": "u",
+      "tips": "开口度很小，双唇拢圆留小孔，舌头后缩。",
+      "rule": "“u”占中格，先写竖右弯，再写竖，两笔写成。",
+      "intro": "乌龟龟壳 u u u",
+      "tones": [
+        {
+          "id": 2957,
+          "symbol": "ū",
+          "phoneme": "u1",
+          "audio": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme/u1.mp3"
+        },
+        {
+          "id": 2958,
+          "symbol": "ú",
+          "phoneme": "u2",
+          "audio": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme/u2.mp3"
+        },
+        {
+          "id": 2959,
+          "symbol": "ǔ",
+          "phoneme": "u3",
+          "audio": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme/u3.mp3"
+        },
+        {
+          "id": 2960,
+          "symbol": "ù",
+          "phoneme": "u4",
+          "audio": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme/u4.mp3"
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "symbol": "ü",
+      "label": "",
+      "image": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme-image/d50d8848fe5a9773946703e089673415.png",
+      "eg_image": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme-image/ced67fce76ecb89343c43495a1d246b9.png",
+      "audio": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme/v1.mp3",
+      "phoneme": "ü",
+      "tips": "双唇咧成扁圆形，略噘嘴唇，舌头向前，接近下齿背。",
+      "rule": "“ü”占中上格，两点最后写，写在中格靠近第二条线的地方，四笔写成。",
+      "intro": "鱼儿吐泡 ü ü ü",
+      "tones": [
+        {
+          "id": 2961,
+          "symbol": "ǖ",
+          "phoneme": "v1",
+          "audio": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme/v1.mp3"
+        },
+        {
+          "id": 2962,
+          "symbol": "ǘ",
+          "phoneme": "v2",
+          "audio": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme/v2.mp3"
+        },
+        {
+          "id": 2963,
+          "symbol": "ǚ",
+          "phoneme": "v3",
+          "audio": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme/v3.mp3"
+        },
+        {
+          "id": 2964,
+          "symbol": "ǜ",
+          "phoneme": "v4",
+          "audio": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme/v4.mp3"
+        }
+      ]
+    }
+  ]
+}

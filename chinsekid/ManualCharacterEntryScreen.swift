@@ -13,6 +13,7 @@ struct ManualCharacterEntryScreen: View {
     let app: AppModel
 
     @Environment(\.dismiss) private var dismiss
+    @FocusState private var inputFocused: Bool
     @State private var inputText = ""
     @State private var excludedGlyphs = Set<String>()
     @State private var feedback: EntryFeedback?
@@ -62,7 +63,10 @@ struct ManualCharacterEntryScreen: View {
                         TextEditor(text: $inputText)
                             .font(.system(size: 23, weight: .medium, design: .serif))
                             .foregroundStyle(ManualEntryPalette.ink)
+                            .tint(ManualEntryPalette.ink)
                             .scrollContentBackground(.hidden)
+                            .background(Color.clear)
+                            .focused($inputFocused)
                             .padding(10)
                             .frame(minHeight: 112, maxHeight: 150)
                     }
@@ -74,6 +78,7 @@ struct ManualCharacterEntryScreen: View {
                         Spacer()
                         if !inputText.isEmpty {
                             Button("清空") {
+                                inputFocused = false
                                 inputText = ""
                                 excludedGlyphs.removeAll()
                                 feedback = nil
@@ -106,6 +111,7 @@ struct ManualCharacterEntryScreen: View {
                                 }
                                 Spacer()
                                 Button(excludedGlyphs.isEmpty ? "取消全选" : "选中全部新字") {
+                                    inputFocused = false
                                     if excludedGlyphs.isEmpty {
                                         excludedGlyphs = Set(newGlyphs)
                                     } else {
@@ -143,7 +149,12 @@ struct ManualCharacterEntryScreen: View {
                 .frame(maxWidth: 700)
                 .frame(maxWidth: .infinity)
             }
-            .background { StorybookBackground() }
+            .scrollDismissesKeyboard(.interactively)
+            .background {
+                StorybookBackground()
+                    .contentShape(Rectangle())
+                    .onTapGesture { inputFocused = false }
+            }
             .safeAreaInset(edge: .bottom, spacing: 0) {
                 Button(action: saveCharacters) {
                     HStack {
@@ -168,9 +179,21 @@ struct ManualCharacterEntryScreen: View {
             .navigationTitle("手动录入")
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
-                ToolbarItem(placement: .topBarLeading) { Button("取消") { dismiss() } }
-                ToolbarItem(placement: .topBarTrailing) { Button("完成") { dismiss() }.fontWeight(.bold) }
+                ToolbarItem(placement: .topBarLeading) {
+                    Button("取消") {
+                        inputFocused = false
+                        dismiss()
+                    }
+                }
+                ToolbarItem(placement: .topBarTrailing) {
+                    Button("完成") {
+                        inputFocused = false
+                        dismiss()
+                    }
+                    .fontWeight(.bold)
+                }
             }
+            .keyboardDismissToolbar { inputFocused = false }
             .onChange(of: inputText) { _, _ in
                 excludedGlyphs = excludedGlyphs.intersection(newGlyphs)
                 withAnimation(.easeInOut(duration: 0.18)) { feedback = nil }
@@ -184,6 +207,7 @@ struct ManualCharacterEntryScreen: View {
         let colors = [ManualEntryPalette.mint, ManualEntryPalette.yellow, KidsTheme.lilac, KidsTheme.blue]
 
         return Button {
+            inputFocused = false
             guard !alreadyAdded else { return }
             if selected { excludedGlyphs.insert(glyph) }
             else { excludedGlyphs.remove(glyph) }
@@ -214,6 +238,7 @@ struct ManualCharacterEntryScreen: View {
     }
 
     private func saveCharacters() {
+        inputFocused = false
         let selected = selectedGlyphs
         guard !selected.isEmpty else { return }
         let alreadyPresent = detectedGlyphs.filter(app.contains).count

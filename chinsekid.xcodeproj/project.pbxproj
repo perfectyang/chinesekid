@@ -6,13 +6,38 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		A7C100000000000000000004 /* UnityFishGame/Build/UnityFishGame-iOS/Data in Resources */ = {isa = PBXBuildFile; fileRef = A7C100000000000000000003 /* UnityFishGame/Build/UnityFishGame-iOS/Data */; };
+		A7C100000000000000000006 /* UnityFishGame/Build/UnityFishGame.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7C100000000000000000001 /* UnityFishGame/Build/UnityFishGame.xcframework */; };
+		A7C100000000000000000007 /* UnityFishGame/Build/UnityFishGame.xcframework in Embed Unity Frameworks */ = {isa = PBXBuildFile; fileRef = A7C100000000000000000001 /* UnityFishGame/Build/UnityFishGame.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		A7C100000000000000000005 /* Embed Unity Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				A7C100000000000000000007 /* UnityFishGame/Build/UnityFishGame.xcframework in Embed Unity Frameworks */,
+			);
+			name = "Embed Unity Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		A7C100000000000000000001 /* UnityFishGame/Build/UnityFishGame.xcframework */ = {isa = PBXFileReference; explicitFileType = wrapper.xcframework; includeInIndex = 0; path = UnityFishGame/Build/UnityFishGame.xcframework; sourceTree = SOURCE_ROOT; };
+		A7C100000000000000000003 /* UnityFishGame/Build/UnityFishGame-iOS/Data */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "UnityFishGame/Build/UnityFishGame-iOS/Data"; sourceTree = SOURCE_ROOT; };
 		B0A651A2306B49ED002A0C6D /* chinsekid.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = chinsekid.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		B0A651A4306B49ED002A0C6D /* chinsekid */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			explicitFolders = (
+				"Resources/拼音播放资源",
+			);
 			path = chinsekid;
 			sourceTree = "<group>";
 		};
@@ -23,6 +48,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A7C100000000000000000006 /* UnityFishGame/Build/UnityFishGame.xcframework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -33,6 +59,8 @@
 			isa = PBXGroup;
 			children = (
 				B0A651A4306B49ED002A0C6D /* chinsekid */,
+				A7C100000000000000000001 /* UnityFishGame/Build/UnityFishGame.xcframework */,
+				A7C100000000000000000003 /* UnityFishGame/Build/UnityFishGame-iOS/Data */,
 				B0A651A3306B49ED002A0C6D /* Products */,
 			);
 			sourceTree = "<group>";
@@ -55,6 +83,8 @@
 				B0A6519E306B49ED002A0C6D /* Sources */,
 				B0A6519F306B49ED002A0C6D /* Frameworks */,
 				B0A651A0306B49ED002A0C6D /* Resources */,
+				A7C100000000000000000008 /* Select Unity Data for Simulator */,
+				A7C100000000000000000005 /* Embed Unity Frameworks */,
 			);
 			buildRules = (
 			);
@@ -64,8 +94,6 @@
 				B0A651A4306B49ED002A0C6D /* chinsekid */,
 			);
 			name = chinsekid;
-			packageProductDependencies = (
-			);
 			productName = chinsekid;
 			productReference = B0A651A2306B49ED002A0C6D /* chinsekid.app */;
 			productType = "com.apple.product-type.application";
@@ -86,10 +114,10 @@
 				};
 			};
 			buildConfigurationList = B0A6519D306B49ED002A0C6D /* Build configuration list for PBXProject "chinsekid" */;
-			developmentRegion = en;
+			developmentRegion = "zh-Hans";
 			hasScannedForEncodings = 0;
 			knownRegions = (
-				en,
+				"zh-Hans",
 				Base,
 			);
 			mainGroup = B0A65199306B49ED002A0C6D;
@@ -109,10 +137,30 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A7C100000000000000000004 /* UnityFishGame/Build/UnityFishGame-iOS/Data in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		A7C100000000000000000008 /* Select Unity Data for Simulator */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/UnityFishGame/Build/UnityFishGame-iOS-Simulator/Data",
+			);
+			name = "Select Unity Data for Simulator";
+			outputPaths = (
+				"$(TARGET_BUILD_DIR)/$(UNLOCALIZED_RESOURCES_FOLDER_PATH)/Data/boot.config",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if [ \"$PLATFORM_NAME\" = \"iphonesimulator\" ]; then\n  /usr/bin/ditto \"$SRCROOT/UnityFishGame/Build/UnityFishGame-iOS-Simulator/Data\" \"$TARGET_BUILD_DIR/$UNLOCALIZED_RESOURCES_FOLDER_PATH/Data\"\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		B0A6519E306B49ED002A0C6D /* Sources */ = {
@@ -255,15 +303,17 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = PTDZDDYCXE;
 				ENABLE_PREVIEWS = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.education";
-				INFOPLIST_KEY_NSCameraUsageDescription = "使用相机拍摄汉字进行识别，或拍摄小朋友头像。头像会保存在本机，识别照片不会保存。";
+				INFOPLIST_KEY_NSCameraUsageDescription = "使用相机拍摄汉字或英语单词进行识别，也可拍摄小朋友头像。头像会保存在本机，识别照片不会保存。";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "录制拼音和英语单词听写读音，供孩子之后练习使用。";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 17.6;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -296,15 +346,17 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = PTDZDDYCXE;
 				ENABLE_PREVIEWS = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.education";
-				INFOPLIST_KEY_NSCameraUsageDescription = "使用相机拍摄汉字进行识别，或拍摄小朋友头像。头像会保存在本机，识别照片不会保存。";
+				INFOPLIST_KEY_NSCameraUsageDescription = "使用相机拍摄汉字或英语单词进行识别，也可拍摄小朋友头像。头像会保存在本机，识别照片不会保存。";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "录制拼音和英语单词听写读音，供孩子之后练习使用。";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 17.6;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

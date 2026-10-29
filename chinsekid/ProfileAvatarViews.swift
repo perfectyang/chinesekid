@@ -1,6 +1,7 @@
 import PhotosUI
 import SwiftUI
 import UIKit
+import UniformTypeIdentifiers
 
 struct ProfileAvatarView: View {
     let user: ChildProfile
@@ -29,16 +30,14 @@ struct ProfileAvatarEditor: View {
     let user: ChildProfile
     let onSave: (ChildProfile, UIImage) -> Void
 
-    @State private var showingSourceOptions = false
-    @State private var showingPhotoPicker = false
-    @State private var showingCamera = false
+    @State private var activeSheet: AvatarEditorSheet?
     @State private var cameraUnavailable = false
-    @State private var photoItem: PhotosPickerItem?
     @State private var capturedImage: UIImage?
 
     var body: some View {
         Button {
-            showingSourceOptions = true
+            KeyboardSupport.dismissActiveInput()
+            activeSheet = .sourceOptions
         } label: {
             ProfileAvatarView(user: user, size: 52)
                 .overlay(alignment: .bottomTrailing) {
@@ -51,39 +50,38 @@ struct ProfileAvatarEditor: View {
         }
         .buttonStyle(.plain)
         .accessibilityLabel("更换\(user.name)的头像")
-        .confirmationDialog("更换头像", isPresented: $showingSourceOptions, titleVisibility: .visible) {
-            Button("拍照") {
-                guard UIImagePickerController.isSourceTypeAvailable(.camera) else {
-                    cameraUnavailable = true
-                    return
-                }
-                showingCamera = true
-            }
-            Button("从相册选择") { showingPhotoPicker = true }
-            Button("取消", role: .cancel) {}
-        } message: {
-            Text("为 \(user.name) 选一张喜欢的照片")
-        }
-        .photosPicker(isPresented: $showingPhotoPicker, selection: $photoItem, matching: .images)
-        .sheet(isPresented: $showingCamera) {
-            ProfileCameraPicker(image: $capturedImage)
-                .ignoresSafeArea()
-        }
-        .onChange(of: photoItem) { _, item in
-            guard let item else { return }
-            Task {
-                do {
-                    guard let data = try await item.loadTransferable(type: Data.self),
-                          let image = UIImage(data: data) else {
-                        cameraUnavailable = true
-                        return
+        .sheet(item: $activeSheet) { sheet in
+            Group {
+                switch sheet {
+                case .sourceOptions:
+                    AvatarSourceOptionsSheet(
+                        userName: user.name,
+                        onCamera: {
+                            guard UIImagePickerController.isSourceTypeAvailable(.camera) else {
+                                activeSheet = nil
+                                cameraUnavailable = true
+                                return
+                            }
+                            activeSheet = .camera
+                        },
+                        onPhotoLibrary: { activeSheet = .photoLibrary },
+                        onCancel: { activeSheet = nil }
+                    )
+                case .photoLibrary:
+                    PhotoLibraryPicker { data in
+                        activeSheet = nil
+                        guard let data, let image = UIImage(data: data) else { return }
+                        onSave(user, image)
                     }
-                    onSave(user, image)
-                    photoItem = nil
-                } catch {
-                    cameraUnavailable = true
+                    .ignoresSafeArea()
+                case .camera:
+                    ProfileCameraPicker(image: $capturedImage)
+                        .ignoresSafeArea()
                 }
             }
+            .presentationDetents(sheet == .sourceOptions ? [.height(250)] : [.large])
+            .presentationDragIndicator(sheet == .sourceOptions ? .visible : .hidden)
+            .interactiveDismissDisabled()
         }
         .onChange(of: capturedImage) { _, image in
             guard let image else { return }
@@ -95,6 +93,95 @@ struct ProfileAvatarEditor: View {
         } message: {
             Text("当前设备无法打开相机或读取照片，请再试一次。")
         }
+    }
+
+}
+
+private enum AvatarEditorSheet: String, Identifiable {
+    case sourceOptions
+    case photoLibrary
+    case camera
+
+    var id: String { rawValue }
+}
+
+struct PhotoLibraryPicker: UIViewControllerRepresentable {
+    let onSelect: (Data?) -> Void
+
+    func makeUIViewController(context: Context) -> PHPickerViewController {
+        var configuration = PHPickerConfiguration(photoLibrary: .shared())
+        configuration.filter = .images
+        configuration.selectionLimit = 1
+
+        let picker = PHPickerViewController(configuration: configuration)
+        picker.delegate = context.coordinator
+        return picker
+    }
+
+    func updateUIViewController(_ controller: PHPickerViewController, context: Context) {}
+
+    func makeCoordinator() -> Coordinator {
+        Coordinator(onSelect: onSelect)
+    }
+
+    final class Coordinator: NSObject, PHPickerViewControllerDelegate {
+        private let onSelect: (Data?) -> Void
+
+        init(onSelect: @escaping (Data?) -> Void) {
+            self.onSelect = onSelect
+        }
+
+        func picker(_ picker: PHPickerViewController, didFinishPicking results: [PHPickerResult]) {
+            guard let provider = results.first?.itemProvider else {
+                onSelect(nil)
+                return
+            }
+
+            provider.loadDataRepresentation(forTypeIdentifier: UTType.image.identifier) { [onSelect = self.onSelect] data, _ in
+                DispatchQueue.main.async {
+                    onSelect(data)
+                }
+            }
+        }
+    }
+}
+
+private struct AvatarSourceOptionsSheet: View {
+    let userName: String
+    let onCamera: () -> Void
+    let onPhotoLibrary: () -> Void
+    let onCancel: () -> Void
+
+    var body: some View {
+        VStack(spacing: 12) {
+            Text("更换头像")
+                .font(.system(size: 19, weight: .heavy, design: .rounded))
+                .foregroundStyle(KidsTheme.ink)
+            Text("为 \(userName) 选一张喜欢的照片")
+                .font(.system(size: 14, weight: .medium, design: .rounded))
+                .foregroundStyle(KidsTheme.muted)
+            Button(action: onCamera) {
+                Label("拍照", systemImage: "camera")
+                    .frame(maxWidth: .infinity)
+                    .frame(height: 44)
+            }
+            .buttonStyle(.borderedProminent)
+            .tint(KidsTheme.mint)
+            .foregroundStyle(KidsTheme.ink)
+            Button(action: onPhotoLibrary) {
+                Label("从相册选择", systemImage: "photo")
+                    .frame(maxWidth: .infinity)
+                    .frame(height: 44)
+            }
+            .buttonStyle(.bordered)
+            .tint(KidsTheme.ink)
+            Button("取消", action: onCancel)
+                .font(.system(size: 14, weight: .bold, design: .rounded))
+                .foregroundStyle(KidsTheme.muted)
+        }
+        .padding(20)
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
+        .background(StorybookBackground())
     }
 }
 

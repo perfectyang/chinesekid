@@ -1,0 +1,358 @@
+{
+  "name": "复韵母",
+  "symbol": [
+    "ɑi",
+    "ei",
+    "ui",
+    "ɑo",
+    "ou",
+    "iu",
+    "ie",
+    "üe",
+    "er"
+  ],
+  "phonemes": [
+    {
+      "id": 37,
+      "symbol": "ɑi",
+      "label": "",
+      "image": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme-image/efb81de4cf4854eebbb8ea7312dbeefd.png",
+      "eg_image": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme-image/df678f9f3ab5d6eb03e80a766ecd9e49.png",
+      "audio": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme/ai1.m4a",
+      "phoneme": "ɑi",
+      "tips": "从“ɑ”开始，舌尖抵住下齿背，发音响亮，然后舌面向“i”滑动，口型由开到微合。",
+      "rule": "“ɑ”占中格，“i”占中上格。书写时注意两个字母要紧凑匀称。",
+      "intro": "姐姐弟弟比高矮 ɑi ɑi ɑi",
+      "tones": [
+        {
+          "id": 1482,
+          "symbol": "āi",
+          "phoneme": "ai1",
+          "audio": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme/ai1.m4a"
+        },
+        {
+          "id": 1483,
+          "symbol": "ái",
+          "phoneme": "ai2",
+          "audio": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme/ai2.m4a"
+        },
+        {
+          "id": 1484,
+          "symbol": "ǎi",
+          "phoneme": "ai3",
+          "audio": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme/ai3.m4a"
+        },
+        {
+          "id": 1485,
+          "symbol": "ài",
+          "phoneme": "ai4",
+          "audio": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme/ai4.m4a"
+        }
+      ]
+    },
+    {
+      "id": 38,
+      "symbol": "ei",
+      "label": "",
+      "image": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme-image/94635f6fbd14955c9f16e73c0e6970a3.png",
+      "eg_image": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme-image/c74a54708eb7e2f75d7bea64019a48cd.png",
+      "audio": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme/ei1.m4a",
+      "phoneme": "ei",
+      "tips": "先发“e”音，向“i”滑动，舌位要比单念“e”靠前一些，发音也更响亮。",
+      "rule": "“e”占中格，“i”占中上格。书写时注意两个字母要紧凑匀称。",
+      "intro": "妈妈喂妹妹 ei ei ei",
+      "tones": [
+        {
+          "id": 1759,
+          "symbol": "ēi",
+          "phoneme": "ei1",
+          "audio": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme/ei1.m4a"
+        },
+        {
+          "id": 1475,
+          "symbol": "éi",
+          "phoneme": "ei2",
+          "audio": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme/ei2.mp3"
+        },
+        {
+          "id": 1474,
+          "symbol": "ěi",
+          "phoneme": "ei3",
+          "audio": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme/ei3.mp3"
+        },
+        {
+          "id": 1473,
+          "symbol": "èi",
+          "phoneme": "ei4",
+          "audio": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme/ei4.mp3"
+        }
+      ]
+    },
+    {
+      "id": 39,
+      "symbol": "ui",
+      "label": "",
+      "image": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme-image/53edb03ea1dfa19f0ae9f2adb4afacc0.png",
+      "eg_image": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme-image/c487d61be193afaf4e2e36fb3e1b6a69.png",
+      "audio": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme/ui1.mp3",
+      "phoneme": "ui",
+      "tips": "先发“u”的音，接着发“ei”，口形由圆到扁。",
+      "rule": "“u”占中格，“i”占中上格。书写时注意两个字母要紧凑匀称。",
+      "intro": "一条围巾 ui ui ui",
+      "tones": [
+        {
+          "id": 2965,
+          "symbol": "uī",
+          "phoneme": "ui1",
+          "audio": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme/ui1.mp3"
+        },
+        {
+          "id": 2966,
+          "symbol": "uí",
+          "phoneme": "ui2",
+          "audio": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme/ui2.mp3"
+        },
+        {
+          "id": 2967,
+          "symbol": "uǐ",
+          "phoneme": "ui3",
+          "audio": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme/ui3.mp3"
+        },
+        {
+          "id": 2968,
+          "symbol": "uì",
+          "phoneme": "ui4",
+          "audio": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme/ui4.mp3"
+        }
+      ]
+    },
+    {
+      "id": 40,
+      "symbol": "ɑo",
+      "label": "",
+      "image": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme-image/0de7de0617d2cc4e3ab9827583e2c4db.png",
+      "eg_image": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme-image/950bec4dcc91694dc7183fb7a2cb485f.png",
+      "audio": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme/ao1.m4a",
+      "phoneme": "ao",
+      "tips": "先发“ɑ”的音，接着舌头逐渐抬高，发出近似“u”的音，要轻短。",
+      "rule": "“ɑ、o”都占中格。书写时注意两个字母要紧凑匀称。",
+      "intro": "一件棉袄 ɑo ɑo ɑo",
+      "tones": [
+        {
+          "id": 1493,
+          "symbol": "āo",
+          "phoneme": "ao1",
+          "audio": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme/ao1.m4a"
+        },
+        {
+          "id": 1494,
+          "symbol": "áo",
+          "phoneme": "ao2",
+          "audio": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme/ao2.m4a"
+        },
+        {
+          "id": 1495,
+          "symbol": "ǎo",
+          "phoneme": "ao3",
+          "audio": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme/ao3.m4a"
+        },
+        {
+          "id": 1496,
+          "symbol": "ào",
+          "phoneme": "ao4",
+          "audio": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme/ao4.m4a"
+        }
+      ]
+    },
+    {
+      "id": 41,
+      "symbol": "ou",
+      "label": "",
+      "image": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme-image/81c6c35105306f8a21054b3fea63ac0e.png",
+      "eg_image": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme-image/8f4d0afaeb5c791d18928dacf1718b4e.png",
+      "audio": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme/ou1.m4a",
+      "phoneme": "ou",
+      "tips": "先发“o”音，接着嘴唇逐渐收拢，发出“u”音。",
+      "rule": "“o、u”都占中格。书写时注意这两个字母要紧凑匀称。",
+      "intro": "一只海鸥 ou ou ou",
+      "tones": [
+        {
+          "id": 2314,
+          "symbol": "ōu",
+          "phoneme": "ou1",
+          "audio": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme/ou1.m4a"
+        },
+        {
+          "id": 1472,
+          "symbol": "óu",
+          "phoneme": "ou2",
+          "audio": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme/ou2.mp3"
+        },
+        {
+          "id": 2315,
+          "symbol": "ǒu",
+          "phoneme": "ou3",
+          "audio": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme/ou3.m4a"
+        },
+        {
+          "id": 2316,
+          "symbol": "òu",
+          "phoneme": "ou4",
+          "audio": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme/ou4.m4a"
+        }
+      ]
+    },
+    {
+      "id": 42,
+      "symbol": "iu",
+      "label": "",
+      "image": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme-image/f6279a56f8cd5989d282af8df9455354.png",
+      "eg_image": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme-image/9a29a3123360d21e23d931f00aab77dd.png",
+      "audio": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme/iu1.mp3",
+      "phoneme": "iu",
+      "tips": "先发“i”的音，然后逐渐把声音过渡到“u”。“iu”要比单韵母“u”的口形开一些。",
+      "rule": "“i”占中上格，“u”占中格。书写时注意两个字母要紧凑匀称。",
+      "intro": "气球气球 iu iu iu",
+      "tones": [
+        {
+          "id": 2969,
+          "symbol": "iū",
+          "phoneme": "iu1",
+          "audio": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme/iu1.mp3"
+        },
+        {
+          "id": 2970,
+          "symbol": "iú",
+          "phoneme": "iu2",
+          "audio": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme/iu2.mp3"
+        },
+        {
+          "id": 2971,
+          "symbol": "iǔ",
+          "phoneme": "iu3",
+          "audio": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme/iu3.mp3"
+        },
+        {
+          "id": 2972,
+          "symbol": "iù",
+          "phoneme": "iu4",
+          "audio": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme/iu4.mp3"
+        }
+      ]
+    },
+    {
+      "id": 43,
+      "symbol": "ie",
+      "label": "",
+      "image": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme-image/9f84dc1bb69def4c9d78dbba698d2d45.png",
+      "eg_image": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme-image/0861092f04eab5c7db09473bd51687ff.png",
+      "audio": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme/ie1.mp3",
+      "phoneme": "ie",
+      "tips": "发“ie”时，由“i”开始，接着发“e”，口腔半开，中间气不断。",
+      "rule": "先把“i”写在中上格，再把“e”写在中格。书写时注意两个字母要紧凑匀称。",
+      "intro": "一只蝴蝶 ie ie ie",
+      "tones": [
+        {
+          "id": 2973,
+          "symbol": "iē",
+          "phoneme": "ie1",
+          "audio": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme/ie1.mp3"
+        },
+        {
+          "id": 2974,
+          "symbol": "ié",
+          "phoneme": "ie2",
+          "audio": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme/ie2.mp3"
+        },
+        {
+          "id": 2975,
+          "symbol": "iě",
+          "phoneme": "ie3",
+          "audio": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme/ie3.mp3"
+        },
+        {
+          "id": 2976,
+          "symbol": "iè",
+          "phoneme": "ie4",
+          "audio": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme/ie4.mp3"
+        }
+      ]
+    },
+    {
+      "id": 44,
+      "symbol": "üe",
+      "label": "",
+      "image": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme-image/3a57b86ddd5891095f03473cab0570af.png",
+      "eg_image": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme-image/41eddcd2b90ccd294ae9ba9d0579d02f.png",
+      "audio": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme/ve1.mp3",
+      "phoneme": "üe",
+      "tips": "先发“ü”音，然后向“e”滑动，口形由合到半开，中间气不断。",
+      "rule": "先把“ü”写在中上格，再把“e”写在中格。书写时注意两个字母要紧凑匀称。",
+      "intro": "一弯新月 üe üe üe",
+      "tones": [
+        {
+          "id": 2977,
+          "symbol": "üē",
+          "phoneme": "ve1",
+          "audio": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme/ve1.mp3"
+        },
+        {
+          "id": 1471,
+          "symbol": "üé",
+          "phoneme": "ve2",
+          "audio": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme/ve2.mp3"
+        },
+        {
+          "id": 1470,
+          "symbol": "üě",
+          "phoneme": "ve3",
+          "audio": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme/ve3.mp3"
+        },
+        {
+          "id": 2980,
+          "symbol": "üè",
+          "phoneme": "ve4",
+          "audio": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme/ve4.mp3"
+        }
+      ]
+    },
+    {
+      "id": 45,
+      "symbol": "er",
+      "label": "特殊韵母",
+      "image": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme-image/a71bd0fc0ef0ac6a9b103f796d1ab11a.png",
+      "eg_image": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme-image/380acf6e676f4a207398308f2be93a59.png",
+      "audio": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme/er1.mp3",
+      "phoneme": "er",
+      "tips": "“e”表示发音时舌头的位置，“r”表示卷舌的动作，口形张凯，舌尖卷起。",
+      "rule": "“e、r”都占中格。书写时注意两个字母要紧凑匀称。",
+      "intro": "大象耳朵 er er er",
+      "tones": [
+        {
+          "id": 1469,
+          "symbol": "ēr",
+          "phoneme": "er1",
+          "audio": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme/er1.mp3"
+        },
+        {
+          "id": 1763,
+          "symbol": "ér",
+          "phoneme": "er2",
+          "audio": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme/er2.m4a"
+        },
+        {
+          "id": 1764,
+          "symbol": "ěr",
+          "phoneme": "er3",
+          "audio": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme/er3.m4a"
+        },
+        {
+          "id": 1765,
+          "symbol": "èr",
+          "phoneme": "er4",
+          "audio": "https://ywld-1315558954.51jiaoxi.com/yw-static/mp3/phoneme/er4.m4a"
+        }
+      ]
+    }
+  ]
+}

@@ -17,15 +17,42 @@ private struct StudySession: Identifiable {
     let visibleOrder: [String]
 }
 
+private enum ContentSheet: String, Identifiable {
+    case importCharacters
+    case manualEntry
+    case profiles
+    case homeModules
+
+    var id: String { rawValue }
+
+    var detents: Set<PresentationDetent> {
+        switch self {
+        case .importCharacters, .manualEntry:
+            [.large]
+        case .profiles:
+            [.medium, .large]
+        case .homeModules:
+            [.medium]
+        }
+    }
+}
+
 struct ContentView: View {
     @StateObject private var app = AppModel()
     @State private var selectedTab = 0
     @State private var studySession: StudySession?
     @State private var showingListeningGame = false
     @State private var showingArithmeticGame = false
-    @State private var showingImport = false
-    @State private var showingManualEntry = false
-    @State private var showingProfiles = false
+    @State private var showingEquationBalanceGame = false
+    @State private var showingPinyinModule = false
+    @State private var showingHanziDecomposition = false
+    @State private var showingAlphabetModule = false
+    @State private var showingSnakeGame = false
+    @State private var showingFishGame = false
+    @State private var showingSnakeTicketPractice = false
+    @State private var showingParentFishSettings = false
+    @State private var activeSheet: ContentSheet?
+    @Environment(\.scenePhase) private var scenePhase
 
     var body: some View {
         ZStack {
@@ -40,9 +67,28 @@ struct ContentView: View {
                         },
                         startListeningGame: { showingListeningGame = true },
                         startArithmeticGame: { showingArithmeticGame = true },
-                        importWords: { showingImport = true },
-                        manualEntry: { showingManualEntry = true },
-                        chooseProfile: { showingProfiles = true }
+                        startEquationBalanceGame: { showingEquationBalanceGame = true },
+                        startPinyinModule: { showingPinyinModule = true },
+                        startHanziDecomposition: { showingHanziDecomposition = true },
+                        startAlphabetModule: { showingAlphabetModule = true },
+                        startSnakeGame: {
+                            app.refreshSnakeRewardStatus()
+                            if app.snakeRewardStatus.hasTicket {
+                                showingSnakeGame = true
+                            } else {
+                                showingSnakeTicketPractice = true
+                            }
+                        },
+                        startFishGame: {
+                            app.refreshSnakeRewardStatus()
+                            showingFishGame = true
+                        },
+                        openHomeModuleSettings: { activeSheet = .homeModules },
+                        showLibrary: { selectedTab = 1 },
+                        importWords: { activeSheet = .importCharacters },
+                        manualEntry: { activeSheet = .manualEntry },
+                        chooseProfile: { activeSheet = .profiles },
+                        openParentFishSettings: { showingParentFishSettings = true }
                     )
                 } else {
                     LibraryScreen(app: app, startStudy: { glyph, visibleOrder in
@@ -52,6 +98,9 @@ struct ContentView: View {
             }
         }
         .tint(AppPalette.orange)
+        // The app uses a fixed light palette; keep system text controls readable
+        // when the iPad itself is set to Dark Mode.
+        .preferredColorScheme(.light)
         .safeAreaInset(edge: .bottom, spacing: 0) {
             BottomNavigation(selectedTab: $selectedTab)
         }
@@ -63,27 +112,62 @@ struct ContentView: View {
             ListeningGameFlowScreen(app: app) {
                 showingListeningGame = false
                 DispatchQueue.main.asyncAfter(deadline: .now() + 0.35) {
-                    showingImport = true
+                    activeSheet = .importCharacters
                 }
             }
         }
         .fullScreenCover(isPresented: $showingArithmeticGame) {
-            ArithmeticGameScreen()
+            ArithmeticGameScreen(app: app)
         }
-        .sheet(isPresented: $showingImport) {
-            OCRImportScreen(app: app)
-                .presentationDetents([.large])
-                .presentationDragIndicator(.visible)
+        .fullScreenCover(isPresented: $showingEquationBalanceGame) {
+            EquationBalanceGameScreen(app: app)
         }
-        .sheet(isPresented: $showingManualEntry) {
-            ManualCharacterEntryScreen(app: app)
-                .presentationDetents([.large])
-                .presentationDragIndicator(.visible)
+        .fullScreenCover(isPresented: $showingPinyinModule) {
+            PinyinModuleScreen(app: app)
         }
-        .sheet(isPresented: $showingProfiles) {
-            ProfileScreen(app: app)
-                .presentationDetents([.medium, .large])
-                .presentationDragIndicator(.visible)
+        .fullScreenCover(isPresented: $showingHanziDecomposition) {
+            HanziDecompositionModuleScreen(app: app)
+        }
+        .fullScreenCover(isPresented: $showingAlphabetModule) {
+            AlphabetModuleScreen(app: app)
+        }
+        .fullScreenCover(isPresented: $showingSnakeGame) {
+            SnakeGameScreen(app: app)
+        }
+        .fullScreenCover(isPresented: $showingFishGame) {
+            FishGameScreen(app: app)
+        }
+        .fullScreenCover(isPresented: $showingSnakeTicketPractice) {
+            AlphabetModuleScreen(
+                app: app,
+                snakeTicketPractice: true,
+                onSnakeTicketEarned: {
+                    showingSnakeTicketPractice = false
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.4) {
+                        showingSnakeGame = true
+                    }
+                }
+            )
+        }
+        .fullScreenCover(isPresented: $showingParentFishSettings) {
+            ParentFishSettingsScreen(app: app)
+        }
+        .sheet(item: $activeSheet) { sheet in
+            Group {
+                switch sheet {
+                case .importCharacters:
+                    OCRImportScreen(app: app)
+                case .manualEntry:
+                    ManualCharacterEntryScreen(app: app)
+                case .profiles:
+                    ProfileScreen(app: app)
+                case .homeModules:
+                    HomeModuleSettingsSheet(app: app)
+                }
+            }
+            .presentationDetents(sheet.detents)
+            .presentationDragIndicator(.visible)
+            .interactiveDismissDisabled()
         }
         .alert("暂时打不开小字典", isPresented: Binding(
             get: { app.errorMessage != nil },
@@ -93,135 +177,186 @@ struct ContentView: View {
         } message: {
             Text(app.errorMessage ?? "请稍后再试。")
         }
+        .onChange(of: scenePhase) { _, phase in
+            if phase == .active { app.refreshSnakeRewardStatus() }
+        }
     }
 
     private func beginStudy(startingWith glyph: String? = nil, visibleOrder: [String] = []) {
         studySession = StudySession(startingGlyph: glyph, visibleOrder: visibleOrder)
     }
+
 }
 
 private struct HomeScreen: View {
-    let app: AppModel
+    @ObservedObject var app: AppModel
     let startStudy: () -> Void
     let openCharacter: (String, [String]) -> Void
     let startListeningGame: () -> Void
     let startArithmeticGame: () -> Void
+    let startEquationBalanceGame: () -> Void
+    let startPinyinModule: () -> Void
+    let startHanziDecomposition: () -> Void
+    let startAlphabetModule: () -> Void
+    let startSnakeGame: () -> Void
+    let startFishGame: () -> Void
+    let openHomeModuleSettings: () -> Void
+    let showLibrary: () -> Void
     let importWords: () -> Void
     let manualEntry: () -> Void
     let chooseProfile: () -> Void
+    let openParentFishSettings: () -> Void
 
     var body: some View {
         ScrollView {
-            VStack(alignment: .leading, spacing: 24) {
+            VStack(alignment: .leading, spacing: 16) {
                 HStack {
-                    VStack(alignment: .leading, spacing: 4) {
+                    VStack(alignment: .leading, spacing: 3) {
                         Text("嗨，\(app.currentUser.name)！")
-                            .font(.system(size: 27, weight: .heavy, design: .rounded))
+                            .font(.system(size: 24, weight: .heavy, design: .rounded))
                             .foregroundStyle(AppPalette.ink)
                         Text("今天也来发现汉字宝藏吧")
-                            .font(.system(size: 16, weight: .medium, design: .rounded))
+                            .font(.system(size: 14, weight: .medium, design: .rounded))
                             .foregroundStyle(AppPalette.muted)
                     }
                     Spacer()
-                    Button(action: chooseProfile) {
-                        ProfileAvatarView(user: app.currentUser, size: 56)
-                    }
-                    .buttonStyle(.plain)
-                    .accessibilityLabel("切换小朋友档案")
-                }
-
-                AdventureBanner(startStudy: startStudy)
-
-                HStack(spacing: 14) {
-                    ProgressTile(
-                        value: "\(app.learnedCount)", label: "认识的字",
-                        symbol: "sparkles", color: AppPalette.mint
-                    )
-                    ProgressTile(
-                        value: "\(app.dueCount)", label: "等你复习",
-                        symbol: "clock.fill", color: AppPalette.lilac
-                    )
-                }
-
-                ListeningGameBanner(action: startListeningGame)
-                ArithmeticGameBanner(action: startArithmeticGame)
-
-                VStack(alignment: .leading, spacing: 13) {
-                    HStack {
-                        Text("去收集新汉字")
-                            .font(.system(size: 21, weight: .heavy, design: .rounded))
-                            .foregroundStyle(AppPalette.ink)
-                        Spacer()
-                        Text("拍一拍，找一找")
-                            .font(.system(size: 13, weight: .semibold, design: .rounded))
-                            .foregroundStyle(AppPalette.muted)
-                    }
-                    Button(action: importWords) {
-                        HStack(spacing: 16) {
-                            ZStack {
-                                RoundedRectangle(cornerRadius: 18).fill(.white.opacity(0.7))
-                                    .frame(width: 58, height: 58)
-                                Image(systemName: "camera.macro")
-                                    .font(.system(size: 27, weight: .bold))
-                                    .foregroundStyle(AppPalette.ink)
-                            }
-                            VStack(alignment: .leading, spacing: 4) {
-                                Text("拍下身边的字")
-                                    .font(.system(size: 18, weight: .heavy, design: .rounded))
-                                Text("从绘本、路牌里发现汉字")
-                                    .font(.system(size: 14, weight: .medium, design: .rounded))
-                                    .opacity(0.8)
-                            }
-                            Spacer()
-                            Image(systemName: "arrow.right.circle.fill")
-                                .font(.system(size: 27))
+                    HStack(spacing: 8) {
+                        Button(action: openHomeModuleSettings) {
+                            Image(systemName: "gearshape.fill")
+                                .font(.system(size: 18, weight: .bold))
+                                .foregroundStyle(AppPalette.ink)
+                                .frame(width: 46, height: 46)
+                                .background(.white.opacity(0.82), in: Circle())
+                                .contentShape(Circle())
                         }
-                        .foregroundStyle(AppPalette.ink)
-                        .padding(16)
-                        .background(AppPalette.yellow, in: RoundedRectangle(cornerRadius: 25))
+                        .buttonStyle(.plain)
+                        .accessibilityLabel("首页模块设置")
+                        ProfileAvatarView(user: app.currentUser, size: 48)
+                            .frame(width: 52, height: 52)
+                            .contentShape(Circle())
+                            .onTapGesture(perform: chooseProfile)
+                            .onLongPressGesture(minimumDuration: 3, perform: openParentFishSettings)
+                            .accessibilityAddTraits(.isButton)
+                        .accessibilityLabel("切换小朋友档案")
                     }
-                    .buttonStyle(.plain)
-                    Button(action: manualEntry) {
-                        HStack(spacing: 9) {
-                            Image(systemName: "keyboard")
-                            Text("也可以手动输入一个生字")
-                            Spacer()
-                            Image(systemName: "arrow.right")
-                        }
-                        .font(.system(size: 14, weight: .bold, design: .rounded))
-                        .foregroundStyle(AppPalette.ink.opacity(0.82))
-                        .padding(.horizontal, 16).frame(height: 48)
-                        .background(.white, in: RoundedRectangle(cornerRadius: 16))
-                    }
-                    .buttonStyle(.plain)
                 }
 
-                VStack(alignment: .leading, spacing: 13) {
-                    HStack {
-                        Text("我的汉字图鉴")
-                            .font(.system(size: 21, weight: .heavy, design: .rounded))
+                if app.isHomeModuleVisible(.hanziExploration) {
+                    AdventureBanner(startStudy: startStudy)
+                }
+
+                if app.isHomeModuleVisible(.listening) {
+                    ListeningGameBanner(action: startListeningGame)
+                }
+                if app.isHomeModuleVisible(.arithmetic) {
+                    ArithmeticGameBanner(action: startArithmeticGame)
+                }
+                if app.isHomeModuleVisible(.equationBalance) {
+                    EquationBalanceGameBanner(action: startEquationBalanceGame)
+                }
+                if app.isHomeModuleVisible(.pinyin) {
+                    PinyinModuleBanner(action: startPinyinModule)
+                }
+                if app.isHomeModuleVisible(.hanziDecomposition) {
+                    HanziDecompositionBanner(action: startHanziDecomposition)
+                }
+                if app.isHomeModuleVisible(.alphabet) {
+                    AlphabetModuleBanner(action: startAlphabetModule, studiedCount: app.studiedAlphabetLetters.count)
+                }
+                if app.isHomeModuleVisible(.snake) {
+                    SnakeGameBanner(status: app.snakeRewardStatus, action: startSnakeGame)
+                }
+                if app.isHomeModuleVisible(.fish) {
+                    FishGameBanner(status: app.snakeRewardStatus, cost: app.fishTicketSettings.ticketsPerGame, action: startFishGame)
+                }
+
+                if app.isHomeModuleVisible(.hanziExploration) {
+                    VStack(alignment: .leading, spacing: 10) {
+                        HStack {
+                            Text("去收集新汉字")
+                                .font(.system(size: 19, weight: .heavy, design: .rounded))
+                                .foregroundStyle(AppPalette.ink)
+                            Spacer()
+                            Text("拍一拍，找一找")
+                                .font(.system(size: 12, weight: .semibold, design: .rounded))
+                                .foregroundStyle(AppPalette.muted)
+                        }
+                        Button(action: importWords) {
+                            HStack(spacing: 12) {
+                                ZStack {
+                                    RoundedRectangle(cornerRadius: 18).fill(.white.opacity(0.7))
+                                        .frame(width: 48, height: 48)
+                                    Image(systemName: "camera.macro")
+                                        .font(.system(size: 23, weight: .bold))
+                                        .foregroundStyle(AppPalette.ink)
+                                }
+                                VStack(alignment: .leading, spacing: 4) {
+                                    Text("拍下身边的字")
+                                        .font(.system(size: 16, weight: .heavy, design: .rounded))
+                                    Text("从绘本、路牌里发现汉字")
+                                        .font(.system(size: 12, weight: .medium, design: .rounded))
+                                        .opacity(0.8)
+                                }
+                                Spacer()
+                                Image(systemName: "arrow.right.circle.fill")
+                                    .font(.system(size: 24))
+                            }
                             .foregroundStyle(AppPalette.ink)
-                        Spacer()
-                        Text("\(app.characters.count) 个")
+                            .padding(13)
+                            .background(AppPalette.yellow, in: RoundedRectangle(cornerRadius: 22))
+                        }
+                        .buttonStyle(.plain)
+                        Button(action: manualEntry) {
+                            HStack(spacing: 9) {
+                                Image(systemName: "keyboard")
+                                Text("也可以手动输入一个生字")
+                                Spacer()
+                                Image(systemName: "arrow.right")
+                            }
                             .font(.system(size: 14, weight: .bold, design: .rounded))
-                            .foregroundStyle(AppPalette.muted)
+                            .foregroundStyle(AppPalette.ink.opacity(0.82))
+                            .padding(.horizontal, 15).frame(height: 44)
+                            .background(.white, in: RoundedRectangle(cornerRadius: 16))
+                        }
+                        .buttonStyle(.plain)
                     }
-                    if app.characters.isEmpty {
-                        EmptyCollectionCard(importWords: importWords)
-                    } else {
-                        LazyVGrid(columns: [GridItem(.adaptive(minimum: 84), spacing: 12)], spacing: 12) {
-                            ForEach(Array(app.characters.prefix(8).enumerated()), id: \.element.glyph) { index, item in
-                                CharacterTile(item: item, color: tileColor(index)) {
-                                    openCharacter(item.glyph, Array(app.characters.prefix(8)).map(\.glyph))
+
+                    VStack(alignment: .leading, spacing: 10) {
+                        HStack {
+                            Text("我的汉字图鉴")
+                                .font(.system(size: 19, weight: .heavy, design: .rounded))
+                                .foregroundStyle(AppPalette.ink)
+                            Spacer()
+                            Button(action: showLibrary) {
+                                HStack(spacing: 5) {
+                                    Text("\(app.characters.count) 个")
+                                    Image(systemName: "chevron.right")
+                                        .font(.system(size: 10, weight: .heavy))
+                                }
+                                .font(.system(size: 14, weight: .bold, design: .rounded))
+                                .foregroundStyle(AppPalette.muted)
+                                .contentShape(Rectangle())
+                            }
+                            .buttonStyle(.plain)
+                            .accessibilityLabel("打开汉字图鉴，共 \(app.characters.count) 个字")
+                        }
+                        if app.characters.isEmpty {
+                            EmptyCollectionCard(importWords: importWords)
+                        } else {
+                            LazyVGrid(columns: [GridItem(.adaptive(minimum: 84), spacing: 12)], spacing: 12) {
+                                ForEach(Array(app.characters.prefix(8).enumerated()), id: \.element.glyph) { index, item in
+                                    CharacterTile(item: item, color: tileColor(index)) {
+                                        openCharacter(item.glyph, Array(app.characters.prefix(8)).map(\.glyph))
+                                    }
                                 }
                             }
                         }
                     }
                 }
             }
-            .padding(.horizontal, 24)
-            .padding(.top, 20)
-            .padding(.bottom, 24)
+            .padding(.horizontal, 20)
+            .padding(.top, 14)
+            .padding(.bottom, 20)
             .frame(maxWidth: 760)
             .frame(maxWidth: .infinity)
         }
@@ -232,34 +367,280 @@ private struct HomeScreen: View {
     }
 }
 
+private struct HomeModuleSettingsSheet: View {
+    @ObservedObject var app: AppModel
+    @Environment(\.dismiss) private var dismiss
+
+    var body: some View {
+        NavigationStack {
+            Form {
+                Section {
+                    ForEach(HomeModule.allCases) { module in
+                        Toggle(module.title, isOn: Binding(
+                            get: { app.isHomeModuleVisible(module) },
+                            set: { app.setHomeModule(module, isVisible: $0) }
+                        ))
+                        .tint(AppPalette.orange)
+                    }
+                } footer: {
+                    Text("这些显示设置只应用于\(app.currentUser.name)的首页。")
+                }
+            }
+            .scrollContentBackground(.hidden)
+            .background { StorybookBackground() }
+            .navigationTitle("首页模块")
+            .navigationBarTitleDisplayMode(.inline)
+            .toolbar {
+                ToolbarItem(placement: .confirmationAction) {
+                    Button("完成") { dismiss() }
+                        .fontWeight(.bold)
+                }
+            }
+        }
+    }
+}
+
+private struct PinyinModuleBanner: View {
+    let action: () -> Void
+
+    var body: some View {
+        Button(action: action) {
+            HStack(spacing: 12) {
+                ZStack {
+                    RoundedRectangle(cornerRadius: 17).fill(.white.opacity(0.7))
+                        .frame(width: 48, height: 48)
+                    Text("拼")
+                        .font(.system(size: 27, weight: .black, design: .rounded))
+                        .foregroundStyle(AppPalette.ink)
+                }
+                VStack(alignment: .leading, spacing: 4) {
+                    Text("拼音乐园")
+                        .font(.system(size: 16, weight: .heavy, design: .rounded))
+                    Text("认识声母韵母，动手拼读音节")
+                        .font(.system(size: 12, weight: .medium, design: .rounded))
+                        .opacity(0.76)
+                }
+                Spacer()
+                Image(systemName: "play.circle.fill")
+                    .font(.system(size: 25))
+            }
+            .foregroundStyle(AppPalette.ink)
+            .padding(12)
+            .background(AppPalette.blue.opacity(0.72), in: RoundedRectangle(cornerRadius: 21))
+            .shadow(color: AppPalette.blue.opacity(0.18), radius: 9, x: 0, y: 5)
+        }
+        .buttonStyle(.plain)
+    }
+}
+
+private struct HanziDecompositionBanner: View {
+    let action: () -> Void
+
+    var body: some View {
+        Button(action: action) {
+            HStack(spacing: 12) {
+                ZStack {
+                    RoundedRectangle(cornerRadius: 17).fill(.white.opacity(0.72))
+                        .frame(width: 48, height: 48)
+                    Text("拆")
+                        .font(.system(size: 27, weight: .black, design: .rounded))
+                        .foregroundStyle(AppPalette.ink)
+                }
+                VStack(alignment: .leading, spacing: 4) {
+                    Text("汉字拆解")
+                        .font(.system(size: 16, weight: .heavy, design: .rounded))
+                    Text("按课本册次学结构，也可拆解图鉴生字")
+                        .font(.system(size: 12, weight: .medium, design: .rounded))
+                        .opacity(0.76)
+                }
+                Spacer(minLength: 4)
+                Image(systemName: "arrow.right.circle.fill")
+                    .font(.system(size: 25))
+            }
+            .foregroundStyle(AppPalette.ink)
+            .padding(12)
+            .background(AppPalette.mint.opacity(0.82), in: RoundedRectangle(cornerRadius: 21))
+            .shadow(color: AppPalette.mint.opacity(0.16), radius: 9, x: 0, y: 5)
+        }
+        .buttonStyle(.plain)
+    }
+}
+
+private struct AlphabetModuleBanner: View {
+    let action: () -> Void
+    let studiedCount: Int
+
+    var body: some View {
+        Button(action: action) {
+            HStack(spacing: 12) {
+                ZStack {
+                    RoundedRectangle(cornerRadius: 17).fill(.white.opacity(0.72))
+                        .frame(width: 48, height: 48)
+                    Text("Aa")
+                        .font(.system(size: 24, weight: .black, design: .rounded))
+                        .foregroundStyle(AppPalette.ink)
+                }
+                VStack(alignment: .leading, spacing: 4) {
+                    Text("英文字母岛")
+                        .font(.system(size: 16, weight: .heavy, design: .rounded))
+                    Text("听字母、认大小写、玩听音挑战 · \(studiedCount)/26")
+                        .font(.system(size: 12, weight: .medium, design: .rounded))
+                        .opacity(0.76)
+                }
+                Spacer(minLength: 4)
+                Image(systemName: "play.circle.fill")
+                    .font(.system(size: 25))
+            }
+            .foregroundStyle(AppPalette.ink)
+            .padding(12)
+            .background(AppPalette.blue.opacity(0.68), in: RoundedRectangle(cornerRadius: 21))
+            .shadow(color: AppPalette.blue.opacity(0.18), radius: 9, x: 0, y: 5)
+        }
+        .buttonStyle(.plain)
+        .accessibilityLabel("英文字母岛，已认识 \(studiedCount) 个字母，共 26 个")
+    }
+}
+
+private struct SnakeGameBanner: View {
+    let status: SnakeRewardStatus
+    let action: () -> Void
+
+    private var subtitle: String {
+        if status.hasTicket { return "已攒 \(status.ticketCount) 张游戏券，可以连续玩几局" }
+        if status.hasPlayed { return "游戏券已用完，再练字母就能获得新券" }
+        return "答对 26 个字母练习，获得一张游戏券"
+    }
+
+    var body: some View {
+        Button(action: action) {
+            HStack(spacing: 12) {
+                ZStack {
+                    RoundedRectangle(cornerRadius: 17).fill(.white.opacity(0.72))
+                        .frame(width: 48, height: 48)
+                    Text("🐍")
+                        .font(.system(size: 27))
+                }
+                VStack(alignment: .leading, spacing: 4) {
+                    Text("小蛇闯关")
+                        .font(.system(size: 16, weight: .heavy, design: .rounded))
+                    Text(subtitle)
+                        .font(.system(size: 12, weight: .medium, design: .rounded))
+                        .opacity(0.76)
+                }
+                Spacer(minLength: 4)
+                Image(systemName: status.hasTicket ? "play.circle.fill" : "lock.circle.fill")
+                    .font(.system(size: 25))
+            }
+            .foregroundStyle(AppPalette.ink)
+            .padding(12)
+            .background(AppPalette.yellow.opacity(0.82), in: RoundedRectangle(cornerRadius: 21))
+            .shadow(color: AppPalette.yellow.opacity(0.2), radius: 9, x: 0, y: 5)
+        }
+        .buttonStyle(.plain)
+        .accessibilityLabel("小蛇闯关，\(subtitle)")
+    }
+}
+
+private struct FishGameBanner: View {
+    let status: SnakeRewardStatus
+    let cost: Int
+    let action: () -> Void
+
+    private var subtitle: String {
+        if cost == 0 { return "当前 \(status.ticketCount) 张游戏券 · 本局免费" }
+        if status.ticketCount >= cost { return "当前 \(status.ticketCount) 张游戏券 · 每局需 \(cost) 张" }
+        return "当前 \(status.ticketCount) 张游戏券 · 还差 \(cost - status.ticketCount) 张"
+    }
+
+    var body: some View {
+        Button(action: action) {
+            HStack(spacing: 12) {
+                ZStack {
+                    RoundedRectangle(cornerRadius: 17).fill(.white.opacity(0.72))
+                        .frame(width: 48, height: 48)
+                    Text("🐠").font(.system(size: 27))
+                }
+                VStack(alignment: .leading, spacing: 4) {
+                    Text("海底大冒险")
+                        .font(.system(size: 16, weight: .heavy, design: .rounded))
+                    Text(subtitle)
+                        .font(.system(size: 12, weight: .medium, design: .rounded))
+                        .opacity(0.76)
+                }
+                Spacer(minLength: 4)
+                Image(systemName: status.ticketCount >= cost ? "play.circle.fill" : "lock.circle.fill").font(.system(size: 25))
+            }
+            .foregroundStyle(AppPalette.ink)
+            .padding(12)
+            .background(AppPalette.blue.opacity(0.68), in: RoundedRectangle(cornerRadius: 21))
+            .shadow(color: AppPalette.blue.opacity(0.18), radius: 9, x: 0, y: 5)
+        }
+        .buttonStyle(.plain)
+        .accessibilityLabel("海底大冒险，\(subtitle)")
+    }
+}
+
 private struct ArithmeticGameBanner: View {
     let action: () -> Void
 
     var body: some View {
         Button(action: action) {
-            HStack(spacing: 14) {
+            HStack(spacing: 12) {
                 ZStack {
                     RoundedRectangle(cornerRadius: 17).fill(.white.opacity(0.7))
-                        .frame(width: 56, height: 56)
+                        .frame(width: 48, height: 48)
                     Image(systemName: "number.circle.fill")
-                        .font(.system(size: 32, weight: .bold))
+                        .font(.system(size: 27, weight: .bold))
                         .foregroundStyle(AppPalette.ink)
                 }
                 VStack(alignment: .leading, spacing: 4) {
-                    Text("30秒口算挑战")
-                        .font(.system(size: 18, weight: .heavy, design: .rounded))
+                    Text("口算挑战")
+                        .font(.system(size: 16, weight: .heavy, design: .rounded))
                     Text("加减混合，看看你能答对几题！")
-                        .font(.system(size: 14, weight: .medium, design: .rounded))
+                        .font(.system(size: 12, weight: .medium, design: .rounded))
                         .opacity(0.76)
                 }
                 Spacer()
                 Image(systemName: "play.circle.fill")
-                    .font(.system(size: 29))
+                    .font(.system(size: 25))
             }
             .foregroundStyle(AppPalette.ink)
-            .padding(15)
-            .background(AppPalette.mint, in: RoundedRectangle(cornerRadius: 24))
-            .shadow(color: AppPalette.mint.opacity(0.30), radius: 12, x: 0, y: 7)
+            .padding(12)
+            .background(AppPalette.mint, in: RoundedRectangle(cornerRadius: 21))
+            .shadow(color: AppPalette.mint.opacity(0.24), radius: 9, x: 0, y: 5)
+        }
+        .buttonStyle(.plain)
+    }
+}
+
+private struct EquationBalanceGameBanner: View {
+    let action: () -> Void
+
+    var body: some View {
+        Button(action: action) {
+            HStack(spacing: 12) {
+                ZStack {
+                    RoundedRectangle(cornerRadius: 17).fill(.white.opacity(0.72))
+                        .frame(width: 48, height: 48)
+                    Image(systemName: "scalemass.fill")
+                        .font(.system(size: 23, weight: .bold))
+                        .foregroundStyle(AppPalette.ink)
+                }
+                VStack(alignment: .leading, spacing: 4) {
+                    Text("等式平衡")
+                        .font(.system(size: 16, weight: .heavy, design: .rounded))
+                    Text("玩天平配平，学习加减法和等号")
+                        .font(.system(size: 12, weight: .medium, design: .rounded))
+                        .opacity(0.76)
+                }
+                Spacer()
+                Image(systemName: "play.circle.fill")
+                    .font(.system(size: 25))
+            }
+            .foregroundStyle(AppPalette.ink)
+            .padding(12)
+            .background(AppPalette.yellow.opacity(0.9), in: RoundedRectangle(cornerRadius: 21))
+            .shadow(color: AppPalette.yellow.opacity(0.2), radius: 9, x: 0, y: 5)
         }
         .buttonStyle(.plain)
     }
@@ -270,29 +651,29 @@ private struct ListeningGameBanner: View {
 
     var body: some View {
         Button(action: action) {
-            HStack(spacing: 14) {
+            HStack(spacing: 12) {
                 ZStack {
                     RoundedRectangle(cornerRadius: 17).fill(.white.opacity(0.68))
-                        .frame(width: 56, height: 56)
+                        .frame(width: 48, height: 48)
                     Image(systemName: "ear.badge.waveform")
-                        .font(.system(size: 25, weight: .bold))
+                        .font(.system(size: 22, weight: .bold))
                         .foregroundStyle(AppPalette.ink)
                 }
                 VStack(alignment: .leading, spacing: 4) {
                     Text("听音找字")
-                        .font(.system(size: 18, weight: .heavy, design: .rounded))
+                        .font(.system(size: 16, weight: .heavy, design: .rounded))
                     Text("听听读音，找到正确的汉字")
-                        .font(.system(size: 14, weight: .medium, design: .rounded))
+                        .font(.system(size: 12, weight: .medium, design: .rounded))
                         .opacity(0.76)
                 }
                 Spacer()
                 Image(systemName: "play.circle.fill")
-                    .font(.system(size: 29))
+                    .font(.system(size: 25))
             }
             .foregroundStyle(AppPalette.ink)
-            .padding(15)
-            .background(AppPalette.lilac, in: RoundedRectangle(cornerRadius: 24))
-            .shadow(color: AppPalette.lilac.opacity(0.30), radius: 12, x: 0, y: 7)
+            .padding(12)
+            .background(AppPalette.lilac, in: RoundedRectangle(cornerRadius: 21))
+            .shadow(color: AppPalette.lilac.opacity(0.24), radius: 9, x: 0, y: 5)
         }
         .buttonStyle(.plain)
     }
@@ -304,25 +685,25 @@ private struct AdventureBanner: View {
     var body: some View {
         ZStack(alignment: .topTrailing) {
             RoundedRectangle(cornerRadius: 30).fill(AppPalette.orange)
-            Circle().fill(.white.opacity(0.17)).frame(width: 190, height: 190).offset(x: 35, y: -70)
-            Circle().stroke(.white.opacity(0.28), lineWidth: 2).frame(width: 130, height: 130).offset(x: -60, y: 118)
-            HStack(spacing: 12) {
-                VStack(alignment: .leading, spacing: 12) {
+            Circle().fill(.white.opacity(0.17)).frame(width: 145, height: 145).offset(x: 28, y: -54)
+            Circle().stroke(.white.opacity(0.28), lineWidth: 2).frame(width: 104, height: 104).offset(x: -45, y: 91)
+            HStack(spacing: 10) {
+                VStack(alignment: .leading, spacing: 8) {
                     Text("汉字探险队")
-                        .font(.system(size: 14, weight: .heavy, design: .rounded))
-                        .padding(.horizontal, 11).padding(.vertical, 7)
+                        .font(.system(size: 13, weight: .heavy, design: .rounded))
+                        .padding(.horizontal, 9).padding(.vertical, 5)
                         .background(.white.opacity(0.25), in: Capsule())
                     Text("出发去\n认识新朋友！")
-                        .font(.system(size: 29, weight: .black, design: .rounded))
-                        .lineSpacing(2)
+                        .font(.system(size: 25, weight: .black, design: .rounded))
+                        .lineSpacing(1)
                     Button(action: startStudy) {
                         HStack(spacing: 8) {
                             Text("开始闯关")
                             Image(systemName: "arrow.right")
                         }
-                        .font(.system(size: 16, weight: .heavy, design: .rounded))
+                        .font(.system(size: 15, weight: .heavy, design: .rounded))
                         .foregroundStyle(AppPalette.ink)
-                        .padding(.horizontal, 18).padding(.vertical, 12)
+                        .padding(.horizontal, 16).padding(.vertical, 9)
                         .background(.white, in: Capsule())
                     }
                     .buttonStyle(.plain)
@@ -330,19 +711,19 @@ private struct AdventureBanner: View {
                 .foregroundStyle(.white)
                 Spacer(minLength: 0)
                 ZStack {
-                    Circle().fill(.white.opacity(0.2)).frame(width: 150, height: 150)
-                    Text("🦊").font(.system(size: 93))
+                    Circle().fill(.white.opacity(0.2)).frame(width: 112, height: 112)
+                    Text("🦊").font(.system(size: 70))
                         .rotationEffect(.degrees(-7))
-                    Text("✦").font(.system(size: 27, weight: .black)).offset(x: 54, y: -49)
-                    Text("✦").font(.system(size: 19, weight: .black)).offset(x: -57, y: 52)
+                    Text("✦").font(.system(size: 22, weight: .black)).offset(x: 42, y: -37)
+                    Text("✦").font(.system(size: 16, weight: .black)).offset(x: -43, y: 39)
                 }
                 .accessibilityHidden(true)
             }
-            .padding(23)
+            .padding(18)
         }
-        .frame(height: 255)
-        .clipShape(RoundedRectangle(cornerRadius: 30))
-        .shadow(color: AppPalette.orange.opacity(0.25), radius: 16, x: 0, y: 9)
+        .frame(height: 198)
+        .clipShape(RoundedRectangle(cornerRadius: 25))
+        .shadow(color: AppPalette.orange.opacity(0.22), radius: 12, x: 0, y: 6)
     }
 }
 
@@ -429,15 +810,20 @@ private struct EmptyCollectionCard: View {
 }
 
 private struct LibraryScreen: View {
-    let app: AppModel
+    @ObservedObject var app: AppModel
     let startStudy: (String, [String]) -> Void
 
     var body: some View {
         ScrollView {
             VStack(alignment: .leading, spacing: 20) {
-                Text("汉字图鉴")
-                    .font(.system(size: 30, weight: .black, design: .rounded))
-                    .foregroundStyle(AppPalette.ink)
+                HStack(alignment: .firstTextBaseline, spacing: 14) {
+                    Text("汉字图鉴")
+                        .font(.system(size: 30, weight: .black, design: .rounded))
+                        .foregroundStyle(AppPalette.ink)
+                    Text("共 \(app.characters.count) 个字")
+                        .font(.system(size: 16, weight: .bold, design: .rounded))
+                        .foregroundStyle(AppPalette.muted)
+                }
                 Text("每个汉字，都是你发现的小宝藏。")
                     .font(.system(size: 16, weight: .medium, design: .rounded))
                     .foregroundStyle(AppPalette.muted)
@@ -527,6 +913,7 @@ private struct ProfileScreen: View {
                                 app.updateAvatar(for: profile, image: image)
                             }
                             Button {
+                                nameFocused = false
                                 app.switchUser(to: user)
                                 dismiss()
                             } label: {
@@ -542,6 +929,7 @@ private struct ProfileScreen: View {
                             }
                             .buttonStyle(.plain)
                             Button {
+                                nameFocused = false
                                 profilePendingRename = user
                             } label: {
                                 Image(systemName: "pencil.circle.fill")
@@ -553,9 +941,11 @@ private struct ProfileScreen: View {
                             .buttonStyle(.plain)
                             .accessibilityLabel("修改\(user.name)的名称")
                         }
+                        .listRowBackground(Color.white)
                         .swipeActions(edge: .trailing, allowsFullSwipe: false) {
                             if app.users.count > 1 {
                                 Button(role: .destructive) {
+                                    nameFocused = false
                                     profilePendingDeletion = user
                                 } label: {
                                     Label("删除", systemImage: "trash")
@@ -567,23 +957,45 @@ private struct ProfileScreen: View {
                 Section("新增檔案") {
                     HStack {
                         TextField("小朋友的昵称", text: $newName)
+                            .foregroundStyle(AppPalette.ink)
+                            .tint(AppPalette.ink)
                             .focused($nameFocused)
                             .submitLabel(.done)
+                            .onSubmit { nameFocused = false }
                         Button("添加") {
+                            nameFocused = false
                             app.addUser(named: newName)
                             dismiss()
                         }
                         .fontWeight(.bold)
                         .disabled(newName.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty)
                     }
+                    .listRowBackground(Color.white)
                 }
             }
             .scrollContentBackground(.hidden)
-            .background { StorybookBackground() }
+            .scrollDismissesKeyboard(.interactively)
+            .background {
+                StorybookBackground()
+                    .contentShape(Rectangle())
+                    .onTapGesture { nameFocused = false }
+            }
             .navigationTitle("我的小档案")
             .navigationBarTitleDisplayMode(.inline)
-            .toolbar { ToolbarItem(placement: .topBarTrailing) { Button("完成") { dismiss() } } }
+            .tint(AppPalette.orange)
+            .toolbar {
+                ToolbarItem(placement: .topBarTrailing) {
+                    Button("完成") {
+                        nameFocused = false
+                        dismiss()
+                    }
+                }
+            }
         }
+        // Sheets have their own presentation environment; keep this screen's
+        // fixed paper palette independent of the iPad's system appearance.
+        .preferredColorScheme(.light)
+        .keyboardDismissToolbar { nameFocused = false }
         .alert(item: $profilePendingDeletion) { user in
             Alert(
                 title: Text("删除“\(user.name)”的档案？"),
@@ -600,6 +1012,7 @@ private struct ProfileScreen: View {
             }
             .presentationDetents([.medium])
             .presentationDragIndicator(.visible)
+            .interactiveDismissDisabled()
         }
     }
 }
@@ -626,8 +1039,11 @@ private struct ProfileNameEditor: View {
             Form {
                 Section("小朋友昵称") {
                     TextField("请输入昵称", text: $name)
+                        .foregroundStyle(AppPalette.ink)
+                        .tint(AppPalette.ink)
                         .focused($nameFocused)
                         .submitLabel(.done)
+                        .onSubmit { nameFocused = false }
                         .onChange(of: name) { _, newValue in
                             if newValue.count > 12 {
                                 name = String(newValue.prefix(12))
@@ -635,14 +1051,25 @@ private struct ProfileNameEditor: View {
                         }
                 }
             }
+            .scrollContentBackground(.hidden)
+            .scrollDismissesKeyboard(.interactively)
+            .background {
+                StorybookBackground()
+                    .contentShape(Rectangle())
+                    .onTapGesture { nameFocused = false }
+            }
             .navigationTitle("修改名称")
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItem(placement: .cancellationAction) {
-                    Button("取消") { dismiss() }
+                    Button("取消") {
+                        nameFocused = false
+                        dismiss()
+                    }
                 }
                 ToolbarItem(placement: .confirmationAction) {
                     Button("保存") {
+                        nameFocused = false
                         if onSave(trimmedName) { dismiss() }
                     }
                     .fontWeight(.bold)
@@ -650,6 +1077,7 @@ private struct ProfileNameEditor: View {
                 }
             }
         }
+        .keyboardDismissToolbar { nameFocused = false }
         .onAppear { nameFocused = true }
     }
 }

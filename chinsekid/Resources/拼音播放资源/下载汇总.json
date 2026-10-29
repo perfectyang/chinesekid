@@ -1,0 +1,23 @@
+{
+  "letters": 63,
+  "files": 315,
+  "errors": 0,
+  "bytes": 3256115,
+  "categories": [
+    {
+      "name": "声母",
+      "letters": 23,
+      "files": 115
+    },
+    {
+      "name": "韵母",
+      "letters": 24,
+      "files": 120
+    },
+    {
+      "name": "整体认读",
+      "letters": 16,
+      "files": 80
+    }
+  ]
+}
